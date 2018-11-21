@@ -32,3 +32,21 @@ C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.L
 C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.OvertimeRequest.resources
 C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.Properties.Resources.resources
 C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT-Management.csproj.GenerateResource.Cache
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT-Management.exe
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT-Management.pdb
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\bin\Debug\OT-Management.exe
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\bin\Debug\OT-Management.pdb
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\bin\Debug\MySql.Data.dll
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.OvertimeCodeList.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.Changepass.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.EmployeeList.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.Database.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.Overtime.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.Status.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.Home.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.Login_Form.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.OvertimeRequest.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.Properties.Resources.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT-Management.csproj.GenerateResource.Cache
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\bin\Debug\OT-Management.exe.config

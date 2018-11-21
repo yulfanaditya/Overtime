@@ -21,11 +21,20 @@ namespace OT_Management
         {
             InitializeComponent();
             Login_button.Enabled = true;
-        }
-
-        private void userid_TextChanged(object sender, EventArgs e)
-        {
-       
+            this.AcceptButton = Login_button;
+            userid.Select();
+            if (Properties.Settings.Default.check == true)
+            {
+                userid.Text = Properties.Settings.Default.username;
+                password.Text = Properties.Settings.Default.password;
+                remember_me.Checked = true;
+            }
+            else 
+            {
+                userid.Text = "";
+                password.Text = "";
+                remember_me.Checked = false;
+            }
         }
 
         private void password_TextChanged(object sender, EventArgs e)
@@ -37,7 +46,18 @@ namespace OT_Management
 
         private void remember_me_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (remember_me.Checked == true)
+            {
+                Properties.Settings.Default.username = this.userid.Text;
+                Properties.Settings.Default.password = this.password.Text;
+                Properties.Settings.Default.check = true;
+            }
+            else if (remember_me.Checked == false)
+            {
+                Properties.Settings.Default.username = "";
+                Properties.Settings.Default.password = "";
+                Properties.Settings.Default.check = false;
+            }
         }
 
         private void Login_button_Click(object sender, EventArgs e)
@@ -73,20 +93,16 @@ namespace OT_Management
             }
         }
 
-        private void Login_Form_Load(object sender, EventArgs e)
-        {
 
-        }
-
-///////////////////////////////////Class For Database//////////////////////////////////////////////////
+        ///////////////////////////////////Class For Database///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public class DBOT {
             MySqlConnection connecting;
-            private string server = "192.168.110.42";
-            private string database = "otmanagement";
+            private string server = "192.168.110.22";
+            private string database = "overtime";
             private string user = "root";
-            private string password = "kemet123";
+            private string password = "123";
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             public void inializing(){
             string connect;
@@ -98,7 +114,7 @@ namespace OT_Management
                         
             }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             public bool CheckConnection()
             {
@@ -126,7 +142,7 @@ namespace OT_Management
                 }
             }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             public bool checkingUserPassword(string User, string Password){
                 MySqlDataAdapter linier;
                 string MD5Hasher;
@@ -134,7 +150,7 @@ namespace OT_Management
 
                 MD5Hasher = MD5Hash(Password);
     
-                linier = new MySqlDataAdapter("SELECT tuser,pass FROM tbuser WHERE tuser = " + User + " AND pass = '" + MD5Hasher + "'", connecting);
+                linier = new MySqlDataAdapter("SELECT Username,Password FROM account WHERE Username = '" + User + "' AND Password = '" + MD5Hasher + "'", connecting);
                 linier.Fill(table);
 
                 if (table.Rows.Count <= 0)
@@ -147,7 +163,7 @@ namespace OT_Management
                     return true;
                 }
             }
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             public static string MD5Hash(string input)
             {
@@ -162,6 +178,13 @@ namespace OT_Management
                 return hash.ToString();
             }
         }
+
+        private void userid_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        
 
     }
 }

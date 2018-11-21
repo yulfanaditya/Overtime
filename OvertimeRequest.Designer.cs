@@ -361,7 +361,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox2.Image = global::OT_Management.Properties.Resources._10455371_15016991910545814_origin;
+            this.pictureBox2.Image = global::OT_Management.Properties.Resources.Kemet_Logo;
             this.pictureBox2.Location = new System.Drawing.Point(12, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(141, 68);
