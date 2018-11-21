@@ -1,0 +1,34 @@
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\bin\Debug\OT-Management.exe
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\bin\Debug\OT-Management.pdb
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.Status.resources
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.Home.resources
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.Login_Form.resources
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.OvertimeRequest.resources
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.Properties.Resources.resources
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT-Management.csproj.GenerateResource.Cache
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT-Management.exe
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT-Management.pdb
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\bin\Debug\MySql.Data.dll
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.Changepass.resources
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.OvertimeCodeList.resources
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.EmployeeList.resources
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.Database.resources
+C:\Documents and Settings\erbayfa\My Documents\Visual Studio 2008\Projects\OT-Management\OT-Management\obj\Debug\OT_Management.Overtime.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT-Management.exe
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT-Management.pdb
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\bin\Debug\OT-Management.exe
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\bin\Debug\OT-Management.pdb
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\bin\Debug\MySql.Data.dll
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.OvertimeCodeList.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.Changepass.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.EmployeeList.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.Database.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.Overtime.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.Status.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.Home.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.Login_Form.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.OvertimeRequest.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT_Management.Properties.Resources.resources
+C:\Users\erbayfa\Downloads\OT-Management\OT-Management\obj\Debug\OT-Management.csproj.GenerateResource.Cache
