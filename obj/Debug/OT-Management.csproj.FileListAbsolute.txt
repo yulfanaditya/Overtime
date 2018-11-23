@@ -50,3 +50,4 @@ C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.Properties.Resources.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT-Management.csproj.GenerateResource.Cache
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\bin\Debug\OT-Management.exe.config
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\Debug\OT_Management.All_List.DepartmentList.resources

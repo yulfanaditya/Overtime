@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="All List\DepartmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="All List\DepartmentList.Designer.cs">
+      <DependentUpon>DepartmentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="All List\OvertimeCodeList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,7 @@
     <Compile Include="Database.Designer.cs">
       <DependentUpon>Database.cs</DependentUpon>
     </Compile>
+    <Compile Include="OTDB.cs" />
     <Compile Include="Overtime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +116,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="All List\DepartmentList.resx">
+      <DependentUpon>DepartmentList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="All List\OvertimeCodeList.resx">
       <DependentUpon>OvertimeCodeList.cs</DependentUpon>
       <SubType>Designer</SubType>

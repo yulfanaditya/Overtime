@@ -16,6 +16,7 @@ namespace OT_Management
     public partial class Login_Form : Form
     {
         public static string datauser;
+        OTDB datab = new OTDB();
 
         public Login_Form()
         {
@@ -29,7 +30,7 @@ namespace OT_Management
                 password.Text = Properties.Settings.Default.password;
                 remember_me.Checked = true;
             }
-            else 
+            else if(Properties.Settings.Default.check == false)
             {
                 userid.Text = "";
                 password.Text = "";
@@ -46,7 +47,7 @@ namespace OT_Management
 
         private void remember_me_CheckedChanged(object sender, EventArgs e)
         {
-            if (remember_me.Checked == true)
+           if (remember_me.Checked == true)
             {
                 Properties.Settings.Default.username = this.userid.Text;
                 Properties.Settings.Default.password = this.password.Text;
@@ -59,7 +60,7 @@ namespace OT_Management
                 Properties.Settings.Default.check = false;
             }
         }
-
+        
         private void Login_button_Click(object sender, EventArgs e)
         {
             bool check;
@@ -75,11 +76,10 @@ namespace OT_Management
             }
             else
             {
-                DBOT datab = new DBOT();
-
+                
                 datab.inializing();
-                check = datab.CheckConnection();
-                check = datab.checkingUserPassword(userid.Text, password.Text);
+                datab.CheckConnection();
+                check = checkingUserPassword(userid.Text, password.Text);
                 if (check == true)
                 {
                     this.Hide();
@@ -92,99 +92,54 @@ namespace OT_Management
 
             }
         }
+        
+        public bool checkingUserPassword(string User, string Password)
+        {
+            MySqlDataAdapter linier;
+            string MD5Hasher;
+            DataTable table = new DataTable();
 
+            MD5Hasher = MD5Hash(Password);
 
-        ///////////////////////////////////Class For Database///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public class DBOT {
-            MySqlConnection connecting;
-            private string server = "192.168.110.22";
-            private string database = "overtime";
-            private string user = "root";
-            private string password = "123";
+            linier = new MySqlDataAdapter("SELECT Username,Password FROM account WHERE Username = '" + User + "' AND Password = '" + MD5Hasher + "'",datab.inializing());
+            linier.Fill(table);
 
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            public void inializing(){
-            string connect;
-
-            connect = "SERVER=" + server + ";" + "DATABASE=" 
-            + database + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
-
-            connecting = new MySqlConnection(connect);
-                        
-            }
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            public bool CheckConnection()
+            if (table.Rows.Count <= 0)
             {
-                try
-                {
-                    connecting.Open();
-
-                    return true;
-                }
-                catch (MySqlException ex)
-                {
-
-                    switch (ex.Number)
-                    {
-                        case 0:
-                            MessageBox.Show("Cannot connect to server. Call at *160 or *146");
-                            break;
-
-                        case 1045:
-                            MessageBox.Show("Invalid username/password, please try again");
-                            break;
-                    }
-                    
-                    return false;
-                }
+                MessageBox.Show("Invalid UserID or Password");
+                return false;
             }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            public bool checkingUserPassword(string User, string Password){
-                MySqlDataAdapter linier;
-                string MD5Hasher;
-                DataTable table = new DataTable();
-
-                MD5Hasher = MD5Hash(Password);
-    
-                linier = new MySqlDataAdapter("SELECT Username,Password FROM account WHERE Username = '" + User + "' AND Password = '" + MD5Hasher + "'", connecting);
-                linier.Fill(table);
-
-                if (table.Rows.Count <= 0)
-                {
-                    MessageBox.Show("Invalid UserID or Password");
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            public static string MD5Hash(string input)
+            else
             {
-                StringBuilder hash = new StringBuilder();
-                MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();
-                byte[] bytes = md5provider.ComputeHash(new UTF8Encoding().GetBytes(input));
-
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    hash.Append(bytes[i].ToString("x2"));
-                }
-                return hash.ToString();
+                return true;
             }
         }
 
+        public static string MD5Hash(string input)
+        {
+            StringBuilder hash = new StringBuilder();
+            MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();
+            byte[] bytes = md5provider.ComputeHash(new UTF8Encoding().GetBytes(input));
+
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                hash.Append(bytes[i].ToString("x2"));
+            }
+            return hash.ToString();
+        }
+       
         private void userid_TextChanged(object sender, EventArgs e)
         {
            
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            All_List.DepartmentList or = new All_List.DepartmentList();
+            or.Closed += (s, args) => this.Close();
+            or.Show();
+        }      
 
     }
 }
