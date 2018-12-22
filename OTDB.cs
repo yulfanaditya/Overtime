@@ -55,6 +55,19 @@ namespace OT_Management
 
                     return false;
                 }
-         }          
+            }
+            public bool CloseConnection()
+            {
+                try
+                {
+                    connecting.Close();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return false;
+                }
+            }
     }
 }

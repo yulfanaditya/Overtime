@@ -17,11 +17,10 @@ namespace OT_Management.All_List
         public DepartmentList()
         {
             InitializeComponent();
-            
-            DB.inializing();
+                       
+            deptLists();
+            deptLists();
            
-            DeptLists();
-            AddDeptLists();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -29,31 +28,25 @@ namespace OT_Management.All_List
            
         }
 
-        private void AddDeptLists() 
+        private void deptLists()
         {
-            string sql = "SELECT departementCode,departementName FROM departement";
-            MySqlCommand cmd = new MySqlCommand(sql,DB.inializing());
-            MySqlDataReader Reader = cmd.ExecuteReader();
+            listView1.GridLines = true;
+            listView1.View = View.Details;
 
-            listView1.Items.Clear();
-            
-            while (Reader.Read())
-            {
-                ListViewItem lv = new ListViewItem(Reader.GetInt32(0).ToString());
-                lv.SubItems.Add(Reader.GetString(1));
-                listView1.Items.Add(lv);
-
-            }
-            Reader.Close();
-            cmd.Dispose();
-            DB.inializing().Close();
-
-        }
-        private void DeptLists()
-        {
             listView1.Columns.Add("Department Code", 100, HorizontalAlignment.Center);
             listView1.Columns.Add("Department Name", -2, HorizontalAlignment.Center);
-            listView1.View = View.Details;
+
+            //DB.inializing();
+            MySqlCommand cmd = new MySqlCommand("select * from department", DB.inializing());
+            DataTable dt = new DataTable();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt.Rows[i];
+                ListViewItem listitem = new ListViewItem(dr["departmentCode"].ToString());
+                listitem.SubItems.Add(dr["departmentName"].ToString());
+                listView1.Items.Add(listitem);
+            } 
         }
 
             }
