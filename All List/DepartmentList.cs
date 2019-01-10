@@ -19,7 +19,7 @@ namespace OT_Management.All_List
             InitializeComponent();
                        
             deptLists();
-            deptLists();
+            selected();
            
         }
 
@@ -27,7 +27,28 @@ namespace OT_Management.All_List
         {
            
         }
+        public void selected()
+        {
+            DB.inializing();
+           
+            string query = "Select * from department";
+            MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+            DB.CheckConnection();
+            MySqlDataReader Reader = cmd.ExecuteReader();
 
+            listView1.Items.Clear();
+
+            while (Reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(Reader.GetString(0));
+                lv.SubItems.Add(Reader.GetString(1));
+                listView1.Items.Add(lv);
+
+            }
+            Reader.Close();
+            cmd.Dispose();
+            DB.CloseConnection();
+        }
         private void deptLists()
         {
             listView1.GridLines = true;
@@ -35,18 +56,6 @@ namespace OT_Management.All_List
 
             listView1.Columns.Add("Department Code", 100, HorizontalAlignment.Center);
             listView1.Columns.Add("Department Name", -2, HorizontalAlignment.Center);
-
-            //DB.inializing();
-            MySqlCommand cmd = new MySqlCommand("select * from department", DB.inializing());
-            DataTable dt = new DataTable();
-
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                DataRow dr = dt.Rows[i];
-                ListViewItem listitem = new ListViewItem(dr["departmentCode"].ToString());
-                listitem.SubItems.Add(dr["departmentName"].ToString());
-                listView1.Items.Add(listitem);
-            } 
         }
 
             }

@@ -6,22 +6,48 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace OT_Management
 {
     public partial class EmployeeList : Form
     {
+        OTDB DB = new OTDB();
         public EmployeeList()
         {
             InitializeComponent();
             EmployeeLists();
+            selected();
         }
 
         private void EmployeeList_Load(object sender, EventArgs e)
         {
 
         }
+        public void selected()
+        {
+            DB.inializing();
 
+            string query = "Select Badge, Name, DoJ from karyawan";
+            MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+            DB.CheckConnection();
+            MySqlDataReader Reader = cmd.ExecuteReader();
+
+            listView1.Items.Clear();
+
+            while (Reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(Reader.GetString(0));
+                lv.SubItems.Add(Reader.GetString(1));
+                lv.SubItems.Add(Reader.GetString(2));
+                listView1.Items.Add(lv);
+
+            }
+            Reader.Close();
+            cmd.Dispose();
+            DB.CloseConnection();
+        }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
            
@@ -29,10 +55,40 @@ namespace OT_Management
 
         private void EmployeeLists()
         {
+            listView1.Columns.Add("Badge", 55, HorizontalAlignment.Center);
             listView1.Columns.Add("Name", 200, HorizontalAlignment.Left);
-            listView1.Columns.Add("Badge", 100, HorizontalAlignment.Left);
             listView1.Columns.Add("Date of Join", -2, HorizontalAlignment.Center);
             listView1.View = View.Details;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+            if (textBox1.Text != "")
+            {
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    var item = listView1.Items[i];
+                    if (item.Text.ToLower().Contains(textBox1.Text.ToString()))
+                    {
+                        item.BackColor = SystemColors.Highlight;
+                        item.ForeColor = SystemColors.HighlightText;
+                    }
+                    else
+                    {
+                        listView1.Items.Remove(item);
+                    }
+                }
+                if (listView1.SelectedItems.Count == 1)
+                {
+                    listView1.Focus();
+                }
+            }
+            else
+            {
+                listView1.Items.Clear();
+                selected();
+            }
         }
     }
 }

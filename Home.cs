@@ -78,9 +78,9 @@ namespace OT_Management
             dbm.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("COMING SOON!!");
         }
 
     }

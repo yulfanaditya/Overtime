@@ -15,7 +15,7 @@ namespace OT_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new All_List.DepartmentList());
+            Application.Run(new EmployeeList());
         }
     }
 }

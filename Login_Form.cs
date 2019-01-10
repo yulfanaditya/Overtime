@@ -139,6 +139,11 @@ namespace OT_Management
             All_List.DepartmentList or = new All_List.DepartmentList();
             or.Closed += (s, args) => this.Close();
             or.Show();
+        }
+
+        private void exit_button_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }      
 
     }

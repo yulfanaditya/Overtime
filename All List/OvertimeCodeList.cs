@@ -13,27 +13,60 @@ namespace OT_Management
 {
     public partial class OvertimeCodeList : Form
     {
+        OTDB DB = new OTDB();
         public OvertimeCodeList()
         {
             InitializeComponent();
             OTCodeLists();
+            selected();
+            
         }
 
         private void OvertimeCodeList_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        public void selected()
         {
+            DB.inializing();
 
+            string query = "Select goalofOT from goal";
+            MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+            DB.CheckConnection();
+            MySqlDataReader Reader = cmd.ExecuteReader();
+
+            listView1.Items.Clear();
+
+            while (Reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(Reader.GetString(0));
+                
+                listView1.Items.Add(lv);
+
+            }
+            Reader.Close();
+            cmd.Dispose();
+            DB.CloseConnection();
         }
 
         private void OTCodeLists() 
         {
-            listView1.Columns.Add("Overtime Code", 100, HorizontalAlignment.Center);
-            listView1.Columns.Add("Overtime Activities", -2, HorizontalAlignment.Center);
+            listView1.Columns.Add("Overtime Activities", -2, HorizontalAlignment.Left);
             listView1.View = View.Details;
         }
+        public void listView1_DoubleClick(object sender, System.EventArgs e)
+        {
+            string datalocals = listView1.Items[listView1.SelectedIndices[0]].Text;
+            OvertimeRequest f1 = (OvertimeRequest)Application.OpenForms["OvertimeRequest"];
+            TextBox tb = (TextBox)f1.Controls["TextBox4"];
+            tb.Text = datalocals;
+            this.Close();
+         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }

@@ -16,11 +16,17 @@ namespace OT_Management
             InitializeComponent();
             labeljam.Text = "0";
             OTRequests();
+            OvertimeCodeList OCL = new OvertimeCodeList();
+           
+        }
+        public OvertimeRequest(string data) 
+        {
+            textBox2.Text = data;
         }
 
         private void OvertimeRequest_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void searchdept_Click(object sender, EventArgs e)
@@ -42,7 +48,7 @@ namespace OT_Management
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void closebutton_Click(object sender, EventArgs e)
@@ -52,28 +58,32 @@ namespace OT_Management
             ot.Closed += (s, args) => this.Close();
             ot.Show();
         }
-        private int hasil(int start, int finish)
+        private double hasil(int start, int finish, int start1, int finish1)
         {
-            int d = (finish - start + 24) % 24;
-
-            return d;
+            double w = ((finish - start + 24) % 24) + ((double)((finish1 - start1 + 60) % 60) / 60);
+            return w;
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             int start = dateTimePicker2.Value.Hour;
             int finish = dateTimePicker3.Value.Hour;
-            int hasill = hasil(start, finish);
-            labeljam.Text = hasill.ToString();
+            int start1 = dateTimePicker2.Value.Minute;
+            int finish1 = dateTimePicker3.Value.Minute;
+            double hasill = hasil(start, finish, start1, finish1);
+
+            labeljam.Text = hasill.ToString("n2");
         }
 
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
             int start = dateTimePicker2.Value.Hour;
             int finish = dateTimePicker3.Value.Hour;
-            int hasill = hasil(start, finish);
-            labeljam.Text = hasill.ToString();
-        }
+            int start1 = dateTimePicker2.Value.Minute;
+            int finish1 = dateTimePicker3.Value.Minute;
+            double hasill = hasil(start, finish, start1, finish1);
+            labeljam.Text = hasill.ToString("n2");
+         }
 
         private void labeljam_Click(object sender, EventArgs e)
         {
@@ -87,6 +97,11 @@ namespace OT_Management
             listView1.Columns.Add("Overtime", 100, HorizontalAlignment.Left);
             listView1.Columns.Add("Remark", -2, HorizontalAlignment.Left);
             listView1.View = View.Details;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+                    
         }
     }
 }

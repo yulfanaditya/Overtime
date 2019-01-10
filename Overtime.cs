@@ -16,12 +16,20 @@ namespace OT_Management
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
             OvertimeRequest otr = new OvertimeRequest();
             otr.Closed += (s, args) => this.Close();
             otr.Show();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home home = new Home();
+            home.Closed += (s, args) => this.Close();
+            home.Show();
         }
     }
 }
