@@ -17,3 +17,4 @@ C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Manage
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT-Management.csproj.GenerateResource.Cache
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT-Management.exe
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT-Management.pdb
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Register.resources

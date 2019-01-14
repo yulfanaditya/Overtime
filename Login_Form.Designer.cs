@@ -35,10 +35,11 @@
             this.userid = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.remember_me = new System.Windows.Forms.CheckBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.exit_button = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -97,24 +98,13 @@
             // remember_me
             // 
             this.remember_me.AutoSize = true;
-            this.remember_me.Location = new System.Drawing.Point(31, 307);
+            this.remember_me.Location = new System.Drawing.Point(30, 307);
             this.remember_me.Name = "remember_me";
             this.remember_me.Size = new System.Drawing.Size(95, 17);
             this.remember_me.TabIndex = 11;
             this.remember_me.Text = "Remember Me";
             this.remember_me.UseVisualStyleBackColor = true;
             this.remember_me.CheckedChanged += new System.EventHandler(this.remember_me_CheckedChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::OT_Management.Properties.Resources.Kemet_Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(96, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(141, 68);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // label3
             // 
@@ -128,6 +118,42 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "PT. KEMET ELECTRONICS INDONESIA";
             // 
+            // exit_button
+            // 
+            this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit_button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.exit_button.ImageKey = "(none)";
+            this.exit_button.Location = new System.Drawing.Point(31, 404);
+            this.exit_button.Name = "exit_button";
+            this.exit_button.Size = new System.Drawing.Size(264, 31);
+            this.exit_button.TabIndex = 13;
+            this.exit_button.Text = "Exit";
+            this.exit_button.UseVisualStyleBackColor = true;
+            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.ImageKey = "(none)";
+            this.button1.Location = new System.Drawing.Point(31, 367);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(264, 31);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Register";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::OT_Management.Properties.Resources.Kemet_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(96, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(141, 68);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -138,25 +164,13 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // exit_button
-            // 
-            this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit_button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.exit_button.ImageKey = "(none)";
-            this.exit_button.Location = new System.Drawing.Point(31, 369);
-            this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(264, 31);
-            this.exit_button.TabIndex = 13;
-            this.exit_button.Text = "Exit";
-            this.exit_button.UseVisualStyleBackColor = true;
-            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
-            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(334, 423);
+            this.ClientSize = new System.Drawing.Size(334, 457);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.remember_me);
@@ -192,6 +206,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button exit_button;
+        private System.Windows.Forms.Button button1;
     }
 }
 

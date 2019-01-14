@@ -11,6 +11,7 @@ namespace OT_Management
 {
     public partial class OvertimeRequest : Form
     {
+        public bool ORB;
         public OvertimeRequest()
         {
             InitializeComponent();
@@ -48,7 +49,18 @@ namespace OT_Management
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text))
+            {
+                MessageBox.Show("Overtime Activity or Employee List can't be Empty");
+            }
+            else if (string.IsNullOrEmpty(textBox5.Text))
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure to add without Remark?", "Empty Remark", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
 
+                }
+            }
         }
 
         private void closebutton_Click(object sender, EventArgs e)

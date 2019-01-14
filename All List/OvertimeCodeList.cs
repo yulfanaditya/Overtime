@@ -19,7 +19,6 @@ namespace OT_Management
             InitializeComponent();
             OTCodeLists();
             selected();
-            
         }
 
         private void OvertimeCodeList_Load(object sender, EventArgs e)

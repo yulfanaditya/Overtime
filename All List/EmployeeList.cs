@@ -53,6 +53,16 @@ namespace OT_Management
            
         }
 
+        public void listView1_DoubleClick(object sender, System.EventArgs e)
+        {
+            string datalocals = listView1.SelectedItems[0].SubItems[1].Text;
+            OvertimeRequest f1 = (OvertimeRequest)Application.OpenForms["OvertimeRequest"];
+            TextBox tb = (TextBox)f1.Controls["TextBox3"];
+            tb.Text = datalocals;
+         
+            this.Close();
+        }
+
         private void EmployeeLists()
         {
             listView1.Columns.Add("Badge", 55, HorizontalAlignment.Center);

@@ -248,6 +248,7 @@
             // 
             // deletebutton
             // 
+            this.deletebutton.Enabled = false;
             this.deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deletebutton.Image = ((System.Drawing.Image)(resources.GetObject("deletebutton.Image")));
             this.deletebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -261,6 +262,7 @@
             // 
             // savebutton
             // 
+            this.savebutton.Enabled = false;
             this.savebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savebutton.Image = ((System.Drawing.Image)(resources.GetObject("savebutton.Image")));
             this.savebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
