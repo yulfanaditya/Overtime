@@ -18,6 +18,7 @@ namespace OT_Management
         public Register()
         {
             InitializeComponent();
+            
         }
 
         private void searchOTC_Click(object sender, EventArgs e)
@@ -38,11 +39,12 @@ namespace OT_Management
                 MessageBox.Show("Textbox Must Not Empty");
             }
             else {
-                DB.inializing();
-
-                string query = "INSERT INTO registerusername (Username,Password,Name,Department,Section) VALUES('" + username.Text + "','" + MD5Hash(password.Text) +"','" + textBox2.Text + "','" + comboBox1.Text + "','" + comboBox2.Text + "')";
+                string query = "INSERT INTO registerusername (Username,Password,Name,Position,Department,Section) VALUES('" + username.Text + "','" + MD5Hash(password.Text) + "','" + textBox2.Text + "','" + comboBox3.Text + "','" + comboBox1.Text + "','" + comboBox2.Text + "')";
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                 DB.CheckConnection();
+                cmd.ExecuteNonQuery();
+                DB.CloseConnection();
+                
             }
         }
 

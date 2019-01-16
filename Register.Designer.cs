@@ -42,6 +42,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,10 +52,10 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.ImageKey = "(none)";
-            this.button1.Location = new System.Drawing.Point(72, 345);
+            this.button1.Location = new System.Drawing.Point(65, 366);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(264, 31);
-            this.button1.TabIndex = 20;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -64,14 +66,14 @@
             this.password.Name = "password";
             this.password.PasswordChar = '●';
             this.password.Size = new System.Drawing.Size(215, 20);
-            this.password.TabIndex = 19;
+            this.password.TabIndex = 2;
             // 
             // username
             // 
             this.username.Location = new System.Drawing.Point(133, 121);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(215, 20);
-            this.username.TabIndex = 18;
+            this.username.TabIndex = 1;
             // 
             // label2
             // 
@@ -98,10 +100,10 @@
             this.Login_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Login_button.ImageKey = "(none)";
-            this.Login_button.Location = new System.Drawing.Point(72, 308);
+            this.Login_button.Location = new System.Drawing.Point(65, 329);
             this.Login_button.Name = "Login_button";
             this.Login_button.Size = new System.Drawing.Size(264, 31);
-            this.Login_button.TabIndex = 15;
+            this.Login_button.TabIndex = 7;
             this.Login_button.Text = "Register";
             this.Login_button.UseVisualStyleBackColor = true;
             this.Login_button.Click += new System.EventHandler(this.Login_button_Click);
@@ -134,13 +136,13 @@
             this.textBox2.Location = new System.Drawing.Point(133, 189);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(215, 20);
-            this.textBox2.TabIndex = 25;
+            this.textBox2.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 224);
+            this.label4.Location = new System.Drawing.Point(23, 262);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 20);
             this.label4.TabIndex = 24;
@@ -160,7 +162,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 259);
+            this.label6.Location = new System.Drawing.Point(23, 296);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 27;
@@ -183,26 +185,55 @@
             "PPCWL",
             "Production",
             "Quality"});
-            this.comboBox1.Location = new System.Drawing.Point(133, 224);
+            this.comboBox1.Location = new System.Drawing.Point(133, 261);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(215, 21);
-            this.comboBox1.TabIndex = 29;
+            this.comboBox1.TabIndex = 5;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 258);
+            this.comboBox2.Location = new System.Drawing.Point(133, 296);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(215, 21);
-            this.comboBox2.TabIndex = 30;
+            this.comboBox2.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 225);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 20);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Name";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox3.DropDownWidth = 215;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.IntegralHeight = false;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Submitter",
+            "Approver 1",
+            "Approver 2",
+            "Approver 3"});
+            this.comboBox3.Location = new System.Drawing.Point(133, 224);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(215, 21);
+            this.comboBox3.TabIndex = 4;
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(383, 402);
+            this.ClientSize = new System.Drawing.Size(383, 414);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
@@ -243,5 +274,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }
