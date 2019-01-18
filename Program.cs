@@ -15,7 +15,17 @@ namespace OT_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Register());
+            Application.Run(new Login_Form());
+        }
+    }
+    static class Global
+    {
+        private static string[] _globalVar = {"","","",""};
+
+        public static string[] GlobalVar
+        {
+            get { return _globalVar; }
+            set { _globalVar = value; }
         }
     }
 }

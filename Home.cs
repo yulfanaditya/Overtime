@@ -16,8 +16,7 @@ namespace OT_Management
         public Home()
         {
             InitializeComponent();
-            Login_Form LF = new Login_Form();
-            LF.Close();
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -60,13 +59,15 @@ namespace OT_Management
         private void Home_Load(object sender, EventArgs e)
         {
             string datanama = Login_Form.datauser;
+            label2.Text = Global.GlobalVar[0];
+            label3.Text = Global.GlobalVar[1];
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             this.Hide();
             Overtime ot = new Overtime();
-            ot.Closed += (s, args) => this.Close();
+            ot.Closed += (s, args) => this.Hide();
             ot.Show();
         }
 
@@ -82,6 +83,8 @@ namespace OT_Management
         {
             MessageBox.Show("COMING SOON!!");
         }
+        public string userdata { get; set; }
+
 
     }
     class DBOT

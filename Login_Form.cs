@@ -17,6 +17,7 @@ namespace OT_Management
     {
         public static string datauser;
         OTDB datab = new OTDB();
+        public string userdata { get; set; }
 
         public Login_Form()
         {
@@ -83,8 +84,10 @@ namespace OT_Management
                 if (check == true)
                 {
                     this.Hide();
+                    Global.GlobalVar[0] = "Yulfan Aditya";
+                    Global.GlobalVar[1] = "Administrator";
                     Home home = new Home();
-                    home.Closed += (s, args) => this.Close();
+                    home.Closed += (s, args) => this.Hide();
                     home.Show();
 
                 }
@@ -144,7 +147,7 @@ namespace OT_Management
         private void exit_button_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
-        }      
+        }
 
     }
 }

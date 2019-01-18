@@ -11,6 +11,7 @@ namespace OT_Management
 {
     public partial class Overtime : Form
     {
+
         public Overtime()
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace OT_Management
         {
             this.Hide();
             Home home = new Home();
-            home.Closed += (s, args) => this.Close();
             home.Show();
         }
     }
