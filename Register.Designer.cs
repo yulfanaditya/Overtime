@@ -172,6 +172,7 @@
             // 
             this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.DropDownWidth = 215;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.IntegralHeight = false;
@@ -193,6 +194,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(133, 296);
             this.comboBox2.Name = "comboBox2";
@@ -213,6 +215,7 @@
             // 
             this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox3.DropDownWidth = 215;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.IntegralHeight = false;

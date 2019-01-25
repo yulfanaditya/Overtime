@@ -29,7 +29,10 @@ namespace OT_Management
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            Login_Form or = new Login_Form();
+            or.Closed += (s, args) => this.Close();
+            or.Show();
         }
 
         private void Login_button_Click(object sender, EventArgs e)

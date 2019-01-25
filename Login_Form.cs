@@ -17,6 +17,7 @@ namespace OT_Management
     {
         public static string datauser;
         OTDB datab = new OTDB();
+
         public string userdata { get; set; }
 
         public Login_Form()
@@ -84,10 +85,8 @@ namespace OT_Management
                 if (check == true)
                 {
                     this.Hide();
-                    Global.GlobalVar[0] = "Yulfan Aditya";
-                    Global.GlobalVar[1] = "Administrator";
                     Home home = new Home();
-                    home.Closed += (s, args) => this.Hide();
+                    home.Closed += (s, args) => this.Close();
                     home.Show();
 
                 }
@@ -106,6 +105,7 @@ namespace OT_Management
 
             linier = new MySqlDataAdapter("SELECT Username,Password FROM account WHERE Username = '" + User + "' AND Password = '" + MD5Hasher + "'",datab.inializing());
             linier.Fill(table);
+            getData(User,MD5Hasher);
 
             if (table.Rows.Count <= 0)
             {
@@ -116,6 +116,35 @@ namespace OT_Management
             {
                 return true;
             }
+        }
+
+        public void getData(string User, string Password)
+        {
+            List<string>[] list = new List<string>[4];
+            list[0] = new List<string>();
+            list[1] = new List<string>();
+            list[2] = new List<string>();
+            list[3] = new List<string>();
+
+            datab.inializing();
+            string query = "SELECT Name,Position,departmentName,sectionName FROM account WHERE Username = '" + User + "' AND Password = '" + Password + "'";
+
+            MySqlCommand cmd = new MySqlCommand(query, datab.inializing());
+            datab.CheckConnection();
+            MySqlDataReader Reader = cmd.ExecuteReader();
+
+            while (Reader.Read())
+            {
+                Global.GlobalVar[0] = Reader.GetString(0); //Name
+                Global.GlobalVar[1] = Reader.GetString(1); //Position
+                Global.GlobalVar[2] = Reader.GetString(2); //Department
+                Global.GlobalVar[3] = Reader.GetString(3); //Section
+            }
+
+            Reader.Close();
+            cmd.Dispose();
+            datab.CloseConnection();
+
         }
 
         public static string MD5Hash(string input)
@@ -147,6 +176,14 @@ namespace OT_Management
         private void exit_button_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Register or = new Register();
+            or.Closed += (s, args) => this.Close();
+            or.Show();
         }
 
     }

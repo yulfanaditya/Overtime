@@ -15,6 +15,8 @@ namespace OT_Management
         public OvertimeRequest()
         {
             InitializeComponent();
+            DepartmentBox.Text = Global.GlobalVar[2];
+            SectionBox.Text = Global.GlobalVar[3];
             labeljam.Text = "0";
             OTRequests();
             OvertimeCodeList OCL = new OvertimeCodeList();
@@ -53,7 +55,7 @@ namespace OT_Management
             {
                 MessageBox.Show("Overtime Activity or Employee List can't be Empty");
             }
-            else if (string.IsNullOrEmpty(textBox5.Text))
+            else if (string.IsNullOrEmpty(RemarkBox.Text))
             {
                 DialogResult dialogResult = MessageBox.Show("Are you sure to add without Remark?", "Empty Remark", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)

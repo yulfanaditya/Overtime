@@ -67,7 +67,7 @@ namespace OT_Management
         {
             this.Hide();
             Overtime ot = new Overtime();
-            ot.Closed += (s, args) => this.Hide();
+            ot.Closed += (s, args) => this.Close();
             ot.Show();
         }
 
