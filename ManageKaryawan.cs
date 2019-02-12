@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace OT_Management
 {
-    public partial class Changepass : Form
+    public partial class ManageKaryawan : Form
     {
-        public Changepass()
+        public ManageKaryawan()
         {
             InitializeComponent();
         }

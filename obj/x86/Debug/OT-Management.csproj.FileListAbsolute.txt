@@ -18,3 +18,25 @@ C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT-Manage
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT-Management.exe
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT-Management.pdb
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Register.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\bin\x86\Debug\OT-Management.exe.config
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT-Management.exe
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT-Management.pdb
+C:\Users\yulfa\Documents\GitHub\Overtime\bin\x86\Debug\OT-Management.exe
+C:\Users\yulfa\Documents\GitHub\Overtime\bin\x86\Debug\OT-Management.pdb
+C:\Users\yulfa\Documents\GitHub\Overtime\bin\x86\Debug\MySql.Data.dll
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.All_List.DepartmentList.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.OvertimeCodeList.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.EmployeeList.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.Overtime.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.Register.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.Status.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.Home.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.Login_Form.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.OvertimeRequest.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.Properties.Resources.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT-Management.csproj.GenerateResource.Cache
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.AddNewUsers.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.ManageUser.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.Settings.resources
+C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.ManageKaryawan.resources

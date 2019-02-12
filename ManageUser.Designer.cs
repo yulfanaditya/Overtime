@@ -1,6 +1,6 @@
 ﻿namespace OT_Management
 {
-    partial class Changepass
+    partial class ManageUser
     {
         /// <summary>
         /// Required designer variable.

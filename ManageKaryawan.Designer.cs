@@ -1,6 +1,6 @@
 ﻿namespace OT_Management
 {
-    partial class Database
+    partial class ManageKaryawan
     {
         /// <summary>
         /// Required designer variable.

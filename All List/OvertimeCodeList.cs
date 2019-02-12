@@ -29,9 +29,9 @@ namespace OT_Management
         {
             DB.inializing();
 
-            string query = "Select goalofOT from goal";
+            string query = "Select goalofOT from goal ORDER BY goalofOT ASC";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
-            DB.CheckConnection();
+            DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
 
             listView1.Items.Clear();

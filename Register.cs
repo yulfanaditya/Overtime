@@ -44,7 +44,7 @@ namespace OT_Management
             else {
                 string query = "INSERT INTO registerusername (Username,Password,Name,Position,Department,Section) VALUES('" + username.Text + "','" + MD5Hash(password.Text) + "','" + textBox2.Text + "','" + comboBox3.Text + "','" + comboBox1.Text + "','" + comboBox2.Text + "')";
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
-                DB.CheckConnection();
+                DB.OpenConnection();
                 cmd.ExecuteNonQuery();
                 DB.CloseConnection();
                 

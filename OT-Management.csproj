@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewUsers.Designer.cs">
+      <DependentUpon>AddNewUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="All List\DepartmentList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +79,11 @@
     <Compile Include="All List\OvertimeCodeList.Designer.cs">
       <DependentUpon>OvertimeCodeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Changepass.cs">
+    <Compile Include="ManageUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Changepass.Designer.cs">
-      <DependentUpon>Changepass.cs</DependentUpon>
+    <Compile Include="ManageUser.Designer.cs">
+      <DependentUpon>ManageUser.cs</DependentUpon>
     </Compile>
     <Compile Include="All List\EmployeeList.cs">
       <SubType>Form</SubType>
@@ -85,11 +91,11 @@
     <Compile Include="All List\EmployeeList.Designer.cs">
       <DependentUpon>EmployeeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs">
+    <Compile Include="ManageKaryawan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Database.Designer.cs">
-      <DependentUpon>Database.cs</DependentUpon>
+    <Compile Include="ManageKaryawan.Designer.cs">
+      <DependentUpon>ManageKaryawan.cs</DependentUpon>
     </Compile>
     <Compile Include="OTDB.cs" />
     <Compile Include="Overtime.cs">
@@ -103,6 +109,12 @@
     </Compile>
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Status.cs">
       <SubType>Form</SubType>
@@ -130,6 +142,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddNewUsers.resx">
+      <DependentUpon>AddNewUsers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="All List\DepartmentList.resx">
       <DependentUpon>DepartmentList.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -138,16 +154,16 @@
       <DependentUpon>OvertimeCodeList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Changepass.resx">
-      <DependentUpon>Changepass.cs</DependentUpon>
+    <EmbeddedResource Include="ManageUser.resx">
+      <DependentUpon>ManageUser.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="All List\EmployeeList.resx">
       <DependentUpon>EmployeeList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Database.resx">
-      <DependentUpon>Database.cs</DependentUpon>
+    <EmbeddedResource Include="ManageKaryawan.resx">
+      <DependentUpon>ManageKaryawan.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Overtime.resx">
@@ -156,6 +172,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Status.resx">
@@ -214,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Resources\Close_Box_Red.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

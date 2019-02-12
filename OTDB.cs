@@ -12,7 +12,7 @@ namespace OT_Management
     {
 
             MySqlConnection connecting;
-            private string server = "192.168.110.22";
+            private string server = "192.168.1.7";
             private string database = "overtime";
             private string user = "root";
             private string password = "123";
@@ -31,7 +31,7 @@ namespace OT_Management
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            public bool CheckConnection()
+            public bool OpenConnection()
             {
                 try
                 {
@@ -41,7 +41,7 @@ namespace OT_Management
                 }
                 catch (MySqlException ex)
                 {
-
+                   
                     switch (ex.Number)
                     {
                         case 0:
@@ -49,7 +49,7 @@ namespace OT_Management
                             break;
 
                         case 1045:
-                            MessageBox.Show("Invalid username/password, please try again");
+                            MessageBox.Show("Invalid username/password of database, please Call at *160 or *146");
                             break;
                     }
 

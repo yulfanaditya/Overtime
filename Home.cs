@@ -38,7 +38,7 @@ namespace OT_Management
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Changepass or = new Changepass();
+            ManageUser or = new ManageUser();
             or.Closed += (s, args) => this.Close();
             or.Show();
         }
@@ -74,7 +74,7 @@ namespace OT_Management
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Database dbm = new Database();
+            ManageKaryawan dbm = new ManageKaryawan();
             dbm.Closed += (s, args) => this.Close();
             dbm.Show();
         }

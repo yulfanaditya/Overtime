@@ -29,9 +29,9 @@ namespace OT_Management
         {
             DB.inializing();
 
-            string query = "Select Badge, Name, DoJ FROM karyawan WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + Global.GlobalVar[3] + "'";
+            string query = "Select Badge, Name, DoJ FROM karyawan WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + Global.GlobalVar[3] + "' ORDER BY Badge ASC";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
-            DB.CheckConnection();
+            DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
 
             listView1.Items.Clear();

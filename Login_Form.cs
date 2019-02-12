@@ -80,7 +80,7 @@ namespace OT_Management
             {
                 
                 datab.inializing();
-                datab.CheckConnection();
+                datab.OpenConnection();
                 check = checkingUserPassword(userid.Text, password.Text);
                 if (check == true)
                 {
@@ -130,7 +130,7 @@ namespace OT_Management
             string query = "SELECT Name,Position,departmentName,sectionName FROM account WHERE Username = '" + User + "' AND Password = '" + Password + "'";
 
             MySqlCommand cmd = new MySqlCommand(query, datab.inializing());
-            datab.CheckConnection();
+            datab.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
 
             while (Reader.Read())

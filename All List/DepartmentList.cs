@@ -30,10 +30,10 @@ namespace OT_Management.All_List
         public void selected()
         {
             DB.inializing();
-           
-            string query = "Select * from department";
+
+            string query = "Select departmentName from department ORDER BY departmentCode ASC";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
-            DB.CheckConnection();
+            DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
 
             listView1.Items.Clear();
@@ -41,7 +41,6 @@ namespace OT_Management.All_List
             while (Reader.Read())
             {
                 ListViewItem lv = new ListViewItem(Reader.GetString(0));
-                lv.SubItems.Add(Reader.GetString(1));
                 listView1.Items.Add(lv);
 
             }
