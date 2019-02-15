@@ -78,12 +78,10 @@ namespace OT_Management
 
         public void Insert()
         {
-            string query1 = "INSERT INTO account (Name, Username, Password, Position, departmentName, sectionName) SELECT Name, Username, Password, Position, departmentName, sectionName FROM registerusername WHERE Username = '"+usernameBox.Text+"' AND Name = '"+nameBox.Text+"'";
+            string query = "INSERT INTO account (Name, Username, Password, Position, departmentName, sectionName) SELECT Name, Username, Password, Position, departmentName, sectionName FROM registerusername WHERE Username = '"+usernameBox.Text+"' AND Name = '"+nameBox.Text+"'";
             DB.inializing();
+            MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
-
-            MySqlCommand cmd = new MySqlCommand(query1, DB.inializing());
-            DB.inializing().Open();
             cmd.ExecuteNonQuery();
             DB.CloseConnection();
         }
@@ -91,11 +89,9 @@ namespace OT_Management
         public void Delete()
         {
             string query = "DELETE FROM registerusername WHERE Username='" + usernameBox.Text + "' AND Name='" + nameBox.Text + "'";
-            //DB.inializing();
 
-            DB.OpenConnection();
-            
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+            DB.OpenConnection();
             cmd.ExecuteNonQuery();
             DB.CloseConnection();
         }
@@ -114,6 +110,22 @@ namespace OT_Management
                 positionBox.Text = "";
                 departmentBox.Text = "";
                 sectionBox.Text = "";
+            }
+        }
+
+        private void Decline_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure to decline " + usernameBox.Text + " ?", "Declining", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Delete();
+
+                usernameBox.Text = "";
+                nameBox.Text = "";
+                positionBox.Text = "";
+                departmentBox.Text = "";
+                sectionBox.Text = "";
+                selected();
             }
         }
     }

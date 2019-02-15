@@ -177,6 +177,7 @@
             this.Decline.TabIndex = 13;
             this.Decline.Text = "DECLINE";
             this.Decline.UseVisualStyleBackColor = true;
+            this.Decline.Click += new System.EventHandler(this.Decline_Click);
             // 
             // label6
             // 

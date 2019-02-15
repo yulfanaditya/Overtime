@@ -38,10 +38,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.DepartmentBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ORBox = new System.Windows.Forms.TextBox();
+            this.CEBox = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.OABox = new System.Windows.Forms.TextBox();
             this.RemarkBox = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -149,22 +149,22 @@
             this.DepartmentBox.Size = new System.Drawing.Size(283, 20);
             this.DepartmentBox.TabIndex = 16;
             // 
-            // textBox2
+            // ORBox
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(147, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(283, 20);
-            this.textBox2.TabIndex = 17;
+            this.ORBox.Enabled = false;
+            this.ORBox.Location = new System.Drawing.Point(147, 92);
+            this.ORBox.Name = "ORBox";
+            this.ORBox.ReadOnly = true;
+            this.ORBox.Size = new System.Drawing.Size(283, 20);
+            this.ORBox.TabIndex = 17;
             // 
-            // textBox3
+            // CEBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(147, 255);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(283, 20);
-            this.textBox3.TabIndex = 18;
+            this.CEBox.Location = new System.Drawing.Point(147, 255);
+            this.CEBox.Name = "CEBox";
+            this.CEBox.ReadOnly = true;
+            this.CEBox.Size = new System.Drawing.Size(283, 20);
+            this.CEBox.TabIndex = 18;
             // 
             // dateTimePicker1
             // 
@@ -176,22 +176,21 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 20);
             this.dateTimePicker1.TabIndex = 19;
             // 
-            // textBox4
+            // OABox
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(147, 118);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(283, 20);
-            this.textBox4.TabIndex = 20;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.OABox.Enabled = false;
+            this.OABox.Location = new System.Drawing.Point(147, 118);
+            this.OABox.Name = "OABox";
+            this.OABox.ReadOnly = true;
+            this.OABox.Size = new System.Drawing.Size(283, 20);
+            this.OABox.TabIndex = 20;
             // 
             // RemarkBox
             // 
             this.RemarkBox.Location = new System.Drawing.Point(147, 281);
             this.RemarkBox.Name = "RemarkBox";
             this.RemarkBox.Size = new System.Drawing.Size(283, 20);
-            this.RemarkBox.TabIndex = 21;
+            this.RemarkBox.TabIndex = 1;
             // 
             // dateTimePicker2
             // 
@@ -234,7 +233,7 @@
             this.listView1.HoverSelection = true;
             this.listView1.Location = new System.Drawing.Point(12, 310);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(464, 209);
+            this.listView1.Size = new System.Drawing.Size(623, 209);
             this.listView1.TabIndex = 31;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -280,9 +279,9 @@
             // 
             this.Addbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Addbutton.BackgroundImage")));
             this.Addbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Addbutton.Location = new System.Drawing.Point(435, 281);
+            this.Addbutton.Location = new System.Drawing.Point(468, 272);
             this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(26, 23);
+            this.Addbutton.Size = new System.Drawing.Size(34, 29);
             this.Addbutton.TabIndex = 27;
             this.Addbutton.UseVisualStyleBackColor = true;
             this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
@@ -359,7 +358,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(519, 591);
+            this.ClientSize = new System.Drawing.Size(647, 591);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SectionBox);
             this.Controls.Add(this.closebutton);
@@ -373,10 +372,10 @@
             this.Controls.Add(this.searchEmployee);
             this.Controls.Add(this.searchOTC);
             this.Controls.Add(this.RemarkBox);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.OABox);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.CEBox);
+            this.Controls.Add(this.ORBox);
             this.Controls.Add(this.DepartmentBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -411,10 +410,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox DepartmentBox;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ORBox;
+        private System.Windows.Forms.TextBox CEBox;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox OABox;
         private System.Windows.Forms.TextBox RemarkBox;
         private System.Windows.Forms.Button searchOTC;
         private System.Windows.Forms.Button searchEmployee;

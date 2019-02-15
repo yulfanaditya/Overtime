@@ -178,29 +178,34 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.IntegralHeight = false;
             this.comboBox1.Items.AddRange(new object[] {
-            "Accounting",
-            "Engineering",
-            "General Manager",
-            "HR & GA",
-            "IT/MIS",
-            "Maintenance",
-            "PPCWL",
-            "Production",
-            "Quality"});
-            this.comboBox1.Location = new System.Drawing.Point(133, 298);
+            "Submitter",
+            "Approver 1",
+            "Approver 2",
+            "Approver 3"});
+            this.comboBox1.Location = new System.Drawing.Point(133, 264);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(215, 21);
             this.comboBox1.TabIndex = 5;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 333);
+            this.comboBox2.Items.AddRange(new object[] {
+            "Accounting",
+            "Engineering",
+            "General Manager",
+            "HR & GA",
+            "MIS",
+            "Maintenance",
+            "PPCWL",
+            "Production",
+            "Quality"});
+            this.comboBox2.Location = new System.Drawing.Point(133, 299);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(215, 21);
             this.comboBox2.TabIndex = 6;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -220,12 +225,7 @@
             this.comboBox3.DropDownWidth = 215;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.IntegralHeight = false;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Submitter",
-            "Approver 1",
-            "Approver 2",
-            "Approver 3"});
-            this.comboBox3.Location = new System.Drawing.Point(133, 261);
+            this.comboBox3.Location = new System.Drawing.Point(133, 332);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(215, 21);
             this.comboBox3.TabIndex = 4;

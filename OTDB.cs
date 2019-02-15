@@ -11,16 +11,16 @@ namespace OT_Management
     public class OTDB
     {
 
-            MySqlConnection connecting;
-            private string server = "192.168.1.7";
-            private string database = "overtime";
-            private string user = "root";
-            private string password = "123";
+        MySqlConnection connecting;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             public MySqlConnection inializing()
             {
+                string server = "192.168.110.22";
+                string database = "overtime";
+                string user = "root";
+                string password = "123";
                 string connect;
 
                 connect = "SERVER=" + server + ";" + "DATABASE="

@@ -5,9 +5,7 @@ C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\bin\x86\Debug\MySql.Dat
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.All_List.DepartmentList.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.OvertimeCodeList.resources
-C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Changepass.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.EmployeeList.resources
-C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Database.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Overtime.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Status.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Home.resources
@@ -40,3 +38,7 @@ C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.AddNewUsers
 C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.ManageUser.resources
 C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.Settings.resources
 C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.ManageKaryawan.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.AddNewUsers.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.ManageUser.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.ManageKaryawan.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Settings.resources

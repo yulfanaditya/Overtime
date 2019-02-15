@@ -57,7 +57,7 @@ namespace OT_Management
         {
             string datalocals = listView1.Items[listView1.SelectedIndices[0]].Text;
             OvertimeRequest f1 = (OvertimeRequest)Application.OpenForms["OvertimeRequest"];
-            TextBox tb = (TextBox)f1.Controls["TextBox4"];
+            TextBox tb = (TextBox)f1.Controls["OABox"];
             tb.Text = datalocals;
             this.Close();
          }
