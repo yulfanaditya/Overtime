@@ -23,6 +23,7 @@ namespace OT_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             this.Close();
         }
 
@@ -104,6 +105,8 @@ namespace OT_Management
             {
                 Insert();
                 Delete();
+                listView1.Items.Clear();
+                selected();
 
                 usernameBox.Text = "";
                 nameBox.Text = "";

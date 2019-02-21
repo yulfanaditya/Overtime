@@ -59,6 +59,7 @@ namespace OT_Management
             OvertimeRequest f1 = (OvertimeRequest)Application.OpenForms["OvertimeRequest"];
             TextBox tb = (TextBox)f1.Controls["OABox"];
             tb.Text = datalocals;
+            
             this.Close();
          }
 

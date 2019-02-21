@@ -40,11 +40,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,27 +165,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(23, 333);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 20);
+            this.label6.Size = new System.Drawing.Size(70, 20);
             this.label6.TabIndex = 27;
-            this.label6.Text = "Session";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.DropDownWidth = 215;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.IntegralHeight = false;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Submitter",
-            "Approver 1",
-            "Approver 2",
-            "Approver 3"});
-            this.comboBox1.Location = new System.Drawing.Point(133, 264);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 21);
-            this.comboBox1.TabIndex = 5;
+            this.label6.Text = "Section";
             // 
             // comboBox2
             // 
@@ -204,7 +186,7 @@
             this.comboBox2.Location = new System.Drawing.Point(133, 299);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(215, 21);
-            this.comboBox2.TabIndex = 6;
+            this.comboBox2.TabIndex = 5;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label7
@@ -228,7 +210,7 @@
             this.comboBox3.Location = new System.Drawing.Point(133, 332);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(215, 21);
-            this.comboBox3.TabIndex = 4;
+            this.comboBox3.TabIndex = 6;
             // 
             // label8
             // 
@@ -241,6 +223,24 @@
             this.label8.Size = new System.Drawing.Size(210, 42);
             this.label8.TabIndex = 32;
             this.label8.Text = "REGISTER";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.DropDownWidth = 215;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.IntegralHeight = false;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Submitter",
+            "Approver 1",
+            "Approver 2",
+            "Approver 3"});
+            this.comboBox1.Location = new System.Drawing.Point(133, 264);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(215, 21);
+            this.comboBox1.TabIndex = 4;
             // 
             // Register
             // 
@@ -289,10 +289,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

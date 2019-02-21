@@ -29,7 +29,18 @@ namespace OT_Management
         {
             this.Hide();
             Home home = new Home();
+            home.Closed += (s, args) => this.Close();
             home.Show();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (Global.GlobalVar[1] == "Submitter")
+            {
+                MessageBox.Show("Cant Access this Session!","Access Denied");
+            }
+        
+        }
+
     }
 }

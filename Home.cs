@@ -16,6 +16,10 @@ namespace OT_Management
         public Home()
         {
             InitializeComponent();
+            if(Global.GlobalVar[1] == "Administrator"){
+                settingBox.Visible = true;
+                settingBox.Enabled = true;
+            }
 
         }
 
@@ -30,25 +34,25 @@ namespace OT_Management
             or.ShowDialog();
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ManageUser or = new ManageUser();
-            or.Closed += (s, args) => this.Close();
-            or.Show();
+            Overtime ot = new Overtime();
+            ot.Closed += (s, args) => this.Close();
+            ot.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("COMING SOON!!");
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Login_Form or = new Login_Form();
-            or.Closed += (s, args) => this.Close();
-            or.Show();
+            ManageKaryawan dbm = new ManageKaryawan();
+            dbm.Closed += (s, args) => this.Close();
+            dbm.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -63,31 +67,19 @@ namespace OT_Management
             label3.Text = Global.GlobalVar[1];
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Overtime ot = new Overtime();
-            ot.Closed += (s, args) => this.Close();
-            ot.Show();
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ManageKaryawan dbm = new ManageKaryawan();
-            dbm.Closed += (s, args) => this.Close();
-            dbm.Show();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("COMING SOON!!");
-        }
         public string userdata { get; set; }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Settings st = new Settings();
+            st.Closed += (s, args) => this.Close();
+            st.Show();
+        }
 
 
     }
-    class DBOT
+   /* class DBOT
     {
         MySqlConnection connecting;
         private string server = "192.168.110.42";
@@ -111,6 +103,6 @@ namespace OT_Management
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    }
+    }*/
 }
 

@@ -57,6 +57,7 @@
             this.closebutton = new System.Windows.Forms.Button();
             this.SectionBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,6 +161,7 @@
             // 
             // CEBox
             // 
+            this.CEBox.Enabled = false;
             this.CEBox.Location = new System.Drawing.Point(147, 255);
             this.CEBox.Name = "CEBox";
             this.CEBox.ReadOnly = true;
@@ -229,13 +231,15 @@
             // 
             // listView1
             // 
-            this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.listView1.HoverSelection = true;
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(12, 310);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(623, 209);
+            this.listView1.Size = new System.Drawing.Size(665, 209);
             this.listView1.TabIndex = 31;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
             // label12
             // 
@@ -260,10 +264,10 @@
             this.deletebutton.Text = "Delete";
             this.deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.deletebutton.UseVisualStyleBackColor = true;
+            this.deletebutton.Click += new System.EventHandler(this.deletebutton_Click);
             // 
             // savebutton
             // 
-            this.savebutton.Enabled = false;
             this.savebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savebutton.Image = ((System.Drawing.Image)(resources.GetObject("savebutton.Image")));
             this.savebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -274,12 +278,13 @@
             this.savebutton.Text = "Save";
             this.savebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.savebutton.UseVisualStyleBackColor = true;
+            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
             // 
             // Addbutton
             // 
             this.Addbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Addbutton.BackgroundImage")));
             this.Addbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Addbutton.Location = new System.Drawing.Point(468, 272);
+            this.Addbutton.Location = new System.Drawing.Point(435, 276);
             this.Addbutton.Name = "Addbutton";
             this.Addbutton.Size = new System.Drawing.Size(34, 29);
             this.Addbutton.TabIndex = 27;
@@ -353,12 +358,24 @@
             this.label1.TabIndex = 37;
             this.label1.Text = "Section";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(521, 223);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 38;
+            this.checkBox1.Text = "Break Time";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // OvertimeRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(647, 591);
+            this.ClientSize = new System.Drawing.Size(689, 591);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SectionBox);
             this.Controls.Add(this.closebutton);
@@ -428,5 +445,6 @@
         private System.Windows.Forms.Button closebutton;
         private System.Windows.Forms.TextBox SectionBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

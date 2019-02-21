@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Status));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -44,7 +45,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(170, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(305, 19);
+            this.label2.Size = new System.Drawing.Size(304, 19);
             this.label2.TabIndex = 10;
             this.label2.Text = "PT. KEMET ELECTRONICS INDONESIA";
             // 
@@ -80,7 +81,7 @@
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
-            // Form1
+            // Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,7 +90,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Status";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

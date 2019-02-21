@@ -72,7 +72,7 @@
             this.ManageUserBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ManageUserBox.TabIndex = 14;
             this.ManageUserBox.TabStop = false;
-            this.ManageUserBox.Visible = false;
+            this.ManageUserBox.Click += new System.EventHandler(this.ManageUserBox_Click);
             // 
             // ManageKaryawan
             // 
@@ -83,7 +83,6 @@
             this.ManageKaryawan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ManageKaryawan.TabIndex = 15;
             this.ManageKaryawan.TabStop = false;
-            this.ManageKaryawan.Visible = false;
             // 
             // AddNewUser
             // 
@@ -94,7 +93,6 @@
             this.AddNewUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddNewUser.TabIndex = 16;
             this.AddNewUser.TabStop = false;
-            this.AddNewUser.Visible = false;
             this.AddNewUser.Click += new System.EventHandler(this.AddNewUser_Click);
             // 
             // Settings
@@ -109,7 +107,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Settings";
             this.Text = "Settings";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

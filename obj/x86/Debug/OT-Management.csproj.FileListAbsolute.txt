@@ -42,3 +42,4 @@ C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Manage
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.ManageUser.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.ManageKaryawan.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Settings.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Approval.resources

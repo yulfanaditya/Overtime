@@ -20,5 +20,13 @@ namespace OT_Management
         {
             
         }
+
+        private void ManageUserBox_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddNewUsers anu = new AddNewUsers();
+            anu.Closed += (s, args) => this.Close();
+            anu.Show();
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace OT_Management
         {
             InitializeComponent();
             
+            
         }
 //====================================================================================================================================================================================================================================
 
@@ -44,13 +45,13 @@ namespace OT_Management
             {
                 MessageBox.Show("Data Must Not Empty");
             }
-            else if (equalitychecker(username.Text) == true)
+            else if (equalitychecker(username.Text,true) == true || equalitychecker(username.Text,false) == true)
             {
                 MessageBox.Show("Username is Already Taken!");
                 clear();
             }
             else {
-                string query = "INSERT INTO registerusername (Username,Password,Name,Position,departmentName,sectionName) VALUES('" + username.Text + "','" + MD5Hash(password.Text) + "','" + textBox2.Text + "','" + comboBox3.Text + "','" + comboBox1.Text + "','" + comboBox2.Text + "')";
+                string query = "INSERT INTO registerusername (Username,Password,Name,Position,departmentName,sectionName) VALUES('" + username.Text + "','" + MD5Hash(password.Text) + "','" + textBox2.Text + "','" + comboBox1.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "')";
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                 DB.OpenConnection();
                 cmd.ExecuteNonQuery();
@@ -74,13 +75,22 @@ namespace OT_Management
             return hash.ToString();
         }
 //====================================================================================================================================================================================================================================
-        public bool equalitychecker(string data) 
+        public bool equalitychecker(string data,bool check) 
         {
 
             DB.inializing();
             string data2 = "";
+            string query;
 
-            string query = "Select Username from registerusername WHERE Username = '"+data+"'";
+            if (check == true)
+            {
+                query = "Select Username from registerusername WHERE Username = '" + data + "'";
+            }
+            else
+            {
+                query = "Select Username from account WHERE Username = '" + data + "'";
+            }
+            
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
@@ -125,6 +135,7 @@ namespace OT_Management
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBox3.Enabled = true;
             switch (comboBox2.Text) {
                 case "Accounting":
                     this.comboBox3.Items.Clear();
@@ -144,7 +155,9 @@ namespace OT_Management
 
                 case "General Manager":
                     this.comboBox3.Items.Clear();
+                    comboBox3.Items.Add("GENERAL");
                     comboBox3.Text = "GENERAL";
+                    comboBox3.Enabled = false;
                     break;
 
                 case "HR & GA":
@@ -160,6 +173,8 @@ namespace OT_Management
                     this.comboBox3.Items.Clear();
                     comboBox3.Text = "";
                     comboBox3.Items.Add("IT");
+                    comboBox3.Text = "IT";
+                    comboBox3.Enabled = false;
                     break;
 
                 case "Maintenance":
