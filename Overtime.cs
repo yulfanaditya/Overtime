@@ -37,7 +37,14 @@ namespace OT_Management
         {
             if (Global.GlobalVar[1] == "Submitter")
             {
-                MessageBox.Show("Cant Access this Session!","Access Denied");
+                MessageBox.Show("Cant Access this Session!", "Access Denied");
+            }
+            else 
+            {
+                this.Hide();
+                Approval ap = new Approval();
+                ap.Closed += (s, args) => this.Close();
+                ap.Show();
             }
         
         }

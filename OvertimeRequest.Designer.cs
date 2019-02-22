@@ -227,7 +227,6 @@
             this.labeljam.Size = new System.Drawing.Size(36, 13);
             this.labeljam.TabIndex = 30;
             this.labeljam.Text = " 0.00";
-            this.labeljam.Click += new System.EventHandler(this.labeljam_Click);
             // 
             // listView1
             // 
@@ -268,6 +267,7 @@
             // 
             // savebutton
             // 
+            this.savebutton.Enabled = false;
             this.savebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savebutton.Image = ((System.Drawing.Image)(resources.GetObject("savebutton.Image")));
             this.savebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -408,7 +408,6 @@
             this.MaximizeBox = false;
             this.Name = "OvertimeRequest";
             this.Text = "OVERTIME REQUEST";
-            this.Load += new System.EventHandler(this.OvertimeRequest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

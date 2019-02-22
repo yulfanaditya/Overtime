@@ -62,12 +62,14 @@
             // listView1
             // 
             this.listView1.Activation = System.Windows.Forms.ItemActivation.TwoClick;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(8, 99);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(437, 398);
+            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 34;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);

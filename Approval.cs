@@ -6,18 +6,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace OT_Management
 {
     public partial class Approval : Form
     {
-
+        OTDB DB = new OTDB();
         public Approval()
         {
             InitializeComponent();
             catchSection();
             viewList();
-            justAccess();
+            //justAccess();
         }
         private void viewData() {
                                     
@@ -50,78 +52,72 @@ namespace OT_Management
 
         private void catchAcess()
         {
-            string query;
+            string query = "";
+            int i = 0;
 
             switch (Global.GlobalVar[1])
             {
-                case "Approval 1" :
-                    query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + Global.GlobalVar[3] + "' AND approval1 = 0";
+                case "Approver 1" :
+                    query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text +"' AND approval1 = 0";
                     break;
-                case "Approval 2" :
+                case "Approver 2" :
                     query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '0'";
                     break;
-                case "Approval 3" :
+                case "Approver 3" :
                     query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '1' AND approval3 = '0'";
                     break;
                 case "Administrator" :
                     query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "'";
                     break;
             }
-        }
+            MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+            DB.OpenConnection();
+            MySqlDataReader Reader = cmd.ExecuteReader();
 
-        private void justAccess() 
-        {
-            switch (Global.GlobalVar[1])
+            listView1.Items.Clear();
+
+            while (Reader.Read())
             {
-                case "Approval 1" :
-                    sectionBox.Visible = false;
-                    sectionBox.Enabled = false;
-                    break;
-                case "Approval 2" :
-                    sectionBox.Visible = true;
-                    sectionBox.Enabled = true;
-                    sectionLabel.Visible = false;
-                    sectionLabel.Enabled = false;
-                    sectionBox.Text = Global.GlobalVar[3];
-                    break;
-                case "Approval 3" :
-                    sectionBox.Visible = true;
-                    sectionBox.Enabled = true;
-                    sectionLabel.Visible = false;
-                    sectionLabel.Enabled = false;
-                    sectionBox.Text = Global.GlobalVar[3];
-                    break;
-                case "Administrator" :
-                    sectionBox.Visible = true;
-                    sectionBox.Enabled = true;
-                    sectionBox.Text = Global.GlobalVar[3];
-                    sectionLabel.Visible = false;
-                    sectionLabel.Enabled = false;
-                    break;
+                ListViewItem lv = new ListViewItem(i.ToString());
+                lv.SubItems.Add(Reader.GetString(0));
+                lv.SubItems.Add(Reader.GetString(1));
+                lv.SubItems.Add(Reader.GetString(2));
+                lv.SubItems.Add(Reader.GetString(3));
+                lv.SubItems.Add(Reader.GetString(4));
+                lv.SubItems.Add(Reader.GetString(5));
+                lv.SubItems.Add(Reader.GetString(6));
+
+                listView1.Items.Add(lv);
+
             }
+            Reader.Close();
+            cmd.Dispose();
+            DB.CloseConnection();
+            resetCounter();
         }
 
         private void catchSection()
         {
-            departmentLabel.Text = Global.GlobalVar[3];
-            sectionBox.Text = Global.GlobalVar[1];
+            departmentLabel.Text = Global.GlobalVar[2];
+            
+            sectionBox.Enabled = true;
             
             switch (Global.GlobalVar[2])
             {
                 case "Accounting":
                     this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
                     sectionBox.Items.Add("FINANCE");
                     sectionBox.Items.Add("GENERAL");
+                    sectionBox.Text = Global.GlobalVar[3];
                     break;
 
                 case "Engineering":
                     this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
                     sectionBox.Items.Add("PROCESS");
                     sectionBox.Items.Add("TEST AND CALIBRATION");
                     sectionBox.Items.Add("R & D");
                     sectionBox.Items.Add("GENERAL");
+                    sectionBox.Text = Global.GlobalVar[3];
                     break;
 
                 case "General Manager":
@@ -131,22 +127,21 @@ namespace OT_Management
 
                 case "HR & GA":
                     this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
                     sectionBox.Items.Add("TRAINING");
                     sectionBox.Items.Add("PAYROLL");
                     sectionBox.Items.Add("GENERAL AFFAIR");
                     sectionBox.Items.Add("GENERAL");
+                    sectionBox.Text = Global.GlobalVar[3];
                     break;
 
                 case "MIS":
                     this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
-                    sectionBox.Items.Add("IT");
+                    sectionBox.Text = "IT";
+                    sectionBox.Enabled = false;
                     break;
 
                 case "Maintenance":
                     this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
                     sectionBox.Items.Add("PM & FACILITY");
                     sectionBox.Items.Add("PRUDUCTION SUPPORT (MOL X)");
                     sectionBox.Items.Add("TECHNICAL SUPPORT");
@@ -162,19 +157,19 @@ namespace OT_Management
                     sectionBox.Items.Add("PM (MOL S)");
                     sectionBox.Items.Add("PRODUCTION SUPPORT (MOL W)");
                     sectionBox.Items.Add("GENERAL");
+                    sectionBox.Text = Global.GlobalVar[3];
                     break;
 
                 case "PPCWL":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
+                    this.sectionBox.Items.Clear();                    
                     sectionBox.Items.Add("W & L");
                     sectionBox.Items.Add("PLANNING");
                     sectionBox.Items.Add("GENERAL");
+                    sectionBox.Text = Global.GlobalVar[3];
                     break;
 
                 case "Production":
                     this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
                     sectionBox.Items.Add("PRODUCTION CONTROLLER");
                     sectionBox.Items.Add("BOL LINE LEADER");
                     sectionBox.Items.Add("BOL NON WINDING");
@@ -195,11 +190,11 @@ namespace OT_Management
                     sectionBox.Items.Add("PROD. INNOVATION & DEVELOPMENT");
                     sectionBox.Items.Add("PRODUCTION ENGINEERING");
                     sectionBox.Items.Add("PRODUCTION SUPERVISORY");
+                    sectionBox.Text = Global.GlobalVar[3];
                     break;
 
                 case "Quality":
                     this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
                     sectionBox.Items.Add("DOCUMENT CONTROL CENTRE");
                     sectionBox.Items.Add("ENVIRONMENT HEALTH SAFETY");
                     sectionBox.Items.Add("FINAL INSPECTION");
@@ -212,8 +207,17 @@ namespace OT_Management
                     sectionBox.Items.Add("SECTION HEAD");
                     sectionBox.Items.Add("SUPPORTING TEAM");
                     sectionBox.Items.Add("TRAINING");
+                    sectionBox.Text = Global.GlobalVar[3];
                     break;
             }
+        }
+        private void resetCounter()
+        {
+            for (int i = 1; listView1.Items.Count >= i; i++)
+            {
+                listView1.Items[i - 1].SubItems[0].Text = i.ToString();
+            }
+
         }
     }
 }

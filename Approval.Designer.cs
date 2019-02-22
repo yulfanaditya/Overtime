@@ -30,54 +30,55 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Approval));
             this.listView1 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.approveButton = new System.Windows.Forms.Button();
+            this.declineButton = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.departmentLabel = new System.Windows.Forms.Label();
             this.Section = new System.Windows.Forms.Label();
             this.sectionBox = new System.Windows.Forms.ComboBox();
-            this.sectionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.CheckBoxes = true;
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(10, 89);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(764, 312);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // approveButton
             // 
-            this.button1.Location = new System.Drawing.Point(10, 407);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Approve";
-            this.button1.UseVisualStyleBackColor = true;
+            this.approveButton.Location = new System.Drawing.Point(10, 407);
+            this.approveButton.Name = "approveButton";
+            this.approveButton.Size = new System.Drawing.Size(122, 43);
+            this.approveButton.TabIndex = 1;
+            this.approveButton.Text = "Approve";
+            this.approveButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // declineButton
             // 
-            this.button2.Location = new System.Drawing.Point(138, 407);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 43);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Decline";
-            this.button2.UseVisualStyleBackColor = true;
+            this.declineButton.Location = new System.Drawing.Point(138, 407);
+            this.declineButton.Name = "declineButton";
+            this.declineButton.Size = new System.Drawing.Size(122, 43);
+            this.declineButton.TabIndex = 2;
+            this.declineButton.Text = "Decline";
+            this.declineButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // closeButton
             // 
-            this.button3.Location = new System.Drawing.Point(266, 407);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 43);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.closeButton.Location = new System.Drawing.Point(266, 407);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(122, 43);
+            this.closeButton.TabIndex = 3;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.button3_Click);
             // 
             // pictureBox3
             // 
@@ -134,33 +135,22 @@
             this.sectionBox.TabIndex = 11;
             this.sectionBox.SelectedIndexChanged += new System.EventHandler(this.sectionBox_SelectedIndexChanged);
             // 
-            // sectionLabel
-            // 
-            this.sectionLabel.AutoSize = true;
-            this.sectionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sectionLabel.Location = new System.Drawing.Point(302, 38);
-            this.sectionLabel.Name = "sectionLabel";
-            this.sectionLabel.Size = new System.Drawing.Size(85, 29);
-            this.sectionLabel.TabIndex = 12;
-            this.sectionLabel.Text = "label2";
-            // 
             // Approval
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(788, 461);
-            this.Controls.Add(this.sectionLabel);
             this.Controls.Add(this.sectionBox);
             this.Controls.Add(this.Section);
             this.Controls.Add(this.departmentLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.closeButton);
+            this.Controls.Add(this.declineButton);
+            this.Controls.Add(this.approveButton);
             this.Controls.Add(this.listView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Approval";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -174,14 +164,13 @@
         #endregion
 
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button approveButton;
+        private System.Windows.Forms.Button declineButton;
+        private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label departmentLabel;
         private System.Windows.Forms.Label Section;
         private System.Windows.Forms.ComboBox sectionBox;
-        private System.Windows.Forms.Label sectionLabel;
     }
 }

@@ -29,7 +29,7 @@ namespace OT_Management
         {
             DB.inializing();
 
-            string query = "Select Badge, Name, DoJ FROM karyawan WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + Global.GlobalVar[3] + "' ORDER BY Badge ASC";
+            string query = "Select Badge, Name, DoJ, timeRemain FROM karyawan WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + Global.GlobalVar[3] + "' ORDER BY Badge ASC";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
@@ -41,6 +41,7 @@ namespace OT_Management
                 ListViewItem lv = new ListViewItem(Reader.GetString(0));
                 lv.SubItems.Add(Reader.GetString(1));
                 lv.SubItems.Add(Reader.GetString(2));
+                lv.SubItems.Add(Reader.GetString(3));
                 listView1.Items.Add(lv);
 
             }
@@ -66,8 +67,9 @@ namespace OT_Management
         private void EmployeeLists()
         {
             listView1.Columns.Add("Badge", 55, HorizontalAlignment.Center);
-            listView1.Columns.Add("Name", 200, HorizontalAlignment.Left);
-            listView1.Columns.Add("Date of Join", -2, HorizontalAlignment.Center);
+            listView1.Columns.Add("Name", 150, HorizontalAlignment.Left);
+            listView1.Columns.Add("Date of Join", 100, HorizontalAlignment.Center);
+            listView1.Columns.Add("Time Remain", -2, HorizontalAlignment.Center);
             listView1.View = View.Details;
         }
 
@@ -99,6 +101,13 @@ namespace OT_Management
                 listView1.Items.Clear();
                 selected();
             }
+        }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+            
         }
     }
 }
