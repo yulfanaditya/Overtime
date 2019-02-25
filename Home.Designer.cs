@@ -34,13 +34,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.logoutButton = new System.Windows.Forms.Button();
             this.hsBox = new System.Windows.Forms.PictureBox();
-            this.databaseBox = new System.Windows.Forms.PictureBox();
             this.overtimeBox = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.settingBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hsBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overtimeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingBox)).BeginInit();
             this.SuspendLayout();
@@ -90,29 +88,17 @@
             this.logoutButton.TabIndex = 6;
             this.logoutButton.Text = "Log Out";
             this.logoutButton.UseVisualStyleBackColor = true;
-            
             // 
             // hsBox
             // 
             this.hsBox.Image = ((System.Drawing.Image)(resources.GetObject("hsBox.Image")));
-            this.hsBox.Location = new System.Drawing.Point(8, 269);
+            this.hsBox.Location = new System.Drawing.Point(301, 105);
             this.hsBox.Name = "hsBox";
             this.hsBox.Size = new System.Drawing.Size(272, 147);
             this.hsBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.hsBox.TabIndex = 11;
             this.hsBox.TabStop = false;
             this.hsBox.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // databaseBox
-            // 
-            this.databaseBox.Image = ((System.Drawing.Image)(resources.GetObject("databaseBox.Image")));
-            this.databaseBox.Location = new System.Drawing.Point(302, 105);
-            this.databaseBox.Name = "databaseBox";
-            this.databaseBox.Size = new System.Drawing.Size(272, 147);
-            this.databaseBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.databaseBox.TabIndex = 8;
-            this.databaseBox.TabStop = false;
-            this.databaseBox.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // overtimeBox
             // 
@@ -139,7 +125,7 @@
             // 
             this.settingBox.Enabled = false;
             this.settingBox.Image = ((System.Drawing.Image)(resources.GetObject("settingBox.Image")));
-            this.settingBox.Location = new System.Drawing.Point(302, 269);
+            this.settingBox.Location = new System.Drawing.Point(8, 274);
             this.settingBox.Name = "settingBox";
             this.settingBox.Size = new System.Drawing.Size(272, 147);
             this.settingBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -157,13 +143,12 @@
             this.Controls.Add(this.settingBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.hsBox);
-            this.Controls.Add(this.databaseBox);
             this.Controls.Add(this.overtimeBox);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Home";
@@ -171,7 +156,6 @@
             this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hsBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overtimeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingBox)).EndInit();
             this.ResumeLayout(false);
@@ -186,7 +170,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.PictureBox hsBox;
-        private System.Windows.Forms.PictureBox databaseBox;
         private System.Windows.Forms.PictureBox overtimeBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox settingBox;

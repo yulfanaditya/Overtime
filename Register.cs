@@ -25,7 +25,7 @@ namespace OT_Management
 
         private void searchOTC_Click(object sender, EventArgs e)
         {
-            EmployeeList home = new EmployeeList();
+            Employeedata home = new Employeedata();
             home.ShowDialog();
         }
 //====================================================================================================================================================================================================================================

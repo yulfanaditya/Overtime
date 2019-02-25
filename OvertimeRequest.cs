@@ -229,13 +229,13 @@ namespace OT_Management
 
         private void searchOTC_Click(object sender, EventArgs e)
         {
-            OvertimeCodeList home = new OvertimeCodeList();
+            OvertimeCodeData home = new OvertimeCodeData();
             home.ShowDialog();
         }
 
         private void searchEmployee_Click(object sender, EventArgs e)
         {
-            EmployeeList home = new EmployeeList();
+            Employeedata home = new Employeedata();
             home.ShowDialog();
         }
 //=========================================================================================================================================================================
