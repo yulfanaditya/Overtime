@@ -16,18 +16,13 @@ namespace OT_Management
         public bool ORB;
         private int i = 0;
         OTDB DB = new OTDB();
-        
+        public string Items { get; set; }
         public OvertimeRequest()
         {
             InitializeComponent();
             OTRequests();
-            
-            refresh();
-           
-        }
-        public OvertimeRequest(string data) 
-        {
-            ORBox.Text = data;
+            OABox.Text = Items;
+            refresh();           
         }
 //=========================================================================================================================================================================
 //dateTimePicker
@@ -127,17 +122,6 @@ namespace OT_Management
             addingData();
             listView1.Clear();
             OTRequests();
-            /*int data;
-            string[,] lists = new string[listView1.Items.Count + 1, 9];
-           for (int i = 0; i <= listView1.Items.Count-1; i++)
-            {
-                for (int j = 0; j <= 8; j++)
-                {
-                    lists[i, j] = listView1.Items[i].SubItems[j].Text;
-                    MessageBox.Show(lists[i, j]);
-                }
-                
-            }*/
         }
 
         private void deletebutton_Click(object sender, EventArgs e)
@@ -229,14 +213,24 @@ namespace OT_Management
 
         private void searchOTC_Click(object sender, EventArgs e)
         {
-            OvertimeCodeData home = new OvertimeCodeData();
-            home.ShowDialog();
+            var OCD = new OvertimeCodeData();
+
+            if (OCD.ShowDialog() == DialogResult.OK)
+            {
+                OABox.Text = OCD.ActivityOT;
+            }
         }
 
         private void searchEmployee_Click(object sender, EventArgs e)
         {
-            Employeedata home = new Employeedata();
-            home.ShowDialog();
+            //Employeedata home = new Employeedata();
+            //home.ShowDialog();
+            var ED = new Employeedata();
+
+            if (ED.ShowDialog() == DialogResult.OK)
+            {
+                CEBox.Text = ED.employee;
+            }
         }
 //=========================================================================================================================================================================
 //Supporting Function

@@ -4,8 +4,6 @@ C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\bin\x86\Debug\OT-Manage
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\bin\x86\Debug\MySql.Data.dll
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.All_List.DepartmentList.resources
-C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.OvertimeCodeList.resources
-C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.EmployeeList.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Overtime.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Status.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Home.resources
@@ -43,3 +41,8 @@ C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Manage
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.ManageKaryawan.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Settings.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Approval.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.OvertimeCodeData.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.DatabaseSettings.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Print.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Employeedata.resources
+C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.ManageSection.resources

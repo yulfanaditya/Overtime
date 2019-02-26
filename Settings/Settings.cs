@@ -18,7 +18,10 @@ namespace OT_Management
 
         private void AddNewUser_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            ManageUser mu = new ManageUser();
+            mu.Closed += (s, args) => this.Close();
+            mu.Show();
         }
 
         private void ManageUserBox_Click(object sender, EventArgs e)
@@ -27,6 +30,22 @@ namespace OT_Management
             AddNewUsers anu = new AddNewUsers();
             anu.Closed += (s, args) => this.Close();
             anu.Show();
+        }
+
+        private void ManageKaryawan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DatabaseSettings ds = new DatabaseSettings();
+            ds.Closed += (s, args) => this.Close();
+            ds.Show();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home home = new Home();
+            home.Closed += (s, args) => this.Close();
+            home.Show();
         }
     }
 }

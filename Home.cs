@@ -77,6 +77,18 @@ namespace OT_Management
             st.Show();
         }
 
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            for(int i=0;i<4;i++)
+            {
+                Global.GlobalVar[i] = "";
+            }
+            this.Hide();
+            Login_Form or = new Login_Form();
+            or.Closed += (s, args) => this.Close();
+            or.Show();
+        }
+
 
     }
    /* class DBOT

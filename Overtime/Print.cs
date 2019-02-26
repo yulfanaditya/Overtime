@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace OT_Management
 {
-    public partial class ManageUser : Form
+    public partial class Print : Form
     {
-        public ManageUser()
+        public Print()
         {
             InitializeComponent();
         }

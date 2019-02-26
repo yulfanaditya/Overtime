@@ -23,8 +23,10 @@ namespace OT_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            this.Close();
+            this.Hide();
+            Settings set = new Settings();
+            set.Closed += (s, args) => this.Close();
+            set.Show();
         }
 
         public void selected()

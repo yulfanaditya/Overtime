@@ -120,15 +120,15 @@ namespace OT_Management
             comboBox1.Items.Add("Approver 2");
             comboBox1.Items.Add("Approver 3");
             comboBox2.Items.Clear();
-            comboBox2.Items.Add("Accounting");
-            comboBox2.Items.Add("Engineering");
-            comboBox2.Items.Add("General Manager");
+            comboBox2.Items.Add("ACCOUNTING");
+            comboBox2.Items.Add("ENGINEERING");
+            comboBox2.Items.Add("GENERAL MANAGER");
             comboBox2.Items.Add("HR & GA");
             comboBox2.Items.Add("MIS");
-            comboBox2.Items.Add("Maintenance");
+            comboBox2.Items.Add("MAINTENANCE");
             comboBox2.Items.Add("PPCWL");
-            comboBox2.Items.Add("Production");
-            comboBox2.Items.Add("Quality");
+            comboBox2.Items.Add("PRODUCTION");
+            comboBox2.Items.Add("QUALITY");
             comboBox3.Items.Clear();
             
         }
@@ -137,14 +137,14 @@ namespace OT_Management
         {
             comboBox3.Enabled = true;
             switch (comboBox2.Text) {
-                case "Accounting":
+                case "ACCOUNTING":
                     this.comboBox3.Items.Clear();
                     comboBox3.Text = "";
                     comboBox3.Items.Add("FINANCE");
                     comboBox3.Items.Add("GENERAL");
                     break;
 
-                case "Engineering":
+                case "ENGINEERING":
                     this.comboBox3.Items.Clear();
                     comboBox3.Text = "";
                     comboBox3.Items.Add("PROCESS");
@@ -153,7 +153,7 @@ namespace OT_Management
                     comboBox3.Items.Add("GENERAL");
                     break;
 
-                case "General Manager":
+                case "GENERAL MANAGER":
                     this.comboBox3.Items.Clear();
                     comboBox3.Items.Add("GENERAL");
                     comboBox3.Text = "GENERAL";
@@ -177,7 +177,7 @@ namespace OT_Management
                     comboBox3.Enabled = false;
                     break;
 
-                case "Maintenance":
+                case "MAINTENANCE":
                     this.comboBox3.Items.Clear();
                     comboBox3.Text = "";
                     comboBox3.Items.Add("PM & FACILITY");
@@ -205,7 +205,7 @@ namespace OT_Management
                     comboBox3.Items.Add("GENERAL");
                     break;
 
-                case "Production":
+                case "PRODUCTION":
                     this.comboBox3.Items.Clear();
                     comboBox3.Text = "";
                     comboBox3.Items.Add("PRODUCTION CONTROLLER");
@@ -230,7 +230,7 @@ namespace OT_Management
                     comboBox3.Items.Add("PRODUCTION SUPERVISORY");
                     break;
 
-                case "Quality" :
+                case "QUALITY":
                     this.comboBox3.Items.Clear();
                     comboBox3.Text = "";
                     comboBox3.Items.Add("DOCUMENT CONTROL CENTRE");

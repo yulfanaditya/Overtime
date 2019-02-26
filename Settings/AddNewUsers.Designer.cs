@@ -62,21 +62,23 @@
             // Approve
             // 
             this.Approve.Enabled = false;
+            this.Approve.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Approve.Location = new System.Drawing.Point(12, 314);
             this.Approve.Name = "Approve";
             this.Approve.Size = new System.Drawing.Size(91, 53);
             this.Approve.TabIndex = 1;
-            this.Approve.Text = "APPROVE";
+            this.Approve.Text = "Approve";
             this.Approve.UseVisualStyleBackColor = true;
             this.Approve.Click += new System.EventHandler(this.Approve_Click);
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(206, 314);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(91, 53);
             this.button2.TabIndex = 2;
-            this.button2.Text = "EXIT";
+            this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -172,11 +174,12 @@
             // Decline
             // 
             this.Decline.Enabled = false;
+            this.Decline.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Decline.Location = new System.Drawing.Point(109, 314);
             this.Decline.Name = "Decline";
             this.Decline.Size = new System.Drawing.Size(91, 53);
             this.Decline.TabIndex = 13;
-            this.Decline.Text = "DECLINE";
+            this.Decline.Text = "Decline";
             this.Decline.UseVisualStyleBackColor = true;
             this.Decline.Click += new System.EventHandler(this.Decline_Click);
             // 

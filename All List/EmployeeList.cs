@@ -14,6 +14,7 @@ namespace OT_Management
     public partial class Employeedata : Form
     {
         OTDB DB = new OTDB();
+        public string employee { get; set; }
         public Employeedata()
         {
             InitializeComponent();
@@ -57,11 +58,8 @@ namespace OT_Management
         public void listView1_DoubleClick(object sender, System.EventArgs e)
         {
             string datalocals = listView1.SelectedItems[0].SubItems[1].Text;
-            OvertimeRequest f1 = (OvertimeRequest)Application.OpenForms["OvertimeRequest"];
-            TextBox tb = (TextBox)f1.Controls["CEBox"];
-            tb.Text = datalocals;
-         
-            this.Close();
+            employee = datalocals;
+            DialogResult = DialogResult.OK;
         }
 
         private void EmployeeLists()

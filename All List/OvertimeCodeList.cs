@@ -13,6 +13,7 @@ namespace OT_Management
 {
     public partial class OvertimeCodeData : Form
     {
+        public string ActivityOT { get; set; }
         OTDB DB = new OTDB();
         public OvertimeCodeData()
         {
@@ -56,11 +57,11 @@ namespace OT_Management
         public void listView1_DoubleClick(object sender, System.EventArgs e)
         {
             string datalocals = listView1.Items[listView1.SelectedIndices[0]].Text;
-            OvertimeRequest f1 = (OvertimeRequest)Application.OpenForms["OvertimeRequest"];
+            /*OvertimeRequest f1 = (OvertimeRequest)Application.OpenForms["OvertimeRequest"];
             TextBox tb = (TextBox)f1.Controls["OABox"];
-            tb.Text = datalocals;
-            
-            this.Close();
+            tb.Text = datalocals;*/
+            ActivityOT = datalocals;
+            DialogResult = DialogResult.OK;
          }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

@@ -88,10 +88,8 @@ namespace OT_Management
                     Home home = new Home();
                     home.Closed += (s, args) => this.Close();
                     home.Show();
-
                 }
                 datauser = userid.Text;
-
             }
         }
         
@@ -144,7 +142,6 @@ namespace OT_Management
             Reader.Close();
             cmd.Dispose();
             datab.CloseConnection();
-
         }
 
         public static string MD5Hash(string input)
@@ -163,14 +160,6 @@ namespace OT_Management
         private void userid_TextChanged(object sender, EventArgs e)
         {
            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            All_List.DepartmentList or = new All_List.DepartmentList();
-            or.Closed += (s, args) => this.Close();
-            or.Show();
         }
 
         private void exit_button_Click(object sender, EventArgs e)
