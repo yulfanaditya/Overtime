@@ -105,7 +105,6 @@ namespace OT_Management
         {
             e.Cancel = true;
             e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
-            
         }
     }
 }

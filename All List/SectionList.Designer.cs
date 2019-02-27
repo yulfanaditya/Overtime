@@ -1,6 +1,6 @@
 ﻿namespace OT_Management.All_List
 {
-    partial class DepartmentList
+    partial class SectionList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepartmentList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SectionList));
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,10 +42,10 @@
             this.label1.BackColor = System.Drawing.Color.DarkGray;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(153, 15);
+            this.label1.Location = new System.Drawing.Point(152, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 19);
-            this.label1.TabIndex = 44;
+            this.label1.TabIndex = 48;
             this.label1.Text = "OVERTIME ACTIVITIES";
             // 
             // listView1
@@ -53,13 +53,11 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.listView1.Location = new System.Drawing.Point(8, 84);
+            this.listView1.Location = new System.Drawing.Point(7, 84);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(437, 419);
-            this.listView1.TabIndex = 41;
+            this.listView1.TabIndex = 47;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // label2
             // 
@@ -67,24 +65,24 @@
             this.label2.BackColor = System.Drawing.Color.DarkGray;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(153, 40);
+            this.label2.Location = new System.Drawing.Point(152, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(304, 19);
-            this.label2.TabIndex = 40;
+            this.label2.TabIndex = 46;
             this.label2.Text = "PT. KEMET ELECTRONICS INDONESIA";
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.DarkGray;
             this.pictureBox2.Image = global::OT_Management.Properties.Resources.Kemet_Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(141, 68);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 38;
+            this.pictureBox2.TabIndex = 45;
             this.pictureBox2.TabStop = false;
             // 
-            // DepartmentList
+            // SectionList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,8 +93,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "DepartmentList";
-            this.Text = "Department List";
+            this.Name = "SectionList";
+            this.Text = "SectionList";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,6 +107,5 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-
     }
 }

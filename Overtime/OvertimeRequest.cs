@@ -13,15 +13,14 @@ namespace OT_Management
 {
     public partial class OvertimeRequest : Form
     {
+        public string departmentItems { get; set; }
         public bool ORB;
         private int i = 0;
         OTDB DB = new OTDB();
-        public string Items { get; set; }
         public OvertimeRequest()
         {
             InitializeComponent();
             OTRequests();
-            OABox.Text = Items;
             refresh();           
         }
 //=========================================================================================================================================================================
@@ -223,8 +222,6 @@ namespace OT_Management
 
         private void searchEmployee_Click(object sender, EventArgs e)
         {
-            //Employeedata home = new Employeedata();
-            //home.ShowDialog();
             var ED = new Employeedata();
 
             if (ED.ShowDialog() == DialogResult.OK)
@@ -250,7 +247,7 @@ namespace OT_Management
             dateTimePicker3.Text = "00 : 00";
             dateTimePicker2.Text = "00 : 00";
             DepartmentBox.Text = Global.GlobalVar[2];
-            SectionBox.Text = Global.GlobalVar[3];
+            SectionBox.Text = "";
             CEBox.Text = "";
             RemarkBox.Text = "";
             checkBox1.Checked = false;
@@ -346,6 +343,18 @@ namespace OT_Management
                 
             }
             return false;
+        }
+
+        private void sectionButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("dsadasdas");
+            var ASL = new All_List.SectionList();
+            
+
+            if (ASL.ShowDialog() == DialogResult.OK)
+            {
+                SectionBox.Text = ASL.sectionItems;
+            }
         }
 //=============================================================================================================================================================================================
 

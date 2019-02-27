@@ -58,6 +58,7 @@
             this.SectionBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.sectionButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -369,12 +370,25 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // sectionButton
+            // 
+            this.sectionButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sectionButton.BackgroundImage")));
+            this.sectionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sectionButton.Location = new System.Drawing.Point(435, 170);
+            this.sectionButton.Name = "sectionButton";
+            this.sectionButton.Size = new System.Drawing.Size(26, 23);
+            this.sectionButton.TabIndex = 39;
+            this.sectionButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sectionButton.UseVisualStyleBackColor = true;
+            this.sectionButton.Click += new System.EventHandler(this.sectionButton_Click);
+            // 
             // OvertimeRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(689, 591);
+            this.Controls.Add(this.sectionButton);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SectionBox);
@@ -445,5 +459,6 @@
         private System.Windows.Forms.TextBox SectionBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button sectionButton;
     }
 }

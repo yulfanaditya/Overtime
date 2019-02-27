@@ -41,11 +41,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.searchDept = new System.Windows.Forms.Button();
+            this.departmentBox = new System.Windows.Forms.TextBox();
+            this.sectionBox = new System.Windows.Forms.TextBox();
+            this.searchSect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,26 +172,6 @@
             this.label6.TabIndex = 27;
             this.label6.Text = "Section";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "ACCOUNTING",
-            "ENGINEERING",
-            "GENERAL MANAGER",
-            "HR & GA",
-            "MIS",
-            "MAINTENANCE",
-            "PPCWL",
-            "PRODUCTION",
-            "QUALITY"});
-            this.comboBox2.Location = new System.Drawing.Point(133, 299);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(215, 21);
-            this.comboBox2.TabIndex = 5;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -199,19 +181,6 @@
             this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 31;
             this.label7.Text = "Position";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.DropDownWidth = 215;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.IntegralHeight = false;
-            this.comboBox3.Location = new System.Drawing.Point(133, 332);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(215, 21);
-            this.comboBox3.TabIndex = 6;
             // 
             // label8
             // 
@@ -243,16 +212,59 @@
             this.comboBox1.Size = new System.Drawing.Size(215, 21);
             this.comboBox1.TabIndex = 4;
             // 
+            // searchDept
+            // 
+            this.searchDept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchDept.BackgroundImage")));
+            this.searchDept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchDept.Location = new System.Drawing.Point(322, 297);
+            this.searchDept.Name = "searchDept";
+            this.searchDept.Size = new System.Drawing.Size(26, 23);
+            this.searchDept.TabIndex = 33;
+            this.searchDept.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchDept.UseVisualStyleBackColor = true;
+            this.searchDept.Click += new System.EventHandler(this.searchDept_Click);
+            // 
+            // departmentBox
+            // 
+            this.departmentBox.Enabled = false;
+            this.departmentBox.Location = new System.Drawing.Point(133, 300);
+            this.departmentBox.Name = "departmentBox";
+            this.departmentBox.Size = new System.Drawing.Size(183, 20);
+            this.departmentBox.TabIndex = 34;
+            // 
+            // sectionBox
+            // 
+            this.sectionBox.Enabled = false;
+            this.sectionBox.Location = new System.Drawing.Point(133, 332);
+            this.sectionBox.Name = "sectionBox";
+            this.sectionBox.Size = new System.Drawing.Size(183, 20);
+            this.sectionBox.TabIndex = 35;
+            // 
+            // searchSect
+            // 
+            this.searchSect.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchSect.BackgroundImage")));
+            this.searchSect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchSect.Enabled = false;
+            this.searchSect.Location = new System.Drawing.Point(322, 329);
+            this.searchSect.Name = "searchSect";
+            this.searchSect.Size = new System.Drawing.Size(26, 23);
+            this.searchSect.TabIndex = 36;
+            this.searchSect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchSect.UseVisualStyleBackColor = true;
+            this.searchSect.Click += new System.EventHandler(this.searchSect_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(383, 462);
+            this.Controls.Add(this.searchSect);
+            this.Controls.Add(this.sectionBox);
+            this.Controls.Add(this.departmentBox);
+            this.Controls.Add(this.searchDept);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox2);
@@ -291,10 +303,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button searchDept;
+        private System.Windows.Forms.TextBox departmentBox;
+        private System.Windows.Forms.TextBox sectionBox;
+        private System.Windows.Forms.Button searchSect;
     }
 }

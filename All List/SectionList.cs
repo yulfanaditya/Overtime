@@ -5,35 +5,37 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace OT_Management.All_List
 {
-    public partial class DepartmentList : Form
+    public partial class SectionList : Form
     {
-        public string departmentItems { get; set; }
         OTDB DB = new OTDB();
-        public DepartmentList()
+        public string sectionItems { get; set; }
+        public string departmentItems { get; set; }
+        public SectionList()
         {
             InitializeComponent();
-                       
-            deptLists();
-            selected();
-           
+            sectLists();
+            selected("asd");
         }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        public SectionList(string data)
         {
-           
+            InitializeComponent();
+            sectLists();
+            selected(data);
+            
         }
-        public void selected()
+        public void selected(string dept)
         {
-            int i = 0;
             DB.inializing();
+            int i = 0;
 
-            string query = "Select departmentName from department ORDER BY departmentName ASC";
+            MessageBox.Show(dept);
+            string query = "Select sectionName, departmentName from section WHERE departmentName = '" + dept + "' ORDER BY sectionName ASC";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
@@ -44,6 +46,7 @@ namespace OT_Management.All_List
             {
                 ListViewItem lv = new ListViewItem(i.ToString());
                 lv.SubItems.Add(Reader.GetString(0));
+                lv.SubItems.Add(Reader.GetString(1));
                 listView1.Items.Add(lv);
 
             }
@@ -52,20 +55,13 @@ namespace OT_Management.All_List
             cmd.Dispose();
             DB.CloseConnection();
         }
-        private void deptLists()
+        private void sectLists()
         {
             listView1.GridLines = true;
             listView1.View = View.Details;
-
-            listView1.Columns.Add("No", 30, HorizontalAlignment.Left);
+            listView1.Columns.Add("No", 30, HorizontalAlignment.Center);
+            listView1.Columns.Add("Section Name", 200, HorizontalAlignment.Center);
             listView1.Columns.Add("Department Name", -2, HorizontalAlignment.Center);
-        }
-
-        private void listView1_DoubleClick(object sender, EventArgs e)
-        {
-            string datalocals = listView1.SelectedItems[0].SubItems[1].Text;
-            departmentItems = datalocals;
-            DialogResult = DialogResult.OK;
         }
 
         private void resetCounter()
