@@ -43,7 +43,6 @@ C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Manage
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Approval.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.OvertimeCodeData.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.DatabaseSettings.resources
-C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Print.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.Employeedata.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.ManageSection.resources
 C:\Users\erbayfa\Documents\Kemet Centre Project\Overtime\obj\x86\Debug\OT_Management.All_List.SectionList.resources

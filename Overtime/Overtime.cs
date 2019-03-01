@@ -49,5 +49,13 @@ namespace OT_Management
         
         }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Status aps = new Status();
+            aps.Closed += (s, args) => this.Close();
+            aps.Show();
+        }
+
     }
 }
