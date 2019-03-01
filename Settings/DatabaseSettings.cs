@@ -32,5 +32,13 @@ namespace OT_Management
             ms.Show();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Settings st = new Settings();
+            st.Closed += (s, args) => this.Close();
+            st.Show();
+        }
+
     }
 }

@@ -15,7 +15,6 @@ namespace OT_Management
     public partial class Register : Form
     {
         OTDB DB = new OTDB();
-        public string departmentItems { get; set; }
         public Register()
         {
             InitializeComponent(); 
@@ -127,8 +126,7 @@ namespace OT_Management
 
             if (ADL.ShowDialog() == DialogResult.OK)
             {
-                departmentBox.Text = ADL.departmentItems; ;
-                departmentItems = ADL.departmentItems;
+                departmentBox.Text = ADL.departmentItems;
                 searchSect.Enabled = true;
             }
         }

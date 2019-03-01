@@ -40,14 +40,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.positionBox = new System.Windows.Forms.ComboBox();
-            this.departmentBox = new System.Windows.Forms.ComboBox();
-            this.sectionBox = new System.Windows.Forms.ComboBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.departmentBox = new System.Windows.Forms.TextBox();
+            this.sectionBox = new System.Windows.Forms.TextBox();
+            this.searchDept = new System.Windows.Forms.Button();
+            this.sectionButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,37 +173,6 @@
             this.positionBox.Size = new System.Drawing.Size(283, 21);
             this.positionBox.TabIndex = 12;
             // 
-            // departmentBox
-            // 
-            this.departmentBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.departmentBox.Enabled = false;
-            this.departmentBox.FormattingEnabled = true;
-            this.departmentBox.Items.AddRange(new object[] {
-            "ACCOUNTING",
-            "ENGINEERING",
-            "GENERAL MANAGER",
-            "HR & GA",
-            "MIS",
-            "MAINTENANCE",
-            "PPCWL",
-            "PRODUCTION",
-            "QUALITY"});
-            this.departmentBox.Location = new System.Drawing.Point(175, 200);
-            this.departmentBox.Name = "departmentBox";
-            this.departmentBox.Size = new System.Drawing.Size(283, 21);
-            this.departmentBox.TabIndex = 13;
-            this.departmentBox.SelectedIndexChanged += new System.EventHandler(this.departmentBox_SelectedIndexChanged);
-            // 
-            // sectionBox
-            // 
-            this.sectionBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sectionBox.Enabled = false;
-            this.sectionBox.FormattingEnabled = true;
-            this.sectionBox.Location = new System.Drawing.Point(175, 230);
-            this.sectionBox.Name = "sectionBox";
-            this.sectionBox.Size = new System.Drawing.Size(283, 21);
-            this.sectionBox.TabIndex = 14;
-            // 
             // deleteButton
             // 
             this.deleteButton.Enabled = false;
@@ -245,11 +216,15 @@
             // 
             // listView1
             // 
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(4, 305);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(522, 197);
             this.listView1.TabIndex = 33;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            this.listView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView1_ColumnWidthChanging);
             // 
             // nameBox
             // 
@@ -269,18 +244,62 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "Name";
             // 
+            // departmentBox
+            // 
+            this.departmentBox.Enabled = false;
+            this.departmentBox.Location = new System.Drawing.Point(175, 201);
+            this.departmentBox.Name = "departmentBox";
+            this.departmentBox.Size = new System.Drawing.Size(251, 20);
+            this.departmentBox.TabIndex = 35;
+            // 
+            // sectionBox
+            // 
+            this.sectionBox.Enabled = false;
+            this.sectionBox.Location = new System.Drawing.Point(175, 230);
+            this.sectionBox.Name = "sectionBox";
+            this.sectionBox.Size = new System.Drawing.Size(251, 20);
+            this.sectionBox.TabIndex = 36;
+            // 
+            // searchDept
+            // 
+            this.searchDept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchDept.BackgroundImage")));
+            this.searchDept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchDept.Enabled = false;
+            this.searchDept.Location = new System.Drawing.Point(432, 200);
+            this.searchDept.Name = "searchDept";
+            this.searchDept.Size = new System.Drawing.Size(26, 23);
+            this.searchDept.TabIndex = 44;
+            this.searchDept.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchDept.UseVisualStyleBackColor = true;
+            this.searchDept.Click += new System.EventHandler(this.searchDept_Click);
+            // 
+            // sectionButton
+            // 
+            this.sectionButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sectionButton.BackgroundImage")));
+            this.sectionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sectionButton.Enabled = false;
+            this.sectionButton.Location = new System.Drawing.Point(432, 230);
+            this.sectionButton.Name = "sectionButton";
+            this.sectionButton.Size = new System.Drawing.Size(26, 23);
+            this.sectionButton.TabIndex = 45;
+            this.sectionButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sectionButton.UseVisualStyleBackColor = true;
+            this.sectionButton.Click += new System.EventHandler(this.sectionButton_Click);
+            // 
             // ManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(532, 505);
+            this.Controls.Add(this.sectionButton);
+            this.Controls.Add(this.searchDept);
+            this.Controls.Add(this.sectionBox);
+            this.Controls.Add(this.departmentBox);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.sectionBox);
-            this.Controls.Add(this.departmentBox);
             this.Controls.Add(this.positionBox);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.deleteButton);
@@ -318,13 +337,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox positionBox;
-        private System.Windows.Forms.ComboBox departmentBox;
-        private System.Windows.Forms.ComboBox sectionBox;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox departmentBox;
+        private System.Windows.Forms.TextBox sectionBox;
+        private System.Windows.Forms.Button searchDept;
+        private System.Windows.Forms.Button sectionButton;
     }
 }

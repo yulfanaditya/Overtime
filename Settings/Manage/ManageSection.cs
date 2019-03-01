@@ -20,6 +20,7 @@ namespace OT_Management
             InitializeComponent();
             deptLists();
             selected();
+            refresh();
         }
 
         private void codeBox_KeyDown(object sender, KeyEventArgs e)
@@ -30,7 +31,6 @@ namespace OT_Management
                 {
                     saveButton.Text = "Save";
                     deleteButton.Enabled = false;
-                    
                 }
                 else
                 {
@@ -39,7 +39,7 @@ namespace OT_Management
                     selectDatabase();
                 }
                 codeBox.Enabled = false;
-                departmentBox.Enabled = true;
+                searchDept.Enabled = true;
                 sectionBox.Enabled = true;
 
                 saveButton.Enabled = true;
@@ -47,15 +47,6 @@ namespace OT_Management
                 departmentBox.Focus();
             }
         }
-
-        private void departmentBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(departmentBox.Text != "")
-            {
-                codeBox.Enabled = true;
-            }
-        }
-
 
         private void deptLists()
         {
@@ -184,6 +175,7 @@ namespace OT_Management
             codeBox.Enabled = true;
             departmentBox.Enabled = false;
             sectionBox.Enabled = false;
+            searchDept.Enabled = false;
 
             saveButton.Enabled = false;
             deleteButton.Enabled = false;
@@ -191,17 +183,8 @@ namespace OT_Management
 
             codeBox.Text = "";
             sectionBox.Text = "";
+            departmentBox.Text = "";
             
-            departmentBox.Items.Clear();
-            departmentBox.Items.Add("ACCOUNTING");
-            departmentBox.Items.Add("ENGINEERING");
-            departmentBox.Items.Add("GENERAL MANAGER");
-            departmentBox.Items.Add("HR & GA");
-            departmentBox.Items.Add("MIS");
-            departmentBox.Items.Add("MAINTENANCE");
-            departmentBox.Items.Add("PPCWL");
-            departmentBox.Items.Add("PRODUCTION");
-            departmentBox.Items.Add("QUALITY");
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -230,6 +213,37 @@ namespace OT_Management
             {
                 e.Handled = true;
             }
+        }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+        }
+
+        private void searchDept_Click(object sender, EventArgs e)
+        {
+            var ADL = new All_List.DepartmentList();
+
+            if (ADL.ShowDialog() == DialogResult.OK)
+            {
+                departmentBox.Text = ADL.departmentItems;
+
+            }
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+             saveButton.Text = "Update";
+             deleteButton.Enabled = true;
+             selectDatabase();
+             codeBox.Enabled = false;
+             searchDept.Enabled = true;
+             sectionBox.Enabled = true;
+
+             saveButton.Enabled = true;
+             cancelButton.Enabled = true;
+             departmentBox.Focus();
         }
     }
 }

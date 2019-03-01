@@ -77,9 +77,9 @@ namespace OT_Management
             st.Show();
         }
 
-        private void logoutButton_Click(object sender, EventArgs e)
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            for(int i=0;i<4;i++)
+            for (int i = 0; i < 4; i++)
             {
                 Global.GlobalVar[i] = "";
             }

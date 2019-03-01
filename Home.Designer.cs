@@ -32,15 +32,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.logoutButton = new System.Windows.Forms.Button();
             this.hsBox = new System.Windows.Forms.PictureBox();
             this.overtimeBox = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.settingBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hsBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overtimeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,17 +79,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
-            // 
-            // logoutButton
-            // 
-            this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.Location = new System.Drawing.Point(492, 37);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(82, 29);
-            this.logoutButton.TabIndex = 6;
-            this.logoutButton.Text = "Log Out";
-            this.logoutButton.UseVisualStyleBackColor = true;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // hsBox
             // 
@@ -135,17 +125,28 @@
             this.settingBox.Visible = false;
             this.settingBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(498, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 57);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(585, 433);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.settingBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.hsBox);
             this.Controls.Add(this.overtimeBox);
-            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -160,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hsBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overtimeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,11 +172,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.PictureBox hsBox;
         private System.Windows.Forms.PictureBox overtimeBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox settingBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
 
     }

@@ -33,136 +33,19 @@ namespace OT_Management
                     usernameBox.Enabled = false;
                     saveButton.Text = "Save";
                     deleteButton.Enabled = false;
+                    sectionButton.Enabled = false;
                 }
                 else 
                 {
                     usernameBox.Enabled = false;
                     saveButton.Text = "Update";
                     deleteButton.Enabled = true;
+                    sectionButton.Enabled = true;
                 }
                 enable();
                 passwordBox.Focus();
             }
         }     
-
-        private void departmentBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            sectionBox.Enabled = true;
-            switch (departmentBox.Text)
-            {
-                case "ACCOUNTING":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
-                    sectionBox.Items.Add("FINANCE");
-                    sectionBox.Items.Add("GENERAL");
-                    break;
-
-                case "ENGINEERING":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
-                    sectionBox.Items.Add("PROCESS");
-                    sectionBox.Items.Add("TEST AND CALIBRATION");
-                    sectionBox.Items.Add("R & D");
-                    sectionBox.Items.Add("GENERAL");
-                    break;
-
-                case "GENERAL MANAGER":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Text = "GENERAL";
-                    sectionBox.Enabled = false;
-                    break;
-
-                case "HR & GA":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
-                    sectionBox.Items.Add("TRAINING");
-                    sectionBox.Items.Add("PAYROLL");
-                    sectionBox.Items.Add("GENERAL AFFAIR");
-                    sectionBox.Items.Add("GENERAL");
-                    break;
-
-                case "MIS":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
-                    sectionBox.Items.Add("IT");
-                    sectionBox.Text = "IT";
-                    sectionBox.Enabled = false;
-                    break;
-
-                case "MAINTENANCE":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
-                    sectionBox.Items.Add("PM & FACILITY");
-                    sectionBox.Items.Add("PRUDUCTION SUPPORT (MOL X)");
-                    sectionBox.Items.Add("TECHNICAL SUPPORT");
-                    sectionBox.Items.Add("PM (MOL W)");
-                    sectionBox.Items.Add("PM");
-                    sectionBox.Items.Add("PRODUCTION SUPPORT (MOL S)");
-                    sectionBox.Items.Add("PRODUCTION SUPPORT (EOL)");
-                    sectionBox.Items.Add("PM (BOL NON WINDING)");
-                    sectionBox.Items.Add("PM (EOL NON TESTING)");
-                    sectionBox.Items.Add("PRODUCTION SUPPORT (BOL)");
-                    sectionBox.Items.Add("PM (BOL WINDING)");
-                    sectionBox.Items.Add("FACILITY");
-                    sectionBox.Items.Add("PM (MOL S)");
-                    sectionBox.Items.Add("PRODUCTION SUPPORT (MOL W)");
-                    sectionBox.Items.Add("GENERAL");
-                    break;
-
-                case "PPCWL":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
-                    sectionBox.Items.Add("W & L");
-                    sectionBox.Items.Add("PLANNING");
-                    sectionBox.Items.Add("GENERAL");
-                    break;
-
-                case "PRODUCTION":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
-                    sectionBox.Items.Add("PRODUCTION CONTROLLER");
-                    sectionBox.Items.Add("BOL LINE LEADER");
-                    sectionBox.Items.Add("BOL NON WINDING");
-                    sectionBox.Items.Add("BOL SECTION HEAD");
-                    sectionBox.Items.Add("BOL WINDING");
-                    sectionBox.Items.Add("EOL LINE LEADER");
-                    sectionBox.Items.Add("EOL NON TESTING");
-                    sectionBox.Items.Add("EOL SECTION HEAD");
-                    sectionBox.Items.Add("EOL TESTING");
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Items.Add("MOL S");
-                    sectionBox.Items.Add("MOL S LINE LEADER");
-                    sectionBox.Items.Add("MOL S SECTION HEAD");
-                    sectionBox.Items.Add("MOL WOUND");
-                    sectionBox.Items.Add("MOL WOUND LINE LEADER");
-                    sectionBox.Items.Add("MOL WOUND SECTION HEAD");
-                    sectionBox.Items.Add("PROD. IN PROCESS YIELD IMPROVE");
-                    sectionBox.Items.Add("PROD. INNOVATION & DEVELOPMENT");
-                    sectionBox.Items.Add("PRODUCTION ENGINEERING");
-                    sectionBox.Items.Add("PRODUCTION SUPERVISORY");
-                    break;
-
-                case "QUALITY":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "";
-                    sectionBox.Items.Add("DOCUMENT CONTROL CENTRE");
-                    sectionBox.Items.Add("ENVIRONMENT HEALTH SAFETY");
-                    sectionBox.Items.Add("FINAL INSPECTION");
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Items.Add("INCOMING");
-                    sectionBox.Items.Add("IPQC");
-                    sectionBox.Items.Add("LINE LEADER");
-                    sectionBox.Items.Add("OUTGOING");
-                    sectionBox.Items.Add("QUALITY MANAGEMENT SYSTEM");
-                    sectionBox.Items.Add("SECTION HEAD");
-                    sectionBox.Items.Add("SUPPORTING TEAM");
-                    sectionBox.Items.Add("TRAINING");
-                    break;
-            }
-        }
-
-        
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Button
 
@@ -288,9 +171,9 @@ namespace OT_Management
             passwordBox.Enabled = true;
             nameBox.Enabled = true;
             positionBox.Enabled = true;
-            departmentBox.Enabled = true;
-            sectionBox.Enabled = true;
+            searchDept.Enabled = true;
 
+            saveButton.Enabled = true;
             deleteButton.Enabled = true;
             cancelButton.Enabled = true;
 
@@ -336,18 +219,8 @@ namespace OT_Management
             positionBox.Items.Add("Approver 3");
             positionBox.Items.Add("Administrator");
 
-            departmentBox.Items.Clear();
-            departmentBox.Items.Add("ACCOUNTING");
-            departmentBox.Items.Add("ENGINEERING");
-            departmentBox.Items.Add("GENERAL MANAGER");
-            departmentBox.Items.Add("HR & GA");
-            departmentBox.Items.Add("MIS");
-            departmentBox.Items.Add("MAINTENANCE");
-            departmentBox.Items.Add("PPCWL");
-            departmentBox.Items.Add("PRODUCTION");
-            departmentBox.Items.Add("QUALITY");
-
-            sectionBox.Items.Clear();
+            departmentBox.Text = "";
+            sectionBox.Text = "";
         }
 
         private void userLists()
@@ -414,6 +287,45 @@ namespace OT_Management
             saveButton.Enabled = false;
             deleteButton.Enabled = false;
             cancelButton.Enabled = false;
+        }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+        }
+
+        private void searchDept_Click(object sender, EventArgs e)
+        {
+            var ADL = new All_List.DepartmentList();
+
+            if (ADL.ShowDialog() == DialogResult.OK)
+            {
+                departmentBox.Text = ADL.departmentItems;
+                sectionBox.Text = "";
+                sectionButton.Enabled = true;
+            }
+        }
+
+        private void sectionButton_Click(object sender, EventArgs e)
+        {
+            var ASL = new All_List.SectionList(departmentBox.Text);
+
+            if (ASL.ShowDialog() == DialogResult.OK)
+            {
+                sectionBox.Text = ASL.sectionItems;
+            }
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            usernameBox.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            usernameBox.Enabled = false;
+            saveButton.Text = "Update";
+            deleteButton.Enabled = true;
+            sectionButton.Enabled = true;
+            enable();
+            passwordBox.Focus();
         }
     }
 }

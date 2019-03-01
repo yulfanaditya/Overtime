@@ -58,6 +58,8 @@
             this.listView1.Size = new System.Drawing.Size(437, 419);
             this.listView1.TabIndex = 47;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
+            this.listView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView1_ColumnWidthChanging);
             // 
             // label2
             // 
@@ -93,6 +95,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "SectionList";
             this.Text = "SectionList";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

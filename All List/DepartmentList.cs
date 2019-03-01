@@ -76,5 +76,11 @@ namespace OT_Management.All_List
             }
 
         }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+        }
     }
 }

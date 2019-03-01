@@ -239,6 +239,7 @@
             this.listView1.TabIndex = 31;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView1_ColumnWidthChanging);
             this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
             // label12
@@ -348,6 +349,7 @@
             this.SectionBox.ReadOnly = true;
             this.SectionBox.Size = new System.Drawing.Size(283, 20);
             this.SectionBox.TabIndex = 36;
+            this.SectionBox.TextChanged += new System.EventHandler(this.SectionBox_TextChanged);
             // 
             // label1
             // 
@@ -418,6 +420,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "OvertimeRequest";

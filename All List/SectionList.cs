@@ -15,26 +15,22 @@ namespace OT_Management.All_List
     {
         OTDB DB = new OTDB();
         public string sectionItems { get; set; }
-        public string departmentItems { get; set; }
         public SectionList()
         {
             InitializeComponent();
             sectLists();
-            selected("asd");
         }
         public SectionList(string data)
         {
             InitializeComponent();
             sectLists();
             selected(data);
-            
         }
         public void selected(string dept)
         {
             DB.inializing();
             int i = 0;
 
-            MessageBox.Show(dept);
             string query = "Select sectionName, departmentName from section WHERE departmentName = '" + dept + "' ORDER BY sectionName ASC";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
@@ -71,6 +67,19 @@ namespace OT_Management.All_List
                 listView1.Items[i - 1].SubItems[0].Text = i.ToString();
             }
 
+        }
+
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string datalocals = listView1.SelectedItems[0].SubItems[1].Text;
+            sectionItems = datalocals;
+            DialogResult = DialogResult.OK;
+        }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
         }
     }
 }

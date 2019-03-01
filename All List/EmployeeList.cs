@@ -15,10 +15,18 @@ namespace OT_Management
     {
         OTDB DB = new OTDB();
         public string employee { get; set; }
+        string sect;
         public Employeedata()
         {
             InitializeComponent();
             EmployeeLists();
+        }
+
+        public Employeedata(string sect)
+        {
+            InitializeComponent();
+            EmployeeLists();
+            this.sect = sect;
             selected();
         }
 
@@ -30,7 +38,7 @@ namespace OT_Management
         {
             DB.inializing();
 
-            string query = "Select Badge, Name, DoJ, timeRemain FROM karyawan WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + Global.GlobalVar[3] + "' ORDER BY Badge ASC";
+            string query = "Select Badge, Name, DoJ, timeRemain FROM karyawan WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + this.sect + "' ORDER BY Badge ASC";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();

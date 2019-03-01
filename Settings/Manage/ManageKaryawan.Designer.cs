@@ -39,8 +39,6 @@
             this.badgeBox = new System.Windows.Forms.TextBox();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.sectionBox = new System.Windows.Forms.ComboBox();
-            this.departmentBox = new System.Windows.Forms.ComboBox();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.closeBox = new System.Windows.Forms.Button();
@@ -50,6 +48,10 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.label8 = new System.Windows.Forms.Label();
             this.timeBox = new System.Windows.Forms.TextBox();
+            this.sectionBox = new System.Windows.Forms.TextBox();
+            this.departmentBox = new System.Windows.Forms.TextBox();
+            this.searchDept = new System.Windows.Forms.Button();
+            this.searchSect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::OT_Management.Properties.Resources.Kemet_Logo;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(4, 6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(152, 70);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,6 +131,7 @@
             // badgeBox
             // 
             this.badgeBox.Location = new System.Drawing.Point(193, 79);
+            this.badgeBox.MaxLength = 6;
             this.badgeBox.Name = "badgeBox";
             this.badgeBox.Size = new System.Drawing.Size(236, 20);
             this.badgeBox.TabIndex = 10;
@@ -150,41 +153,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(98, 20);
             this.dateTimePicker1.TabIndex = 12;
-            // 
-            // sectionBox
-            // 
-            this.sectionBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.sectionBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.sectionBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sectionBox.DropDownWidth = 215;
-            this.sectionBox.Enabled = false;
-            this.sectionBox.FormattingEnabled = true;
-            this.sectionBox.IntegralHeight = false;
-            this.sectionBox.Location = new System.Drawing.Point(193, 200);
-            this.sectionBox.Name = "sectionBox";
-            this.sectionBox.Size = new System.Drawing.Size(236, 21);
-            this.sectionBox.TabIndex = 15;
-            // 
-            // departmentBox
-            // 
-            this.departmentBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.departmentBox.Enabled = false;
-            this.departmentBox.FormattingEnabled = true;
-            this.departmentBox.Items.AddRange(new object[] {
-            "Accounting",
-            "Engineering",
-            "General Manager",
-            "HR & GA",
-            "MIS",
-            "Maintenance",
-            "PPCWL",
-            "Production",
-            "Quality"});
-            this.departmentBox.Location = new System.Drawing.Point(193, 170);
-            this.departmentBox.Name = "departmentBox";
-            this.departmentBox.Size = new System.Drawing.Size(236, 21);
-            this.departmentBox.TabIndex = 14;
-            this.departmentBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // updateButton
             // 
@@ -263,6 +231,8 @@
             this.listView1.Size = new System.Drawing.Size(522, 205);
             this.listView1.TabIndex = 32;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            this.listView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView1_ColumnWidthChanging);
             // 
             // label8
             // 
@@ -284,12 +254,55 @@
             this.timeBox.TabIndex = 16;
             this.timeBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.timeBox_KeyPress);
             // 
+            // sectionBox
+            // 
+            this.sectionBox.Enabled = false;
+            this.sectionBox.Location = new System.Drawing.Point(193, 200);
+            this.sectionBox.Name = "sectionBox";
+            this.sectionBox.Size = new System.Drawing.Size(203, 20);
+            this.sectionBox.TabIndex = 35;
+            // 
+            // departmentBox
+            // 
+            this.departmentBox.Location = new System.Drawing.Point(193, 169);
+            this.departmentBox.Name = "departmentBox";
+            this.departmentBox.Size = new System.Drawing.Size(203, 20);
+            this.departmentBox.TabIndex = 34;
+            // 
+            // searchDept
+            // 
+            this.searchDept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchDept.BackgroundImage")));
+            this.searchDept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchDept.Location = new System.Drawing.Point(402, 166);
+            this.searchDept.Name = "searchDept";
+            this.searchDept.Size = new System.Drawing.Size(26, 23);
+            this.searchDept.TabIndex = 36;
+            this.searchDept.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchDept.UseVisualStyleBackColor = true;
+            this.searchDept.Click += new System.EventHandler(this.searchDept_Click);
+            // 
+            // searchSect
+            // 
+            this.searchSect.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchSect.BackgroundImage")));
+            this.searchSect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchSect.Location = new System.Drawing.Point(402, 198);
+            this.searchSect.Name = "searchSect";
+            this.searchSect.Size = new System.Drawing.Size(26, 23);
+            this.searchSect.TabIndex = 37;
+            this.searchSect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchSect.UseVisualStyleBackColor = true;
+            this.searchSect.Click += new System.EventHandler(this.searchSect_Click);
+            // 
             // ManageKaryawan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(528, 531);
+            this.Controls.Add(this.searchSect);
+            this.Controls.Add(this.searchDept);
+            this.Controls.Add(this.sectionBox);
+            this.Controls.Add(this.departmentBox);
             this.Controls.Add(this.timeBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.listView1);
@@ -299,8 +312,6 @@
             this.Controls.Add(this.closeBox);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
-            this.Controls.Add(this.sectionBox);
-            this.Controls.Add(this.departmentBox);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.badgeBox);
@@ -334,8 +345,6 @@
         private System.Windows.Forms.TextBox badgeBox;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox sectionBox;
-        private System.Windows.Forms.ComboBox departmentBox;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button closeBox;
@@ -345,5 +354,9 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox timeBox;
+        private System.Windows.Forms.TextBox sectionBox;
+        private System.Windows.Forms.TextBox departmentBox;
+        private System.Windows.Forms.Button searchDept;
+        private System.Windows.Forms.Button searchSect;
     }
 }

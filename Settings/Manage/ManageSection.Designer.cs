@@ -35,13 +35,14 @@
             this.closeButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.departmentBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.codeBox = new System.Windows.Forms.TextBox();
             this.sectionBox = new System.Windows.Forms.TextBox();
+            this.departmentBox = new System.Windows.Forms.TextBox();
+            this.searchDept = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,27 +124,6 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // departmentBox
-            // 
-            this.departmentBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.departmentBox.Enabled = false;
-            this.departmentBox.FormattingEnabled = true;
-            this.departmentBox.Items.AddRange(new object[] {
-            "ACCOUNTING",
-            "ENGINEERING",
-            "GENERAL MANAGER",
-            "HR & GA",
-            "MIS",
-            "MAINTENANCE",
-            "PPCWL",
-            "PRODUCTION",
-            "QUALITY"});
-            this.departmentBox.Location = new System.Drawing.Point(171, 110);
-            this.departmentBox.Name = "departmentBox";
-            this.departmentBox.Size = new System.Drawing.Size(237, 21);
-            this.departmentBox.TabIndex = 11;
-            this.departmentBox.SelectedIndexChanged += new System.EventHandler(this.departmentBox_SelectedIndexChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -161,6 +141,8 @@
             this.listView1.Size = new System.Drawing.Size(522, 228);
             this.listView1.TabIndex = 31;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            this.listView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView1_ColumnWidthChanging);
             // 
             // label3
             // 
@@ -200,19 +182,41 @@
             this.sectionBox.Size = new System.Drawing.Size(237, 20);
             this.sectionBox.TabIndex = 12;
             // 
+            // departmentBox
+            // 
+            this.departmentBox.AcceptsReturn = true;
+            this.departmentBox.Location = new System.Drawing.Point(171, 111);
+            this.departmentBox.MaxLength = 4;
+            this.departmentBox.Name = "departmentBox";
+            this.departmentBox.Size = new System.Drawing.Size(205, 20);
+            this.departmentBox.TabIndex = 34;
+            // 
+            // searchDept
+            // 
+            this.searchDept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchDept.BackgroundImage")));
+            this.searchDept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchDept.Location = new System.Drawing.Point(382, 110);
+            this.searchDept.Name = "searchDept";
+            this.searchDept.Size = new System.Drawing.Size(26, 23);
+            this.searchDept.TabIndex = 37;
+            this.searchDept.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchDept.UseVisualStyleBackColor = true;
+            this.searchDept.Click += new System.EventHandler(this.searchDept_Click);
+            // 
             // ManageSection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(546, 496);
+            this.Controls.Add(this.searchDept);
+            this.Controls.Add(this.departmentBox);
             this.Controls.Add(this.sectionBox);
             this.Controls.Add(this.codeBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.departmentBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.deleteButton);
@@ -222,6 +226,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "ManageSection";
             this.Text = "Manage Section";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -238,12 +243,13 @@
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.ComboBox departmentBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox codeBox;
         private System.Windows.Forms.TextBox sectionBox;
+        private System.Windows.Forms.TextBox departmentBox;
+        private System.Windows.Forms.Button searchDept;
     }
 }

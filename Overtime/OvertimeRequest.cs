@@ -121,6 +121,9 @@ namespace OT_Management
             addingData();
             listView1.Clear();
             OTRequests();
+            savebutton.Enabled = false;
+            deletebutton.Enabled = false;
+            MessageBox.Show("Data Just Saved!");
         }
 
         private void deletebutton_Click(object sender, EventArgs e)
@@ -183,6 +186,8 @@ namespace OT_Management
                     lv.SubItems.Add(labeljam.Text);
                     lv.SubItems.Add("");
                     lv.SubItems.Add(ORBox.Text);
+                    lv.SubItems.Add(DepartmentBox.Text);
+                    lv.SubItems.Add(SectionBox.Text);
 
                     listView1.Items.Add(lv);
                     refresh();
@@ -202,6 +207,8 @@ namespace OT_Management
                 lv.SubItems.Add(labeljam.Text);
                 lv.SubItems.Add(RemarkBox.Text);
                 lv.SubItems.Add(ORBox.Text);
+                lv.SubItems.Add(DepartmentBox.Text);
+                lv.SubItems.Add(SectionBox.Text);
 
                 listView1.Items.Add(lv);
                 refresh();
@@ -222,7 +229,7 @@ namespace OT_Management
 
         private void searchEmployee_Click(object sender, EventArgs e)
         {
-            var ED = new Employeedata();
+            var ED = new Employeedata(SectionBox.Text);
 
             if (ED.ShowDialog() == DialogResult.OK)
             {
@@ -247,7 +254,7 @@ namespace OT_Management
             dateTimePicker3.Text = "00 : 00";
             dateTimePicker2.Text = "00 : 00";
             DepartmentBox.Text = Global.GlobalVar[2];
-            SectionBox.Text = "";
+            SectionBox.Text = Global.GlobalVar[3];
             CEBox.Text = "";
             RemarkBox.Text = "";
             checkBox1.Checked = false;
@@ -304,27 +311,29 @@ namespace OT_Management
             listView1.Columns.Add("Hour", 40, HorizontalAlignment.Left);
             listView1.Columns.Add("Remark", 130, HorizontalAlignment.Left);
             listView1.Columns.Add("Code", 120, HorizontalAlignment.Center);
+            listView1.Columns.Add("Department", 120, HorizontalAlignment.Center);
+            listView1.Columns.Add("Section", 120, HorizontalAlignment.Center);
             listView1.View = View.Details;
         }
         private void addingData()
         {
-            string[,] lists = new string[listView1.Items.Count + 1, 9];
+            string[,] lists = new string[listView1.Items.Count + 1, listView1.Columns.Count + 1];
             string query;
             DB.inializing();
 
             for (int i = 0; i < listView1.Items.Count; i++)
             {
-                for (int j = 0; j <= 8; j++)
+                for (int j = 0; j <listView1.Columns.Count ; j++)
                 {
                     lists[i, j] = listView1.Items[i].SubItems[j].Text;
                 }
-                query = "INSERT INTO overtimerequest (name, departmentName, sectionName, activity, date, start, finish, sumTime, remark, code, submitter, approval1, approval2, approval3) VALUES('" + lists[i, 1] + "','" + Global.GlobalVar[2].ToString() + "','" + Global.GlobalVar[3].ToString() + "','" + lists[i, 2].ToString() + "','" + lists[i, 3] + "','" + lists[i, 4] + "','" + lists[i, 5] + "','" + lists[i, 6] + "','" + lists[i, 7] + "','" + lists[i, 8] +"','" + Global.GlobalVar[0] + "',0,0,0)";
+                query = "INSERT INTO overtimerequest (name, departmentName, sectionName, activity, date, start, finish, sumTime, remark, code, submitter, approval1, approval2, approval3) VALUES('" + lists[i, 1] + "','" + lists[i, 9] + "','" + lists[i, 10] + "','" + lists[i, 2].ToString() + "','" + lists[i, 3] + "','" + lists[i, 4] + "','" + lists[i, 5] + "','" + lists[i, 6] + "','" + lists[i, 7] + "','" + lists[i, 8] + "','" + Global.GlobalVar[0] + "',0,0,0)";
 
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                 DB.OpenConnection();
                 cmd.ExecuteNonQuery();
-                DB.CloseConnection();
             }
+            DB.CloseConnection();
 
         }
 
@@ -347,14 +356,24 @@ namespace OT_Management
 
         private void sectionButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("dsadasdas");
-            var ASL = new All_List.SectionList();
-            
+            var ASL = new All_List.SectionList(DepartmentBox.Text);
 
             if (ASL.ShowDialog() == DialogResult.OK)
             {
                 SectionBox.Text = ASL.sectionItems;
+                CEBox.Text = "";
             }
+        }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+        }
+
+        private void SectionBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
 //=============================================================================================================================================================================================
 

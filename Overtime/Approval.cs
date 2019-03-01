@@ -19,7 +19,27 @@ namespace OT_Management
             InitializeComponent();
             catchSection();
             viewList();
-            //justAccess();
+            if (listView1.Items.Count > 0)
+            {
+                approveAllButton.Enabled = true;
+            }
+            else 
+            {
+                approveAllButton.Enabled = false;
+            }
+
+            if (Global.GlobalVar[1] == "Approver 3")
+            {
+                departmentLabel.Visible = false;
+                searchDept.Enabled = true;
+                departmentBox.Text = Global.GlobalVar[2];
+            }
+            else 
+            {
+                departmentBox.Visible = false;
+                searchDept.Visible = false;
+                searchDept.Enabled = false;
+            }
         }
         private void viewData() {
                                     
@@ -40,10 +60,6 @@ namespace OT_Management
             catchAcess();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void sectionBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -64,11 +80,11 @@ namespace OT_Management
                     query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '0'";
                     break;
                 case "Approver 3" :
-                    query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '1' AND approval3 = '0'";
+                    query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + departmentBox.Text + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '1' AND approval3 = '0'";
                     break;
-                case "Administrator" :
+                /*case "Administrator" :
                     query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "'";
-                    break;
+                    break;*/
             }
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
@@ -99,117 +115,9 @@ namespace OT_Management
         private void catchSection()
         {
             departmentLabel.Text = Global.GlobalVar[2];
-            
-            sectionBox.Enabled = true;
-            
-            switch (Global.GlobalVar[2])
-            {
-                case "Accounting":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Items.Add("FINANCE");
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Text = Global.GlobalVar[3];
-                    break;
-
-                case "Engineering":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Items.Add("PROCESS");
-                    sectionBox.Items.Add("TEST AND CALIBRATION");
-                    sectionBox.Items.Add("R & D");
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Text = Global.GlobalVar[3];
-                    break;
-
-                case "General Manager":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "GENERAL";
-                    break;
-
-                case "HR & GA":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Items.Add("TRAINING");
-                    sectionBox.Items.Add("PAYROLL");
-                    sectionBox.Items.Add("GENERAL AFFAIR");
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Text = Global.GlobalVar[3];
-                    break;
-
-                case "MIS":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Text = "IT";
-                    sectionBox.Enabled = false;
-                    break;
-
-                case "Maintenance":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Items.Add("PM & FACILITY");
-                    sectionBox.Items.Add("PRUDUCTION SUPPORT (MOL X)");
-                    sectionBox.Items.Add("TECHNICAL SUPPORT");
-                    sectionBox.Items.Add("PM (MOL W)");
-                    sectionBox.Items.Add("PM");
-                    sectionBox.Items.Add("PRODUCTION SUPPORT (MOL S)");
-                    sectionBox.Items.Add("PRODUCTION SUPPORT (EOL)");
-                    sectionBox.Items.Add("PM (BOL NON WINDING)");
-                    sectionBox.Items.Add("PM (EOL NON TESTING)");
-                    sectionBox.Items.Add("PRODUCTION SUPPORT (BOL)");
-                    sectionBox.Items.Add("PM (BOL WINDING)");
-                    sectionBox.Items.Add("FACILITY");
-                    sectionBox.Items.Add("PM (MOL S)");
-                    sectionBox.Items.Add("PRODUCTION SUPPORT (MOL W)");
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Text = Global.GlobalVar[3];
-                    break;
-
-                case "PPCWL":
-                    this.sectionBox.Items.Clear();                    
-                    sectionBox.Items.Add("W & L");
-                    sectionBox.Items.Add("PLANNING");
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Text = Global.GlobalVar[3];
-                    break;
-
-                case "Production":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Items.Add("PRODUCTION CONTROLLER");
-                    sectionBox.Items.Add("BOL LINE LEADER");
-                    sectionBox.Items.Add("BOL NON WINDING");
-                    sectionBox.Items.Add("BOL SECTION HEAD");
-                    sectionBox.Items.Add("BOL WINDING");
-                    sectionBox.Items.Add("EOL LINE LEADER");
-                    sectionBox.Items.Add("EOL NON TESTING");
-                    sectionBox.Items.Add("EOL SECTION HEAD");
-                    sectionBox.Items.Add("EOL TESTING");
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Items.Add("MOL S");
-                    sectionBox.Items.Add("MOL S LINE LEADER");
-                    sectionBox.Items.Add("MOL S SECTION HEAD");
-                    sectionBox.Items.Add("MOL WOUND");
-                    sectionBox.Items.Add("MOL WOUND LINE LEADER");
-                    sectionBox.Items.Add("MOL WOUND SECTION HEAD");
-                    sectionBox.Items.Add("PROD. IN PROCESS YIELD IMPROVE");
-                    sectionBox.Items.Add("PROD. INNOVATION & DEVELOPMENT");
-                    sectionBox.Items.Add("PRODUCTION ENGINEERING");
-                    sectionBox.Items.Add("PRODUCTION SUPERVISORY");
-                    sectionBox.Text = Global.GlobalVar[3];
-                    break;
-
-                case "Quality":
-                    this.sectionBox.Items.Clear();
-                    sectionBox.Items.Add("DOCUMENT CONTROL CENTRE");
-                    sectionBox.Items.Add("ENVIRONMENT HEALTH SAFETY");
-                    sectionBox.Items.Add("FINAL INSPECTION");
-                    sectionBox.Items.Add("GENERAL");
-                    sectionBox.Items.Add("INCOMING");
-                    sectionBox.Items.Add("IPQC");
-                    sectionBox.Items.Add("LINE LEADER");
-                    sectionBox.Items.Add("OUTGOING");
-                    sectionBox.Items.Add("QUALITY MANAGEMENT SYSTEM");
-                    sectionBox.Items.Add("SECTION HEAD");
-                    sectionBox.Items.Add("SUPPORTING TEAM");
-                    sectionBox.Items.Add("TRAINING");
-                    sectionBox.Text = Global.GlobalVar[3];
-                    break;
-            }
+            sectionBox.Text = Global.GlobalVar[3];
+            sectionBox.Enabled = false;
+            sectionButton.Enabled = true;
         }
         private void resetCounter()
         {
@@ -218,6 +126,212 @@ namespace OT_Management
                 listView1.Items[i - 1].SubItems[0].Text = i.ToString();
             }
 
+        }
+
+        private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Overtime ot = new Overtime();
+            ot.Closed += (s, args) => this.Close();
+            ot.Show();
+        }
+
+        private void sectionButton_Click(object sender, EventArgs e)
+        {
+            if (Global.GlobalVar[1] == "Approver 3")
+            {
+                var ASL = new All_List.SectionList(departmentBox.Text);
+                if (ASL.ShowDialog() == DialogResult.OK)
+                {
+                    sectionBox.Text = ASL.sectionItems;
+                    catchAcess();
+                }
+            }
+            else 
+            {
+                var ASL = new All_List.SectionList(departmentLabel.Text);
+                if (ASL.ShowDialog() == DialogResult.OK)
+                {
+                    sectionBox.Text = ASL.sectionItems;
+                    catchAcess();
+                }
+            }
+        }
+
+        private void searchDept_Click(object sender, EventArgs e)
+        {
+            var ADL = new All_List.DepartmentList();
+
+            if (ADL.ShowDialog() == DialogResult.OK)
+            {
+                departmentBox.Text = ADL.departmentItems;
+                catchAcess();
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                declineButton.Enabled = true;
+                approveButton.Enabled = true;
+                approveAllButton.Enabled = true;
+            }
+            else if (listView1.SelectedIndices.Count <= 0)
+            {
+                declineButton.Enabled = false;
+                approveButton.Enabled = false;
+                approveAllButton.Enabled = false;
+            }
+
+            if (listView1.Items.Count > 0) 
+            {
+                approveAllButton.Enabled = true;
+            }
+            else if (listView1.Items.Count <= 0) 
+            {
+                approveAllButton.Enabled = false;
+            }
+        }
+
+        private void listView1_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                declineButton.Enabled = true;
+                approveButton.Enabled = true;
+                approveAllButton.Enabled = true;
+            }
+            else if (listView1.SelectedIndices.Count <= 0)
+            {
+                declineButton.Enabled = false;
+                approveButton.Enabled = false;
+                approveAllButton.Enabled = false;
+            }
+
+            if (listView1.Items.Count > 0)
+            {
+                approveAllButton.Enabled = true;
+            }
+            else if (listView1.Items.Count <= 0)
+            {
+                approveAllButton.Enabled = false;
+            }
+        }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Approve Button
+        private void approveButton_Click(object sender, EventArgs e)
+        {
+            selectedItemsapprove(false);
+            catchAcess();
+            resetCounter();
+        }
+        private void selectedItemsapprove(bool All) 
+        {
+            string query = "";
+            
+            if (All == false)
+            {
+                for (int i = 0; listView1.SelectedItems.Count > i; i++)
+                {
+                    DB.inializing();
+
+                    switch (Global.GlobalVar[1])
+                    {
+                        case "Approver 1":
+                            query = "UPDATE overtimerequest SET approval1 = 1, approvalName1 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.SelectedItems[i].SubItems[7].Text + "'";
+                            break;
+                        case "Approver 2":
+                            query = "UPDATE overtimerequest SET approval2 = 1, approvalName2 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.SelectedItems[i].SubItems[7].Text + "'";
+                            break;
+                        case "Approver 3":
+                            query = "UPDATE overtimerequest SET approval3 = 1, approvalName3 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.SelectedItems[i].SubItems[7].Text + "'";
+                            break;
+                    }
+
+                    MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+                    DB.OpenConnection();
+                    cmd.ExecuteNonQuery();
+                }
+                DB.CloseConnection();
+                approveButton.Enabled = false;
+                declineButton.Enabled = false;
+            }
+            else 
+            {
+                for (int i = 0; listView1.Items.Count > i; i++)
+                {
+                    DB.inializing();
+
+                    switch (Global.GlobalVar[1])
+                    {
+                        case "Approver 1":
+                            query = "UPDATE overtimerequest SET approval1 = 1, approvalName1 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.Items[i].SubItems[7].Text + "'";
+                            break;
+                        case "Approver 2":
+                            query = "UPDATE overtimerequest SET approval2 = 1, approvalName2 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.Items[i].SubItems[7].Text + "'";
+                            break;
+                        case "Approver 3":
+                            query = "UPDATE overtimerequest SET approval3 = 1, approvalName3 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.Items[i].SubItems[7].Text + "'";
+                            break;
+                    }
+                    MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+                    DB.OpenConnection();
+                    cmd.ExecuteNonQuery();
+                }
+                DB.CloseConnection();
+                approveButton.Enabled = false;
+                declineButton.Enabled = false;
+                approveAllButton.Enabled = false;
+            }
+        }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Approve All Button
+        private void approveAllButton_Click(object sender, EventArgs e)
+        {
+            selectedItemsapprove(true);
+            catchAcess();
+            resetCounter();
+        }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Decline Button
+
+        private void declineButton_Click(object sender, EventArgs e)
+        {
+           declineovertime();
+           catchAcess();
+        }
+
+        private void declineovertime()
+        {
+            string query = "";
+            
+            for (int i = 0; listView1.SelectedItems.Count > i; i++)
+            {
+                DB.inializing();
+
+                query = "DELETE FROM overtimerequest WHERE code = '" + listView1.SelectedItems[i].SubItems[7].Text + "'";
+
+                MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+                DB.OpenConnection();
+                cmd.ExecuteNonQuery();
+                DB.CloseConnection();
+
+                approveButton.Enabled = false;
+                declineButton.Enabled = false;
+            }
+            
+        }
+
+        private void refreshBox_Click(object sender, EventArgs e)
+        {
+            catchAcess();
         }
     }
 }

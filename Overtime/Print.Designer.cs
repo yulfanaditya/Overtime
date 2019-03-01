@@ -38,6 +38,7 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(523, 432);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Print";
             this.Text = "Print Report";
             this.ResumeLayout(false);
