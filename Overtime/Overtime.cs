@@ -57,5 +57,13 @@ namespace OT_Management
             aps.Show();
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Print pr = new Print();
+            pr.Closed += (s, args) => this.Close();
+            pr.Show();
+        }
+
     }
 }

@@ -79,6 +79,23 @@
     <Compile Include="All List\SectionList.Designer.cs">
       <DependentUpon>SectionList.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetOvertime.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOvertime.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Overtime\Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overtime\Print.Designer.cs">
+      <DependentUpon>Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="All List\PrintItemsLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="All List\PrintItemsLists.Designer.cs">
+      <DependentUpon>PrintItemsLists.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings\AddNewUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +197,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="All List\SectionList.resx">
       <DependentUpon>SectionList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overtime\Print.resx">
+      <DependentUpon>Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All List\PrintItemsLists.resx">
+      <DependentUpon>PrintItemsLists.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\AddNewUsers.resx">
@@ -286,6 +311,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DataSetOvertime.xsc">
+      <DependentUpon>DataSetOvertime.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOvertime.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOvertime.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetOvertime.xss">
+      <DependentUpon>DataSetOvertime.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Close_Box_Red.png" />
   </ItemGroup>
   <ItemGroup>
