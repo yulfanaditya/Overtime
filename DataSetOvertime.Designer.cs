@@ -429,7 +429,7 @@ namespace OT_Management {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public DataOvertimeRow AddDataOvertimeRow(string name, string departmentName, string date, string start, string finish, string sumTime, string submitter, string approvalName1, string approvalName2, string approvalName3, string remark, string badge) {
+            public DataOvertimeRow AddDataOvertimeRow(string name, string departmentName, System.DateTime date, string start, string finish, string sumTime, string submitter, string approvalName1, string approvalName2, string approvalName3, string remark, string badge) {
                 DataOvertimeRow rowDataOvertimeRow = ((DataOvertimeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         name,
@@ -483,7 +483,7 @@ namespace OT_Management {
                 base.Columns.Add(this.columnname);
                 this.columndepartmentName = new global::System.Data.DataColumn("departmentName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndepartmentName);
-                this.columndate = new global::System.Data.DataColumn("date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate);
                 this.columnstart = new global::System.Data.DataColumn("start", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstart);
@@ -665,10 +665,10 @@ namespace OT_Management {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string date {
+            public System.DateTime date {
                 get {
                     try {
-                        return ((string)(this[this.tableDataOvertime.dateColumn]));
+                        return ((global::System.DateTime)(this[this.tableDataOvertime.dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'date\' in table \'DataOvertime\' is DBNull.", e);
