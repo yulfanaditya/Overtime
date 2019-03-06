@@ -96,6 +96,7 @@
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PrintItemsLists";
             this.Text = "Approver Lists";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

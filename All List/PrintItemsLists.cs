@@ -33,7 +33,7 @@ namespace OT_Management
             listView1.Columns.Add("Approver 1", 150, HorizontalAlignment.Center);
             listView1.Columns.Add("Approver 2", 150, HorizontalAlignment.Center);
             listView1.Columns.Add("Approver 3", 150, HorizontalAlignment.Center);
-            listView1.Columns.Add("date", 75, HorizontalAlignment.Center);
+            listView1.Columns.Add("date", -2, HorizontalAlignment.Center);
             listView1.View = View.Details;
         }
 
@@ -57,7 +57,7 @@ namespace OT_Management
             int i = 0;
             DB.inializing();
 
-            string query = "SELECT DISTINCT submitter, approvalName1, approvalName2, approvalName3, date from overtimerequest WHERE date BETWEEN '"+date1+"' AND '"+date2+"' ORDER BY approval1 DESC, date";
+            string query = "SELECT DISTINCT submitter, approvalName1, approvalName2, approvalName3, date from overtimerequest WHERE date BETWEEN '"+date1+"' AND '"+date2+"' AND approval1 = 1 ORDER BY approval1 DESC, date";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
@@ -84,7 +84,7 @@ namespace OT_Management
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
             string datalocals = listView1.SelectedItems[0].SubItems[1].Text;
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= 4; i++)
             {
                 data[i-1] = listView1.SelectedItems[0].SubItems[i].Text;
             }
