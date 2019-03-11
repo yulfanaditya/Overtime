@@ -255,8 +255,11 @@ namespace OT_Management
         private void refresh()
         {
             OABox.Text = "";
-            dateTimePicker3.Text = "00 : 00";
-            dateTimePicker2.Text = "00 : 00";
+            if(checkBox2.Checked == false)
+            {
+                dateTimePicker3.Text = "00:00";
+                dateTimePicker2.Text = "00:00";
+            }
             DepartmentBox.Text = Global.GlobalVar[2];
             SectionBox.Text = Global.GlobalVar[3];
             CEBox.Text = "";
@@ -266,39 +269,39 @@ namespace OT_Management
             switch (Global.GlobalVar[2])
             {
                 case "Accounting":
-                    ORBox.Text = "01" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    ORBox.Text = "01" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.CurrentInfo);
                     break;
 
                 case "Engineering":
-                    ORBox.Text = "02" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    ORBox.Text = "02" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.CurrentInfo);
                     break;
 
                 case "General Manager":
-                    ORBox.Text = "03" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    ORBox.Text = "03" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.CurrentInfo);
                     break;
 
                 case "HR & GA":
-                    ORBox.Text = "04" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    ORBox.Text = "04" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.CurrentInfo);
                     break;
 
                 case "MIS":
-                    ORBox.Text = "05" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    ORBox.Text = "05" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.CurrentInfo);
                     break;
 
                 case "Maintenance":
-                    ORBox.Text = "06" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    ORBox.Text = "06" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.CurrentInfo);
                     break;
 
                 case "PPCWL":
-                    ORBox.Text = "07" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    ORBox.Text = "07" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.CurrentInfo);
                     break;
 
                 case "Production":
-                    ORBox.Text = "08" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    ORBox.Text = "08" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.CurrentInfo);
                     break;
 
                 case "Quality":
-                    ORBox.Text = "09" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    ORBox.Text = "09" + DateTime.Now.ToString("yyddMMHHmmssff", System.Globalization.DateTimeFormatInfo.CurrentInfo);
                     break;
             }
 

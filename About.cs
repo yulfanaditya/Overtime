@@ -20,5 +20,20 @@ namespace OT_Management
         {
             this.Close();
         }
+
+        private void hsBox_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/yulfanaditya/Overtime");
+        }
+
+        private void ghBox_MouseEnter(object sender, EventArgs e)
+        {
+            ghBox.Cursor = Cursors.Hand;
+        }
+
+        private void ghBox_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
     }
 }

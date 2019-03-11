@@ -59,6 +59,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.sectionButton = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -384,12 +385,23 @@
             this.sectionButton.UseVisualStyleBackColor = true;
             this.sectionButton.Click += new System.EventHandler(this.sectionButton_Click);
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(475, 280);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(74, 17);
+            this.checkBox2.TabIndex = 40;
+            this.checkBox2.Text = "Hold Time";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // OvertimeRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(689, 591);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.sectionButton);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
@@ -463,5 +475,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button sectionButton;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

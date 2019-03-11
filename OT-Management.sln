@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OvertimeManagement", "OvertimeManagement.csproj", "{09D8E285-33E0-4336-9657-FFC706183C45}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OvertimeSetup", "..\OvertimeSetup\OvertimeSetup.vdproj", "{B9490214-6F78-4078-98DF-1D7504114C82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{09D8E285-33E0-4336-9657-FFC706183C45}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09D8E285-33E0-4336-9657-FFC706183C45}.Release|x86.ActiveCfg = Release|x86
 		{09D8E285-33E0-4336-9657-FFC706183C45}.Release|x86.Build.0 = Release|x86
+		{B9490214-6F78-4078-98DF-1D7504114C82}.Debug|Any CPU.ActiveCfg = Debug
+		{B9490214-6F78-4078-98DF-1D7504114C82}.Debug|x86.ActiveCfg = Debug
+		{B9490214-6F78-4078-98DF-1D7504114C82}.Release|Any CPU.ActiveCfg = Release
+		{B9490214-6F78-4078-98DF-1D7504114C82}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
