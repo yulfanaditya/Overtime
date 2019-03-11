@@ -73,21 +73,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="All List\SectionList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="All List\SectionList.Designer.cs">
       <DependentUpon>SectionList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSetOvertime.Designer.cs">
+    <Compile Include="ChangeServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeServer.Designer.cs">
+      <DependentUpon>ChangeServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OvertimeMenu\Overtime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OvertimeMenu\Overtime.Designer.cs">
+      <DependentUpon>Overtime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Manage\ManageDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Manage\ManageDepartment.Designer.cs">
+      <DependentUpon>ManageDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OvertimeMenu\DataSetOvertime.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetOvertime.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Overtime\Print.cs">
+    <Compile Include="OvertimeMenu\Print.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Overtime\Print.Designer.cs">
+    <Compile Include="OvertimeMenu\Print.Designer.cs">
       <DependentUpon>Print.cs</DependentUpon>
     </Compile>
     <Compile Include="All List\PrintItemsLists.cs">
@@ -96,7 +120,7 @@
     <Compile Include="All List\PrintItemsLists.Designer.cs">
       <DependentUpon>PrintItemsLists.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report.cs">
+    <Compile Include="OvertimeMenu\Report.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Report.rpt</DependentUpon>
@@ -120,10 +144,10 @@
     <Compile Include="All List\OvertimeCodeList.Designer.cs">
       <DependentUpon>OvertimeCodeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Overtime\Approval.cs">
+    <Compile Include="OvertimeMenu\Approval.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Overtime\Approval.Designer.cs">
+    <Compile Include="OvertimeMenu\Approval.Designer.cs">
       <DependentUpon>Approval.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\DatabaseSettings.cs">
@@ -157,12 +181,6 @@
       <DependentUpon>ManageKaryawan.cs</DependentUpon>
     </Compile>
     <Compile Include="OTDB.cs" />
-    <Compile Include="Overtime\Overtime.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Overtime\Overtime.Designer.cs">
-      <DependentUpon>Overtime.cs</DependentUpon>
-    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,10 +193,10 @@
     <Compile Include="Settings\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Overtime\Status.cs">
+    <Compile Include="OvertimeMenu\Status.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Overtime\Status.Designer.cs">
+    <Compile Include="OvertimeMenu\Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
@@ -193,19 +211,35 @@
     <Compile Include="Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Overtime\OvertimeRequest.cs">
+    <Compile Include="OvertimeMenu\OvertimeRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Overtime\OvertimeRequest.Designer.cs">
+    <Compile Include="OvertimeMenu\OvertimeRequest.Designer.cs">
       <DependentUpon>OvertimeRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="All List\SectionList.resx">
       <DependentUpon>SectionList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overtime\Print.resx">
+    <EmbeddedResource Include="ChangeServer.resx">
+      <DependentUpon>ChangeServer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OvertimeMenu\Overtime.resx">
+      <DependentUpon>Overtime.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Manage\ManageDepartment.resx">
+      <DependentUpon>ManageDepartment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OvertimeMenu\Print.resx">
       <DependentUpon>Print.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -213,7 +247,7 @@
       <DependentUpon>PrintItemsLists.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report.rpt">
+    <EmbeddedResource Include="OvertimeMenu\Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report.cs</LastGenOutput>
     </EmbeddedResource>
@@ -229,7 +263,7 @@
       <DependentUpon>OvertimeCodeList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overtime\Approval.resx">
+    <EmbeddedResource Include="OvertimeMenu\Approval.resx">
       <DependentUpon>Approval.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -249,10 +283,6 @@
       <DependentUpon>ManageKaryawan.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overtime\Overtime.resx">
-      <DependentUpon>Overtime.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -265,7 +295,7 @@
       <DependentUpon>Settings.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overtime\Status.resx">
+    <EmbeddedResource Include="OvertimeMenu\Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -277,7 +307,7 @@
       <DependentUpon>Login_Form.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overtime\OvertimeRequest.resx">
+    <EmbeddedResource Include="OvertimeMenu\OvertimeRequest.resx">
       <DependentUpon>OvertimeRequest.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -321,15 +351,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DataSetOvertime.xsc">
+    <None Include="OvertimeMenu\DataSetOvertime.xsc">
       <DependentUpon>DataSetOvertime.xsd</DependentUpon>
     </None>
-    <None Include="DataSetOvertime.xsd">
+    <None Include="OvertimeMenu\DataSetOvertime.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSetOvertime.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetOvertime.xss">
+    <None Include="OvertimeMenu\DataSetOvertime.xss">
       <DependentUpon>DataSetOvertime.xsd</DependentUpon>
     </None>
     <None Include="Resources\Close_Box_Red.png" />

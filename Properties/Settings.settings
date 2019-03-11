@@ -11,5 +11,8 @@
     <Setting Name="check" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="IpAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.1.8</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

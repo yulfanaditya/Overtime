@@ -43,7 +43,6 @@
             this.findButton = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Report1 = new OT_Management.Report();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
@@ -186,13 +185,15 @@
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Enabled = false;
             this.crystalReportViewer1.Location = new System.Drawing.Point(2, 71);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.Report1;
+            this.crystalReportViewer1.SelectionFormula = "";
             this.crystalReportViewer1.Size = new System.Drawing.Size(932, 449);
             this.crystalReportViewer1.TabIndex = 68;
+            this.crystalReportViewer1.ViewTimeSelectionFormula = "";
             // 
             // Print
             // 
@@ -242,6 +243,5 @@
         private System.Windows.Forms.Button findButton;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private Report Report1;
     }
 }

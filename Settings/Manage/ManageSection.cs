@@ -55,7 +55,7 @@ namespace OT_Management
 
             listView1.Columns.Add("No", 30, HorizontalAlignment.Center);
             listView1.Columns.Add("Section Code", 100, HorizontalAlignment.Center);
-            listView1.Columns.Add("Section", 200, HorizontalAlignment.Left);
+            listView1.Columns.Add("Section Name", 200, HorizontalAlignment.Left);
             listView1.Columns.Add("Department", -2, HorizontalAlignment.Left);
         }
 
@@ -144,7 +144,7 @@ namespace OT_Management
             string messaging = "";
             if (string.IsNullOrEmpty(sectionBox.Text))
             {
-                MessageBox.Show("Section Box can't be Empty", "Denied!");
+                MessageBox.Show("Section can't be Empty", "Denied!");
                 sectionBox.Focus();
             }
             else 

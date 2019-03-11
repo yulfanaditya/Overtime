@@ -228,6 +228,7 @@
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "ManageSection";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Section";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

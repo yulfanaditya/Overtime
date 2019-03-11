@@ -17,13 +17,12 @@ namespace OT_Management
 
             public MySqlConnection inializing()
             {
-                string server = "192.168.110.22";
                 string database = "overtime";
                 string user = "root";
                 string password = "123";
                 string connect;
 
-                connect = "SERVER=" + server + ";" + "DATABASE="
+                connect = "SERVER=" + Properties.Settings.Default.IpAddress + ";" + "DATABASE="
                 + database + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
 
                 return connecting = new MySqlConnection(connect);

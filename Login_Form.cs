@@ -102,9 +102,11 @@ namespace OT_Management
             MD5Hasher = MD5Hash(Password);
 
             linier = new MySqlDataAdapter("SELECT Username,Password FROM account WHERE Username = '" + User + "' AND Password = '" + MD5Hasher + "'",datab.inializing());
-            linier.Fill(table);
-            getData(User,MD5Hasher);
-
+            if(datab.OpenConnection() == true)
+            {
+                linier.Fill(table);
+                getData(User,MD5Hasher);
+            }
             if (table.Rows.Count <= 0)
             {
                 MessageBox.Show("Invalid UserID or Password");
@@ -128,20 +130,22 @@ namespace OT_Management
             string query = "SELECT Name,Position,departmentName,sectionName FROM account WHERE Username = '" + User + "' AND Password = '" + Password + "'";
 
             MySqlCommand cmd = new MySqlCommand(query, datab.inializing());
-            datab.OpenConnection();
-            MySqlDataReader Reader = cmd.ExecuteReader();
-
-            while (Reader.Read())
+            if (datab.OpenConnection())
             {
-                Global.GlobalVar[0] = Reader.GetString(0); //Name
-                Global.GlobalVar[1] = Reader.GetString(1); //Position
-                Global.GlobalVar[2] = Reader.GetString(2); //Department
-                Global.GlobalVar[3] = Reader.GetString(3); //Section
-            }
+                MySqlDataReader Reader = cmd.ExecuteReader();
 
-            Reader.Close();
-            cmd.Dispose();
-            datab.CloseConnection();
+                while (Reader.Read())
+                {
+                    Global.GlobalVar[0] = Reader.GetString(0); //Name
+                    Global.GlobalVar[1] = Reader.GetString(1); //Position
+                    Global.GlobalVar[2] = Reader.GetString(2); //Department
+                    Global.GlobalVar[3] = Reader.GetString(3); //Section
+                }
+
+                Reader.Close();
+                cmd.Dispose();
+                datab.CloseConnection();
+            }
         }
 
         public static string MD5Hash(string input)
@@ -173,6 +177,12 @@ namespace OT_Management
             Register or = new Register();
             or.Closed += (s, args) => this.Close();
             or.Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            About ab = new About();
+            ab.ShowDialog();
         }
 
     }

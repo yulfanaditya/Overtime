@@ -40,5 +40,13 @@ namespace OT_Management
             st.Show();
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageDepartment md = new ManageDepartment();
+            md.Closed += (s, args) => this.Close();
+            md.Show();
+        }
+
     }
 }

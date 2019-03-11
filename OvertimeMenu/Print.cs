@@ -81,8 +81,8 @@ namespace OT_Management
                     {
                         dataPrint[i] = PIL.data[i];
                     }
-                    
-                    string query = "SELECT overtimerequest.name, overtimerequest.departmentName, overtimerequest.date, overtimerequest.start, overtimerequest.finish, overtimerequest.sumTime, overtimerequest.submitter, overtimerequest.approvalName1, overtimerequest.approvalName2, overtimerequest.approvalName3, overtimerequest.remark, karyawan.badge FROM overtimerequest INNER JOIN  karyawan ON overtimerequest.name = karyawan.Name WHERE date BETWEEN '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND '" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "' AND submitter = '" + dataPrint[0] + "' AND approvalName1 = '" + dataPrint[1] + "' AND approvalName2 = '" + dataPrint[2] + "' AND approvalName3 = '" + dataPrint[3] + "'";
+
+                    string query = "SELECT overtimerequest.name, overtimerequest.departmentName, overtimerequest.start, overtimerequest.finish, overtimerequest.sumTime, overtimerequest.submitter, overtimerequest.approvalName1, overtimerequest.approvalName2, overtimerequest.approvalName3, overtimerequest.remark, karyawan.badge, DATE_FORMAT(date, '%e %M  %Y') AS date FROM overtimerequest INNER JOIN  karyawan ON overtimerequest.name = karyawan.Name WHERE date BETWEEN '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND '" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "' AND submitter = '" + dataPrint[0] + "' AND approvalName1 = '" + dataPrint[1] + "' AND approvalName2 = '" + dataPrint[2] + "' AND approvalName3 = '" + dataPrint[3] + "'";
                     MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                     DB.OpenConnection();
 
@@ -91,8 +91,8 @@ namespace OT_Management
                     DataSet ds = new DataSet();
                     ds.Clear();
                     msda.Fill(ds, "DataOvertime");
-                    
-                    Report rep = new Report();
+
+                    OvertimeMenu.Report rep = new OvertimeMenu.Report();
                     rep.SetDataSource(ds);
                     crystalReportViewer1.ReportSource = rep;
                     cmd.Dispose();
