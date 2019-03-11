@@ -12,7 +12,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="IpAddress" Type="System.String" Scope="User">
-      <Value Profile="(Default)">192.168.1.8</Value>
+      <Value Profile="(Default)">192.168.110.22</Value>
     </Setting>
   </Settings>
 </SettingsFile>

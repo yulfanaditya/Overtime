@@ -187,10 +187,15 @@
             // 
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Enabled = false;
             this.crystalReportViewer1.Location = new System.Drawing.Point(2, 71);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.SelectionFormula = "";
+            this.crystalReportViewer1.ShowCloseButton = false;
+            this.crystalReportViewer1.ShowExportButton = false;
+            this.crystalReportViewer1.ShowGotoPageButton = false;
+            this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowTextSearchButton = false;
+            this.crystalReportViewer1.ShowZoomButton = false;
             this.crystalReportViewer1.Size = new System.Drawing.Size(932, 449);
             this.crystalReportViewer1.TabIndex = 68;
             this.crystalReportViewer1.ViewTimeSelectionFormula = "";

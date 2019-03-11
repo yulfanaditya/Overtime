@@ -57,3 +57,7 @@ C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OvertimeManagement.csproj
 C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.About.resources
 C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.ChangeServer.resources
 C:\Users\yulfa\Documents\GitHub\Overtime\obj\x86\Debug\OT_Management.ManageDepartment.resources
+C:\Users\erbayfa\Documents\KemetProject\Overtime\obj\x86\Debug\OT_Management.About.resources
+C:\Users\erbayfa\Documents\KemetProject\Overtime\obj\x86\Debug\OT_Management.ChangeServer.resources
+C:\Users\erbayfa\Documents\KemetProject\Overtime\obj\x86\Debug\OT_Management.ManageDepartment.resources
+C:\Users\erbayfa\Documents\KemetProject\Overtime\obj\x86\Debug\OT_Management.OTMax.resources

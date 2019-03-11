@@ -47,5 +47,13 @@ namespace OT_Management
             home.Closed += (s, args) => this.Close();
             home.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OTMax otm = new OTMax();
+            otm.Closed += (s, args) => this.Close();
+            otm.Show();
+        }
     }
 }

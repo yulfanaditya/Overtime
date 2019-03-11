@@ -14,7 +14,12 @@ namespace OT_Management
     public partial class Employeedata : Form
     {
         OTDB DB = new OTDB();
-        public string employee { get; set; }
+        public string[] employeedata = {"", ""};
+
+        public string[] employee {
+            get { return employeedata; }
+            set { employeedata = value; }
+        }
         string sect;
         public Employeedata()
         {
@@ -65,8 +70,9 @@ namespace OT_Management
 
         public void listView1_DoubleClick(object sender, System.EventArgs e)
         {
-            string datalocals = listView1.SelectedItems[0].SubItems[1].Text;
-            employee = datalocals;
+            employee[0] = listView1.SelectedItems[0].SubItems[0].Text;
+            employee[1] = listView1.SelectedItems[0].SubItems[1].Text;
+
             DialogResult = DialogResult.OK;
         }
 

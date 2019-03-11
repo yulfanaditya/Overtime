@@ -17,6 +17,7 @@ namespace OT_Management
         public bool ORB;
         private int i = 0;
         OTDB DB = new OTDB();
+        public string badge;
         public OvertimeRequest()
         {
             InitializeComponent();
@@ -179,6 +180,7 @@ namespace OT_Management
                     i++;
                     ListViewItem lv = new ListViewItem(i.ToString());
                     lv.SubItems.Add(CEBox.Text);
+                    lv.SubItems.Add(badge);
                     lv.SubItems.Add(OABox.Text);
                     lv.SubItems.Add(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                     lv.SubItems.Add(dateTimePicker2.Value.ToString("HH : mm"));
@@ -200,6 +202,7 @@ namespace OT_Management
                 i++;
                 ListViewItem lv = new ListViewItem(i.ToString());
                 lv.SubItems.Add(CEBox.Text);
+                lv.SubItems.Add(badge);
                 lv.SubItems.Add(OABox.Text);
                 lv.SubItems.Add(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                 lv.SubItems.Add(dateTimePicker2.Value.ToString("HH : mm"));
@@ -233,7 +236,8 @@ namespace OT_Management
 
             if (ED.ShowDialog() == DialogResult.OK)
             {
-                CEBox.Text = ED.employee;
+                CEBox.Text = ED.employee[1];
+                badge = ED.employee[0];
             }
         }
 //=========================================================================================================================================================================
@@ -304,6 +308,7 @@ namespace OT_Management
         {
             listView1.Columns.Add("No", 30, HorizontalAlignment.Center);
             listView1.Columns.Add("Employee Name", 120, HorizontalAlignment.Left);
+            listView1.Columns.Add("Badge", 60, HorizontalAlignment.Center);
             listView1.Columns.Add("Activity", 150, HorizontalAlignment.Left);
             listView1.Columns.Add("Date", 75, HorizontalAlignment.Left);
             listView1.Columns.Add("Start", 50, HorizontalAlignment.Left);
@@ -327,7 +332,7 @@ namespace OT_Management
                 {
                     lists[i, j] = listView1.Items[i].SubItems[j].Text;
                 }
-                query = "INSERT INTO overtimerequest (name, departmentName, sectionName, activity, date, start, finish, sumTime, remark, code, submitter, approval1, approval2, approval3) VALUES('" + lists[i, 1] + "','" + lists[i, 9] + "','" + lists[i, 10] + "','" + lists[i, 2].ToString() + "','" + lists[i, 3] + "','" + lists[i, 4] + "','" + lists[i, 5] + "','" + lists[i, 6] + "','" + lists[i, 7] + "','" + lists[i, 8] + "','" + Global.GlobalVar[0] + "',0,0,0)";
+                query = "INSERT INTO overtimerequest (name, Badge, departmentName, sectionName, activity, date, start, finish, sumTime, remark, code, submitter, approval1, approval2, approval3) VALUES('" + lists[i, 1] + "','" + lists[i, 2] + "','" + lists[i, 10] + "','" + lists[i, 11] + "','" + lists[i, 3].ToString() + "','" + lists[i, 4] + "','" + lists[i, 5] + "','" + lists[i, 6] + "','" + lists[i, 7] + "','" + lists[i, 8] + "','" + lists[i, 9] + "','" + Global.GlobalVar[0] + "',0,0,0)";
 
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                 DB.OpenConnection();

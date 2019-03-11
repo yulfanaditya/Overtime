@@ -49,8 +49,9 @@ namespace OT_Management
         {
             listView1.Columns.Add("No", 30, HorizontalAlignment.Center);
             listView1.Columns.Add("Employee Name", 125, HorizontalAlignment.Center);
+            listView1.Columns.Add("Badge", 50, HorizontalAlignment.Center);
             listView1.Columns.Add("Activity", 160, HorizontalAlignment.Center);
-            listView1.Columns.Add("Date", 100, HorizontalAlignment.Center);
+            listView1.Columns.Add("Date", 75, HorizontalAlignment.Center);
             listView1.Columns.Add("Start Time", 75, HorizontalAlignment.Center);
             listView1.Columns.Add("Finish Time", 75, HorizontalAlignment.Center);
             listView1.Columns.Add("Hours", 50, HorizontalAlignment.Center);
@@ -74,13 +75,13 @@ namespace OT_Management
             switch (Global.GlobalVar[1])
             {
                 case "Approver 1" :
-                    query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text +"' AND approval1 = 0";
+                    query = "Select name, Badge, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = 0";
                     break;
                 case "Approver 2" :
-                    query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '0'";
+                    query = "Select name, Badge, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '0'";
                     break;
                 case "Approver 3" :
-                    query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + departmentBox.Text + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '1' AND approval3 = '0'";
+                    query = "Select name, Badge, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + departmentBox.Text + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '1' AND approval3 = '0'";
                     break;
                 /*case "Administrator" :
                     query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "'";
@@ -102,6 +103,7 @@ namespace OT_Management
                 lv.SubItems.Add(Reader.GetString(4));
                 lv.SubItems.Add(Reader.GetString(5));
                 lv.SubItems.Add(Reader.GetString(6));
+                lv.SubItems.Add(Reader.GetString(7));
 
                 listView1.Items.Add(lv);
 
@@ -109,6 +111,7 @@ namespace OT_Management
             Reader.Close();
             cmd.Dispose();
             DB.CloseConnection();
+            
             resetCounter();
         }
 
@@ -228,6 +231,10 @@ namespace OT_Management
 //Approve Button
         private void approveButton_Click(object sender, EventArgs e)
         {
+            if (Global.GlobalVar[1] == "Approver 1")
+            {
+                subEmployee();
+            }
             selectedItemsapprove(false);
             catchAcess();
             resetCounter();
@@ -245,13 +252,13 @@ namespace OT_Management
                     switch (Global.GlobalVar[1])
                     {
                         case "Approver 1":
-                            query = "UPDATE overtimerequest SET approval1 = 1, approvalName1 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.SelectedItems[i].SubItems[7].Text + "'";
+                            query = "UPDATE overtimerequest SET approval1 = 1, approvalName1 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.SelectedItems[i].SubItems[8].Text + "'";
                             break;
                         case "Approver 2":
-                            query = "UPDATE overtimerequest SET approval2 = 1, approvalName2 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.SelectedItems[i].SubItems[7].Text + "'";
+                            query = "UPDATE overtimerequest SET approval2 = 1, approvalName2 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.SelectedItems[i].SubItems[8].Text + "'";
                             break;
                         case "Approver 3":
-                            query = "UPDATE overtimerequest SET approval3 = 1, approvalName3 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.SelectedItems[i].SubItems[7].Text + "'";
+                            query = "UPDATE overtimerequest SET approval3 = 1, approvalName3 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.SelectedItems[i].SubItems[8].Text + "'";
                             break;
                     }
 
@@ -272,13 +279,13 @@ namespace OT_Management
                     switch (Global.GlobalVar[1])
                     {
                         case "Approver 1":
-                            query = "UPDATE overtimerequest SET approval1 = 1, approvalName1 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.Items[i].SubItems[7].Text + "'";
+                            query = "UPDATE overtimerequest SET approval1 = 1, approvalName1 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.Items[i].SubItems[8].Text + "'";
                             break;
                         case "Approver 2":
-                            query = "UPDATE overtimerequest SET approval2 = 1, approvalName2 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.Items[i].SubItems[7].Text + "'";
+                            query = "UPDATE overtimerequest SET approval2 = 1, approvalName2 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.Items[i].SubItems[8].Text + "'";
                             break;
                         case "Approver 3":
-                            query = "UPDATE overtimerequest SET approval3 = 1, approvalName3 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.Items[i].SubItems[7].Text + "'";
+                            query = "UPDATE overtimerequest SET approval3 = 1, approvalName3 = '" + Global.GlobalVar[0] + "' WHERE code = '" + listView1.Items[i].SubItems[8].Text + "'";
                             break;
                     }
                     MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
@@ -295,15 +302,24 @@ namespace OT_Management
 //Approve All Button
         private void approveAllButton_Click(object sender, EventArgs e)
         {
+            if (Global.GlobalVar[1] == "Approver 1")
+            {
+                allsubEmployee();
+            }
             selectedItemsapprove(true);
             catchAcess();
             resetCounter();
+            
         }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Decline Button
 
         private void declineButton_Click(object sender, EventArgs e)
         {
+            if (Global.GlobalVar[1] == "Approver 2" || Global.GlobalVar[1] == "Approver 3")
+            {
+                addEmployee();
+            }
            declineovertime();
            catchAcess();
         }
@@ -316,7 +332,7 @@ namespace OT_Management
             {
                 DB.inializing();
 
-                query = "DELETE FROM overtimerequest WHERE code = '" + listView1.SelectedItems[i].SubItems[7].Text + "'";
+                query = "DELETE FROM overtimerequest WHERE code = '" + listView1.SelectedItems[i].SubItems[8].Text + "'";
 
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                 DB.OpenConnection();
@@ -332,6 +348,115 @@ namespace OT_Management
         private void refreshBox_Click(object sender, EventArgs e)
         {
             catchAcess();
+        }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Subtitution
+        private void subEmployee() 
+        {
+            double[] times = new double[listView1.SelectedItems.Count];
+
+            for (int i = 0; listView1.SelectedItems.Count > i; i++) 
+            {
+                string query = "SELECT karyawan.timeRemain, overtimerequest.sumTime FROM karyawan INNER JOIN overtimerequest ON karyawan.Badge = overtimerequest.Badge WHERE karyawan.Badge = '" + listView1.SelectedItems[i].SubItems[2].Text + "' AND overtimerequest.code = '" + listView1.SelectedItems[i].SubItems[8].Text + "'";
+                MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+                
+                if (DB.OpenConnection() == true)
+                {
+                    MySqlDataReader Reader = cmd.ExecuteReader();
+
+                    while (Reader.Read())
+                    {
+                        times[i] = Reader.GetDouble(0) - Reader.GetDouble(1);
+                    }
+                    cmd.Dispose();
+                }
+            }
+
+            for (int j = 0; listView1.SelectedItems.Count > j; j++)
+            {
+                string query1 = "UPDATE karyawan SET timeRemain = '" + times[j] + "' WHERE Badge = '" + listView1.SelectedItems[j].SubItems[2].Text + "'";
+                MySqlCommand cmd1 = new MySqlCommand(query1, DB.inializing());
+           
+                if (DB.OpenConnection() == true)
+                {
+                    cmd1.ExecuteNonQuery();
+                }
+            }
+            DB.CloseConnection();
+
+        }
+
+        private void allsubEmployee()
+        {
+            double[] times = new double[listView1.Items.Count];
+            for (int i = 0; listView1.Items.Count > i; i++)
+            {
+                string query = "Select karyawan.timeRemain, overtimerequest.sumTime FROM karyawan INNER JOIN overtimerequest ON karyawan.Badge = overtimerequest.Badge WHERE karyawan.Badge = '" + listView1.Items[i].SubItems[2].Text + "' AND overtimerequest.code = '" + listView1.Items[i].SubItems[8].Text + "'";
+                MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+
+                if (DB.OpenConnection() == true)
+                {
+                    MySqlDataReader Reader = cmd.ExecuteReader();
+
+                    while (Reader.Read())
+                    {
+                        times[i] = Reader.GetDouble(0) - Reader.GetDouble(1);
+                    }
+
+                    cmd.Dispose();
+                }
+            }
+
+            for (int j = 0; listView1.Items.Count > j; j++)
+            {
+                string query1 = "UPDATE karyawan SET timeRemain = '" + times[j] + "' WHERE Badge = '" + listView1.Items[j].SubItems[2].Text + "'";
+                MySqlCommand cmd1 = new MySqlCommand(query1, DB.inializing());
+
+                if (DB.OpenConnection() == true)
+                {
+                    cmd1.ExecuteNonQuery();
+                }
+            }
+            DB.CloseConnection();
+
+        }
+
+        private void addEmployee()
+        {
+            double[] times = new double[listView1.SelectedItems.Count];
+
+            MessageBox.Show(listView1.SelectedItems.Count.ToString());
+            for (int i = 0; listView1.SelectedItems.Count > i; i++)
+            {
+                string query = "SELECT karyawan.timeRemain, overtimerequest.sumTime FROM karyawan INNER JOIN overtimerequest ON karyawan.Badge = overtimerequest.Badge WHERE karyawan.Badge = '" + listView1.SelectedItems[i].SubItems[2].Text + "' AND overtimerequest.code = '" + listView1.SelectedItems[i].SubItems[8].Text + "'";
+                MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+
+                if (DB.OpenConnection() == true)
+                {
+                    MySqlDataReader Reader = cmd.ExecuteReader();
+
+                    while (Reader.Read())
+                    {
+                        times[i] = Reader.GetDouble(0) + Reader.GetDouble(1);
+                        MessageBox.Show(times[i].ToString());
+                    }
+                    cmd.Dispose();
+                }
+            }
+
+            for (int j = 0; listView1.SelectedItems.Count > j; j++)
+            {
+                MessageBox.Show(times[j].ToString());
+                string query1 = "UPDATE karyawan SET timeRemain = '" + times[j] + "' WHERE Badge = '" + listView1.SelectedItems[j].SubItems[2].Text + "'";
+                MySqlCommand cmd1 = new MySqlCommand(query1, DB.inializing());
+
+                if (DB.OpenConnection() == true)
+                {
+                    cmd1.ExecuteNonQuery();
+                }
+            }
+            DB.CloseConnection();
+
         }
     }
 }

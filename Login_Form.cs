@@ -185,5 +185,11 @@ namespace OT_Management
             ab.ShowDialog();
         }
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ChangeServer cs = new ChangeServer();
+            cs.ShowDialog();
+        }
+
     }
 }

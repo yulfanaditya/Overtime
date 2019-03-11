@@ -79,6 +79,12 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="All List\EmployeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="All List\EmployeeList.Designer.cs">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="All List\SectionList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,16 @@
     </Compile>
     <Compile Include="ChangeServer.Designer.cs">
       <DependentUpon>ChangeServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OvertimeMenu\DataSetOvertime.cs">
+      <DependentUpon>DataSetOvertime.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Settings\OTMax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\OTMax.Designer.cs">
+      <DependentUpon>OTMax.cs</DependentUpon>
     </Compile>
     <Compile Include="OvertimeMenu\Overtime.cs">
       <SubType>Form</SubType>
@@ -168,12 +184,6 @@
     <Compile Include="Settings\ManageUser.Designer.cs">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="All List\EmployeeList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="All List\EmployeeList.Designer.cs">
-      <DependentUpon>EmployeeList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Settings\Manage\ManageKaryawan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +231,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All List\EmployeeList.resx">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="All List\SectionList.resx">
@@ -275,10 +289,6 @@
       <DependentUpon>ManageUser.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="All List\EmployeeList.resx">
-      <DependentUpon>EmployeeList.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Settings\Manage\ManageKaryawan.resx">
       <DependentUpon>ManageKaryawan.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -289,6 +299,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\Manage\ManageSection.resx">
       <DependentUpon>ManageSection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\OTMax.resx">
+      <DependentUpon>OTMax.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\Settings.resx">

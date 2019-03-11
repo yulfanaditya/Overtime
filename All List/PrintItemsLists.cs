@@ -57,7 +57,7 @@ namespace OT_Management
             int i = 0;
             DB.inializing();
 
-            string query = "SELECT DISTINCT submitter, approvalName1, approvalName2, approvalName3, date from overtimerequest WHERE date BETWEEN '"+date1+"' AND '"+date2+"' AND approval1 = 1 ORDER BY approval1 DESC, date";
+            string query = "SELECT DISTINCT submitter, approvalName1, approvalName2, approvalName3, date from overtimerequest WHERE date BETWEEN '" + date1 + "' AND '" + date2 + "' AND departmentName = '" + dept + "' AND sectionName = '" + sect + "' AND approval1 = 1 ORDER BY approval1 DESC, date";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
