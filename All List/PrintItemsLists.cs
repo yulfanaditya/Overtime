@@ -20,11 +20,11 @@ namespace OT_Management
         {
             InitializeComponent();
         }
-        public PrintItemsLists(string date1, string date2, string dept, string sect)
+        public PrintItemsLists(string date1, string date2, string dept)
         {
             InitializeComponent();
             AppCodeLists();
-            selected(date1,date2,dept,sect);
+            selected(date1,date2,dept);
         }
         private void AppCodeLists()
         {
@@ -52,12 +52,12 @@ namespace OT_Management
 
         }
 
-        public void selected(string date1, string date2, string dept, string sect)
+        public void selected(string date1, string date2, string dept)
         {
             int i = 0;
             DB.inializing();
 
-            string query = "SELECT DISTINCT submitter, approvalName1, approvalName2, approvalName3, date from overtimerequest WHERE date BETWEEN '" + date1 + "' AND '" + date2 + "' AND departmentName = '" + dept + "' AND sectionName = '" + sect + "' AND approval1 = 1 ORDER BY approval1 DESC, date";
+            string query = "SELECT DISTINCT submitter, approvalName1, approvalName2, approvalName3, date from overtimerequest WHERE date BETWEEN '" + date1 + "' AND '" + date2 + "' AND departmentName = '" + dept + "' AND approval1 = 1 ORDER BY approval1 DESC, date";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();

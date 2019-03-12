@@ -19,7 +19,6 @@ namespace OT_Management
         {
             InitializeComponent();
             departmentBox.Text = Global.GlobalVar[2];
-            sectionBox.Text = Global.GlobalVar[3];
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -49,54 +48,36 @@ namespace OT_Management
             if (ADL.ShowDialog() == DialogResult.OK)
             {
                 departmentBox.Text = ADL.departmentItems;
-                sectionBox.Text = "";
-            }
-
-        }
-
-        private void sectionButton_Click(object sender, EventArgs e)
-        {
-            var ASL = new All_List.SectionList(departmentBox.Text);
-
-            if (ASL.ShowDialog() == DialogResult.OK)
-            {
-                sectionBox.Text = ASL.sectionItems;
             }
         }
 
         private void findButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(sectionBox.Text))
+            var PIL = new PrintItemsLists(dateTimePicker1.Value.ToString("yyyy-MM-dd"), dateTimePicker2.Value.ToString("yyyy-MM-dd"), departmentBox.Text);
+            if (PIL.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Section Can't be Empty!", "Empty Section");
-            }
-            else
-            {
-                var PIL = new PrintItemsLists(dateTimePicker1.Value.ToString("yyyy-MM-dd"), dateTimePicker2.Value.ToString("yyyy-MM-dd"), departmentBox.Text, sectionBox.Text);
-                if (PIL.ShowDialog() == DialogResult.OK)
+                string[] dataPrint = {"","","","",""};
+                DB.inializing();
+                for (int i = 0; i <= 3; i++) 
                 {
-                    string[] dataPrint = {"","","","",""};
-                    DB.inializing();
-                    for (int i = 0; i <= 3; i++) 
-                    {
-                        dataPrint[i] = PIL.data[i];
-                    }
+                    dataPrint[i] = PIL.data[i];
+                }
 
-                    string query = "SELECT name, departmentName,DATE_FORMAT(date, '%e %M  %Y') AS date, start, finish, sumTime, submitter, approvalName1, approvalName2, approvalName3, remark, Badge FROM overtimerequest WHERE date BETWEEN '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND '" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "' AND submitter = '" + dataPrint[0] + "' AND approvalName1 = '" + dataPrint[1] + "' AND approvalName2 = '" + dataPrint[2] + "' AND approvalName3 = '" + dataPrint[3] + "'";
-                    MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
-                    DB.OpenConnection();
+                string query = "SELECT name, departmentName,DATE_FORMAT(date, '%e %M  %Y') AS date, start, finish, sumTime, submitter, approvalName1, approvalName2, approvalName3, remark, Badge FROM overtimerequest WHERE date BETWEEN '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND '" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "' AND submitter = '" + dataPrint[0] + "' AND approvalName1 = '" + dataPrint[1] + "' AND approvalName2 = '" + dataPrint[2] + "' AND approvalName3 = '" + dataPrint[3] + "'";
+                MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+                DB.OpenConnection();
 
-                    MySqlDataAdapter msda = new MySqlDataAdapter();
-                    msda.SelectCommand = cmd;
-                    DataSet ds = new DataSet();
-                    ds.Clear();
-                    msda.Fill(ds, "DataOvertime");
+                MySqlDataAdapter msda = new MySqlDataAdapter();
+                msda.SelectCommand = cmd;
+                DataSet ds = new DataSet();
+                ds.Clear();
+                msda.Fill(ds, "DataOvertime");
 
-                    OvertimeMenu.Report rep = new OvertimeMenu.Report();
-                    rep.SetDataSource(ds);
-                    crystalReportViewer1.ReportSource = rep;
-                    cmd.Dispose();
-                    DB.CloseConnection();
+                OvertimeMenu.Report rep = new OvertimeMenu.Report();
+                rep.SetDataSource(ds);
+                crystalReportViewer1.ReportSource = rep;
+                cmd.Dispose();
+                DB.CloseConnection();
 
                     /*MySqlConnection conn; 
                     MySqlCommand cmd; 
@@ -125,7 +106,7 @@ namespace OT_Management
                     rep.SetDataSource(custDB);
                     crystalReportViewer1.ReportSource = rep;*/
                 }
-            }
+            
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)

@@ -36,8 +36,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.searchDept = new System.Windows.Forms.Button();
             this.departmentBox = new System.Windows.Forms.TextBox();
-            this.sectionButton = new System.Windows.Forms.Button();
-            this.sectionBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.findButton = new System.Windows.Forms.Button();
@@ -102,7 +100,7 @@
             // 
             this.searchDept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchDept.BackgroundImage")));
             this.searchDept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.searchDept.Location = new System.Drawing.Point(653, 9);
+            this.searchDept.Location = new System.Drawing.Point(653, 21);
             this.searchDept.Name = "searchDept";
             this.searchDept.Size = new System.Drawing.Size(26, 23);
             this.searchDept.TabIndex = 60;
@@ -113,32 +111,11 @@
             // departmentBox
             // 
             this.departmentBox.Enabled = false;
-            this.departmentBox.Location = new System.Drawing.Point(515, 12);
+            this.departmentBox.Location = new System.Drawing.Point(515, 24);
             this.departmentBox.Name = "departmentBox";
             this.departmentBox.ReadOnly = true;
             this.departmentBox.Size = new System.Drawing.Size(132, 20);
             this.departmentBox.TabIndex = 59;
-            // 
-            // sectionButton
-            // 
-            this.sectionButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sectionButton.BackgroundImage")));
-            this.sectionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sectionButton.Location = new System.Drawing.Point(653, 35);
-            this.sectionButton.Name = "sectionButton";
-            this.sectionButton.Size = new System.Drawing.Size(26, 23);
-            this.sectionButton.TabIndex = 58;
-            this.sectionButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sectionButton.UseVisualStyleBackColor = true;
-            this.sectionButton.Click += new System.EventHandler(this.sectionButton_Click);
-            // 
-            // sectionBox
-            // 
-            this.sectionBox.Enabled = false;
-            this.sectionBox.Location = new System.Drawing.Point(515, 37);
-            this.sectionBox.Name = "sectionBox";
-            this.sectionBox.ReadOnly = true;
-            this.sectionBox.Size = new System.Drawing.Size(132, 20);
-            this.sectionBox.TabIndex = 57;
             // 
             // label7
             // 
@@ -217,8 +194,6 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.searchDept);
             this.Controls.Add(this.departmentBox);
-            this.Controls.Add(this.sectionButton);
-            this.Controls.Add(this.sectionBox);
             this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -241,8 +216,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button searchDept;
         private System.Windows.Forms.TextBox departmentBox;
-        private System.Windows.Forms.Button sectionButton;
-        private System.Windows.Forms.TextBox sectionBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button findButton;

@@ -202,7 +202,7 @@ namespace OT_Management
             listView1.View = View.Details;
 
             listView1.Columns.Add("No", 30, HorizontalAlignment.Center);
-            listView1.Columns.Add("Badge", 40, HorizontalAlignment.Center);
+            listView1.Columns.Add("Badge", 50, HorizontalAlignment.Center);
             listView1.Columns.Add("Name", 150, HorizontalAlignment.Left);
             listView1.Columns.Add("Date of Join", 75, HorizontalAlignment.Left);
             listView1.Columns.Add("Sex", 30, HorizontalAlignment.Left);
