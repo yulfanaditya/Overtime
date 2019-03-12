@@ -18,6 +18,7 @@ namespace OT_Management
         private int i = 0;
         OTDB DB = new OTDB();
         public string badge;
+        public string section;
         public OvertimeRequest()
         {
             InitializeComponent();
@@ -189,7 +190,7 @@ namespace OT_Management
                     lv.SubItems.Add("");
                     lv.SubItems.Add(ORBox.Text);
                     lv.SubItems.Add(DepartmentBox.Text);
-                    lv.SubItems.Add(SectionBox.Text);
+                    lv.SubItems.Add(section);
 
                     listView1.Items.Add(lv);
                     refresh();
@@ -211,7 +212,7 @@ namespace OT_Management
                 lv.SubItems.Add(RemarkBox.Text);
                 lv.SubItems.Add(ORBox.Text);
                 lv.SubItems.Add(DepartmentBox.Text);
-                lv.SubItems.Add(SectionBox.Text);
+                lv.SubItems.Add(section);
 
                 listView1.Items.Add(lv);
                 refresh();
@@ -232,12 +233,13 @@ namespace OT_Management
 
         private void searchEmployee_Click(object sender, EventArgs e)
         {
-            var ED = new Employeedata(SectionBox.Text);
+            var ED = new Employeedata();
 
             if (ED.ShowDialog() == DialogResult.OK)
             {
                 CEBox.Text = ED.employee[1];
                 badge = ED.employee[0];
+                section = ED.employee[2];
             }
         }
 //=========================================================================================================================================================================
@@ -261,7 +263,6 @@ namespace OT_Management
                 dateTimePicker2.Text = "00:00";
             }
             DepartmentBox.Text = Global.GlobalVar[2];
-            SectionBox.Text = Global.GlobalVar[3];
             CEBox.Text = "";
             RemarkBox.Text = "";
             checkBox1.Checked = false;
@@ -360,17 +361,6 @@ namespace OT_Management
                 
             }
             return false;
-        }
-
-        private void sectionButton_Click(object sender, EventArgs e)
-        {
-            var ASL = new All_List.SectionList(DepartmentBox.Text);
-
-            if (ASL.ShowDialog() == DialogResult.OK)
-            {
-                SectionBox.Text = ASL.sectionItems;
-                CEBox.Text = "";
-            }
         }
 
         private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)

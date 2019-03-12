@@ -14,25 +14,18 @@ namespace OT_Management
     public partial class Employeedata : Form
     {
         OTDB DB = new OTDB();
-        public string[] employeedata = {"", ""};
+        public string[] employeedata = {"", "", ""};
 
         public string[] employee {
             get { return employeedata; }
             set { employeedata = value; }
         }
-        string sect;
         public Employeedata()
         {
             InitializeComponent();
             EmployeeLists();
-        }
-
-        public Employeedata(string sect)
-        {
-            InitializeComponent();
-            EmployeeLists();
-            this.sect = sect;
             selected();
+            comboBox1.Text = "By Name";
         }
 
         private void EmployeeList_Load(object sender, EventArgs e)
@@ -43,7 +36,7 @@ namespace OT_Management
         {
             DB.inializing();
 
-            string query = "Select Badge, Name, DoJ, timeRemain FROM karyawan WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + this.sect + "' ORDER BY Badge ASC";
+            string query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE departmentName = '" + Global.GlobalVar[2] + "' ORDER BY sectionName ASC";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
@@ -56,6 +49,7 @@ namespace OT_Management
                 lv.SubItems.Add(Reader.GetString(1));
                 lv.SubItems.Add(Reader.GetString(2));
                 lv.SubItems.Add(Reader.GetString(3));
+                lv.SubItems.Add(Reader.GetString(4));
                 listView1.Items.Add(lv);
 
             }
@@ -72,6 +66,7 @@ namespace OT_Management
         {
             employee[0] = listView1.SelectedItems[0].SubItems[0].Text;
             employee[1] = listView1.SelectedItems[0].SubItems[1].Text;
+            employee[2] = listView1.SelectedItems[0].SubItems[4].Text;
 
             DialogResult = DialogResult.OK;
         }
@@ -87,8 +82,58 @@ namespace OT_Management
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if(comboBox1.Text == "By Name")
+            {
+                DB.inializing();
 
-            if (textBox1.Text != "")
+                string query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE Name LIKE '" + textBox1.Text + "%' AND departmentName = '" + Global.GlobalVar[2] + "' ORDER BY Name ASC";
+                MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+                DB.OpenConnection();
+                MySqlDataReader Reader = cmd.ExecuteReader();
+
+                listView1.Items.Clear();
+
+                while (Reader.Read())
+                {
+                    ListViewItem lv = new ListViewItem(Reader.GetString(0));
+                    lv.SubItems.Add(Reader.GetString(1));
+                    lv.SubItems.Add(Reader.GetString(2));
+                    lv.SubItems.Add(Reader.GetString(3));
+                    lv.SubItems.Add(Reader.GetString(4));
+                    listView1.Items.Add(lv);
+
+                }
+                Reader.Close();
+                cmd.Dispose();
+                DB.CloseConnection();
+            }
+            else if (comboBox1.Text == "By Badge") 
+            {
+                DB.inializing();
+
+                string query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE Badge LIKE '" + textBox1.Text + "%' AND departmentName = '" + Global.GlobalVar[2] + "' ORDER BY Badge ASC";
+                MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+                DB.OpenConnection();
+                MySqlDataReader Reader = cmd.ExecuteReader();
+
+                listView1.Items.Clear();
+
+                while (Reader.Read())
+                {
+                    ListViewItem lv = new ListViewItem(Reader.GetString(0));
+                    lv.SubItems.Add(Reader.GetString(1));
+                    lv.SubItems.Add(Reader.GetString(2));
+                    lv.SubItems.Add(Reader.GetString(3));
+                    lv.SubItems.Add(Reader.GetString(4));
+                    listView1.Items.Add(lv);
+
+                }
+                Reader.Close();
+                cmd.Dispose();
+                DB.CloseConnection();
+            }
+
+            /*if (textBox1.Text != "")
             {
                 for (int i = listView1.Items.Count - 1; i >= 0; i--)
                 {
@@ -113,12 +158,20 @@ namespace OT_Management
                 listView1.Items.Clear();
                 selected();
             }
+             */
+
         }
 
         private void listView1_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             e.Cancel = true;
             e.NewWidth = listView1.Columns[e.ColumnIndex].Width;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            selected();
         }
     }
 }

@@ -54,12 +54,14 @@ namespace OT_Management
                 Properties.Settings.Default.username = this.userid.Text;
                 Properties.Settings.Default.password = this.password.Text;
                 Properties.Settings.Default.check = true;
+                Properties.Settings.Default.Save();
             }
             else if (remember_me.Checked == false)
             {
                 Properties.Settings.Default.username = "";
                 Properties.Settings.Default.password = "";
                 Properties.Settings.Default.check = false;
+                Properties.Settings.Default.Save();
             }
         }
         

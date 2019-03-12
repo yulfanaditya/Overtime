@@ -22,10 +22,14 @@ namespace OT_Management
             if (listView1.Items.Count > 0)
             {
                 approveAllButton.Enabled = true;
+                approveButton.Enabled = true;
+                declineButton.Enabled = true;
             }
             else 
             {
                 approveAllButton.Enabled = false;
+                approveButton.Enabled = false;
+                declineButton.Enabled = false;
             }
 
             if (Global.GlobalVar[1] == "Approver 3")
@@ -33,18 +37,17 @@ namespace OT_Management
                 departmentLabel.Visible = false;
                 searchDept.Enabled = true;
                 departmentBox.Text = Global.GlobalVar[2];
+                catchAcess();
             }
             else 
             {
                 departmentBox.Visible = false;
                 searchDept.Visible = false;
                 searchDept.Enabled = false;
+                catchAcess();
             }
         }
-        private void viewData() {
-                                    
-           
-        }
+
         private void viewList()
         {
             listView1.Columns.Add("No", 30, HorizontalAlignment.Center);
@@ -58,7 +61,7 @@ namespace OT_Management
             listView1.Columns.Add("RequestCode", -2, HorizontalAlignment.Center);
             listView1.View = View.Details;
 
-            catchAcess();
+           // catchAcess();
         }
 
 
@@ -83,9 +86,9 @@ namespace OT_Management
                 case "Approver 3" :
                     query = "Select name, Badge, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + departmentBox.Text + "' AND sectionName = '" + sectionBox.Text + "' AND approval1 = '1' AND approval2 = '1' AND approval3 = '0'";
                     break;
-                /*case "Administrator" :
+                case "Administrator" :
                     query = "Select name, activity, date, finish, start, sumTime, code FROM overtimerequest WHERE departmentName = '" + Global.GlobalVar[2] + "' AND sectionName = '" + sectionBox.Text + "'";
-                    break;*/
+                    break;
             }
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();

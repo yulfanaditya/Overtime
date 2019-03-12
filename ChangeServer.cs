@@ -20,6 +20,7 @@ namespace OT_Management
         private void saveButton_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.IpAddress = IPA.Text;
+            Properties.Settings.Default.Save();
             MessageBox.Show("Server IP Address Just Changed","Changed!");
             this.Close();
         }

@@ -37,7 +37,6 @@
             this.Login_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,6 +47,8 @@
             this.departmentBox = new System.Windows.Forms.TextBox();
             this.sectionBox = new System.Windows.Forms.TextBox();
             this.searchSect = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.searchEmployee = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,13 +135,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(133, 226);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(215, 20);
-            this.textBox2.TabIndex = 3;
             // 
             // label4
             // 
@@ -253,12 +247,31 @@
             this.searchSect.UseVisualStyleBackColor = true;
             this.searchSect.Click += new System.EventHandler(this.searchSect_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(133, 226);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(183, 20);
+            this.textBox2.TabIndex = 3;
+            // 
+            // searchEmployee
+            // 
+            this.searchEmployee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchEmployee.BackgroundImage")));
+            this.searchEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchEmployee.Location = new System.Drawing.Point(322, 224);
+            this.searchEmployee.Name = "searchEmployee";
+            this.searchEmployee.Size = new System.Drawing.Size(26, 23);
+            this.searchEmployee.TabIndex = 37;
+            this.searchEmployee.UseVisualStyleBackColor = true;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(383, 462);
+            this.Controls.Add(this.searchEmployee);
             this.Controls.Add(this.searchSect);
             this.Controls.Add(this.sectionBox);
             this.Controls.Add(this.departmentBox);
@@ -299,7 +312,6 @@
         private System.Windows.Forms.Button Login_button;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -310,5 +322,7 @@
         private System.Windows.Forms.TextBox departmentBox;
         private System.Windows.Forms.TextBox sectionBox;
         private System.Windows.Forms.Button searchSect;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button searchEmployee;
     }
 }
