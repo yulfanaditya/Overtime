@@ -216,5 +216,19 @@ namespace OT_Management
             DB.CloseConnection();
         }
 
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            codeBox.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            saveButton.Text = "Update";
+            deleteButton.Enabled = true;
+            codeBox.Enabled = false;
+            departmentBox.Enabled = true;
+            saveButton.Enabled = true;
+            cancelButton.Enabled = true;
+
+            selectDatabase();
+            departmentBox.Focus();
+        }
+
     }
 }

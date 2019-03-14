@@ -157,6 +157,18 @@ namespace OT_Management
                 {
                     sectionBox.Text = ASL.sectionItems;
                     catchAcess();
+                    if (listView1.Items.Count > 0)
+                    {
+                        approveAllButton.Enabled = true;
+                        approveButton.Enabled = true;
+                        declineButton.Enabled = true;
+                    }
+                    else
+                    {
+                        approveAllButton.Enabled = false;
+                        approveButton.Enabled = false;
+                        declineButton.Enabled = false;
+                    }
                 }
             }
             else 

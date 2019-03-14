@@ -107,11 +107,14 @@
             // 
             // listView1
             // 
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(5, 203);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(455, 228);
             this.listView1.TabIndex = 41;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             this.listView1.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView1_ColumnWidthChanging);
             // 
             // cancelButton

@@ -47,7 +47,7 @@
             this.departmentBox = new System.Windows.Forms.TextBox();
             this.sectionBox = new System.Windows.Forms.TextBox();
             this.searchSect = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.CEBox = new System.Windows.Forms.TextBox();
             this.searchEmployee = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -247,13 +247,13 @@
             this.searchSect.UseVisualStyleBackColor = true;
             this.searchSect.Click += new System.EventHandler(this.searchSect_Click);
             // 
-            // textBox2
+            // CEBox
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(133, 226);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(183, 20);
-            this.textBox2.TabIndex = 3;
+            this.CEBox.Enabled = false;
+            this.CEBox.Location = new System.Drawing.Point(133, 226);
+            this.CEBox.Name = "CEBox";
+            this.CEBox.Size = new System.Drawing.Size(183, 20);
+            this.CEBox.TabIndex = 3;
             // 
             // searchEmployee
             // 
@@ -264,6 +264,7 @@
             this.searchEmployee.Size = new System.Drawing.Size(26, 23);
             this.searchEmployee.TabIndex = 37;
             this.searchEmployee.UseVisualStyleBackColor = true;
+            this.searchEmployee.Click += new System.EventHandler(this.searchEmployee_Click);
             // 
             // Register
             // 
@@ -280,7 +281,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.CEBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -291,8 +292,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Login_button);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
@@ -322,7 +324,7 @@
         private System.Windows.Forms.TextBox departmentBox;
         private System.Windows.Forms.TextBox sectionBox;
         private System.Windows.Forms.Button searchSect;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox CEBox;
         private System.Windows.Forms.Button searchEmployee;
     }
 }

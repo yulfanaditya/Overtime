@@ -233,7 +233,7 @@ namespace OT_Management
 
         private void searchEmployee_Click(object sender, EventArgs e)
         {
-            var ED = new Employeedata();
+            var ED = new Employeedata(DepartmentBox.Text);
 
             if (ED.ShowDialog() == DialogResult.OK)
             {

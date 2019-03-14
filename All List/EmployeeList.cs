@@ -15,7 +15,7 @@ namespace OT_Management
     {
         OTDB DB = new OTDB();
         public string[] employeedata = {"", "", ""};
-
+        public string dept;
         public string[] employee {
             get { return employeedata; }
             set { employeedata = value; }
@@ -27,16 +27,50 @@ namespace OT_Management
             selected();
             comboBox1.Text = "By Name";
         }
-
+        public Employeedata(string dept)
+        {
+            InitializeComponent();
+            EmployeeLists();
+            this.dept = dept;
+            selectedDept(dept);
+            comboBox1.Text = "By Name";
+        }
         private void EmployeeList_Load(object sender, EventArgs e)
         {
 
         }
+        public void selectedDept(string dept)
+        {
+            DB.inializing();
+
+
+            string query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE departmentName = '" + dept + "' ORDER BY Badge ASC";
+            MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+            DB.OpenConnection();
+            MySqlDataReader Reader = cmd.ExecuteReader();
+
+            listView1.Items.Clear();
+
+            while (Reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(Reader.GetString(0));
+                lv.SubItems.Add(Reader.GetString(1));
+                lv.SubItems.Add(Reader.GetString(2));
+                lv.SubItems.Add(Reader.GetString(3));
+                lv.SubItems.Add(Reader.GetString(4));
+                listView1.Items.Add(lv);
+
+            }
+            Reader.Close();
+            cmd.Dispose();
+            DB.CloseConnection();
+        }
+
         public void selected()
         {
             DB.inializing();
 
-            string query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE departmentName = '" + Global.GlobalVar[2] + "' ORDER BY sectionName ASC";
+            string query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan ORDER BY Badge ASC";
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
             MySqlDataReader Reader = cmd.ExecuteReader();
@@ -86,7 +120,16 @@ namespace OT_Management
             {
                 DB.inializing();
 
-                string query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE Name LIKE '" + textBox1.Text + "%' AND departmentName = '" + Global.GlobalVar[2] + "' ORDER BY Name ASC";
+                string query;
+                if (string.IsNullOrEmpty(this.dept))
+                {
+                    query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE Name LIKE '" + textBox1.Text + "%' ORDER BY Name ASC";
+                }
+                else
+                {
+                    query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE Name LIKE '" + textBox1.Text + "%' AND departmentName = '" + this.dept + "' ORDER BY Name ASC";
+                }
+
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                 DB.OpenConnection();
                 MySqlDataReader Reader = cmd.ExecuteReader();
@@ -111,7 +154,15 @@ namespace OT_Management
             {
                 DB.inializing();
 
-                string query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE Badge LIKE '" + textBox1.Text + "%' AND departmentName = '" + Global.GlobalVar[2] + "' ORDER BY Badge ASC";
+                string query; 
+                if(string.IsNullOrEmpty(this.dept))
+                {
+                    query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE Badge LIKE '" + textBox1.Text + "%' ORDER BY Badge ASC";
+                }
+                else
+                {
+                    query = "Select Badge, Name, DoJ, timeRemain, sectionName FROM karyawan WHERE Badge LIKE '" + textBox1.Text + "%' AND departmentName = '" + this.dept + "' ORDER BY Badge ASC";
+                }
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                 DB.OpenConnection();
                 MySqlDataReader Reader = cmd.ExecuteReader();
@@ -171,7 +222,14 @@ namespace OT_Management
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBox1.Clear();
-            selected();
+            if (string.IsNullOrEmpty(this.dept))
+            {
+                selected();
+            }
+            else 
+            {
+                selectedDept(this.dept);   
+            }
         }
     }
 }

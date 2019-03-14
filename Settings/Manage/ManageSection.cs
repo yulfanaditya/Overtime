@@ -234,6 +234,7 @@ namespace OT_Management
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
+            codeBox.Text = listView1.SelectedItems[0].SubItems[1].Text;
              saveButton.Text = "Update";
              deleteButton.Enabled = true;
              selectDatabase();

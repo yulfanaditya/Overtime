@@ -38,7 +38,7 @@ namespace OT_Management
 
         private void Login_button_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(username.Text) || string.IsNullOrEmpty(password.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(departmentBox.Text) || string.IsNullOrEmpty(sectionBox.Text))
+            if (string.IsNullOrEmpty(username.Text) || string.IsNullOrEmpty(password.Text) || string.IsNullOrEmpty(CEBox.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(departmentBox.Text) || string.IsNullOrEmpty(sectionBox.Text))
             {
                 MessageBox.Show("Data Must Not Empty");
             }
@@ -48,7 +48,7 @@ namespace OT_Management
                 clear();
             }
             else {
-                string query = "INSERT INTO registerusername (Username,Password,Name,Position,departmentName,sectionName) VALUES('" + username.Text + "','" + MD5Hash(password.Text) + "','" + textBox2.Text + "','" + comboBox1.Text + "','" + departmentBox.Text + "','" + sectionBox.Text + "')";
+                string query = "INSERT INTO registerusername (Username,Password,Name,Position,departmentName,sectionName) VALUES('" + username.Text + "','" + MD5Hash(password.Text) + "','" + CEBox.Text + "','" + comboBox1.Text + "','" + departmentBox.Text + "','" + sectionBox.Text + "')";
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                 DB.OpenConnection();
                 cmd.ExecuteNonQuery();
@@ -110,7 +110,7 @@ namespace OT_Management
         public void clear() {
             username.Text = "";
             password.Text = "";
-            textBox2.Text = "";
+            CEBox.Text = "";
             departmentBox.Text = "";
             sectionBox.Text = "";
             comboBox1.Items.Clear();
@@ -138,6 +138,16 @@ namespace OT_Management
             if (ASL.ShowDialog() == DialogResult.OK)
             {
                 sectionBox.Text = ASL.sectionItems;
+            }
+        }
+
+        private void searchEmployee_Click(object sender, EventArgs e)
+        {
+            var ED = new Employeedata();
+
+            if (ED.ShowDialog() == DialogResult.OK)
+            {
+                CEBox.Text = ED.employee[1];
             }
         }
     }

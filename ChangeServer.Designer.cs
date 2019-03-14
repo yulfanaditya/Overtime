@@ -128,8 +128,9 @@
             this.Controls.Add(this.IPALabel);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.IPA);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ChangeServer";
             this.Text = "ChangeServer";
             ((System.ComponentModel.ISupportInitialize)(this.IPA)).EndInit();

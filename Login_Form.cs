@@ -43,7 +43,7 @@ namespace OT_Management
         private void password_TextChanged(object sender, EventArgs e)
         {
             if(Control.IsKeyLocked(Keys.CapsLock)){
-                MessageBox.Show("Capslock Is On");
+             
             }
         }
 
@@ -175,10 +175,12 @@ namespace OT_Management
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             Register or = new Register();
             or.Closed += (s, args) => this.Close();
-            or.Show();
+            or.Show();*/
+            Register or = new Register();
+            or.ShowDialog();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

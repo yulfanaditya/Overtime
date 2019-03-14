@@ -77,7 +77,7 @@ namespace OT_Management
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM karyawan WHERE Username='" + badgeBox.Text + "'";
+            string query = "DELETE FROM karyawan WHERE Badge='" + badgeBox.Text + "'";
 
             MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
             DB.OpenConnection();
@@ -110,8 +110,9 @@ namespace OT_Management
                         badgeBox.Enabled = false;
                         updateButton.Text = "Save";
                         deleteButton.Enabled = false;
+                        timeBox.Text = maxTime().ToString();
+                        nameBox.Text = "";
                         timeBox.Enabled = false;
-                        timeBox.Text = "56";
                         searchSect.Enabled = false;
                     }
                     else
@@ -123,8 +124,8 @@ namespace OT_Management
                         searchSect.Enabled = true;
                     }
                     badgeBox.Enabled = false;
-                    enable();
                     nameBox.Focus();
+                    enable();
                 }
             }
         }
@@ -215,8 +216,6 @@ namespace OT_Management
             nameBox.Enabled = true;
             dateTimePicker1.Enabled = true;
             genderBox.Enabled = true;
-            departmentBox.Enabled = true;
-            sectionBox.Enabled = true;
 
             updateButton.Enabled = true;
             cancelButton.Enabled = true;
@@ -254,11 +253,10 @@ namespace OT_Management
 
         private void clear() 
         {
-            nameBox.Text = "";
+            nameBox.Clear();
             dateTimePicker1.Text = "";
-            timeBox.Text = "";
-            departmentBox.Text = "";
-            sectionBox.Text = "";
+            departmentBox.Clear();
+            sectionBox.Clear();
 
             genderBox.Items.Clear();
             genderBox.Items.Add("M");
@@ -267,8 +265,9 @@ namespace OT_Management
         private void refresh()
         {
             badgeBox.Enabled = true;
-            badgeBox.Text = "";
-            nameBox.Text = "";
+            badgeBox.Clear();
+            nameBox.Clear(); 
+            timeBox.Clear();
             dateTimePicker1.Value = DateTime.Now;
             clear();
 
@@ -303,6 +302,7 @@ namespace OT_Management
             if (ADL.ShowDialog() == DialogResult.OK)
             {
                 departmentBox.Text = ADL.departmentItems;
+                sectionBox.Clear();
                 searchSect.Enabled = true;
             }
         }
@@ -319,15 +319,33 @@ namespace OT_Management
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
+            badgeBox.Text = listView1.SelectedItems[0].SubItems[1].Text;
             badgeBox.Enabled = false;
             updateButton.Text = "Update";
             deleteButton.Enabled = true;
             timeBox.Enabled = true;
             searchSect.Enabled = true;
-     
             badgeBox.Enabled = false;
             enable();
             nameBox.Focus();
+        }
+
+        private int maxTime() {
+            DB.inializing();
+            int i = 0;
+            string query = "Select OTMAX from overtimemax";
+            MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
+            DB.OpenConnection();
+            MySqlDataReader Reader = cmd.ExecuteReader();
+
+            while (Reader.Read())
+            {
+                i = Reader.GetInt16(0);
+            }
+            Reader.Close();
+            cmd.Dispose();
+            DB.CloseConnection();
+            return i;
         }
 
         

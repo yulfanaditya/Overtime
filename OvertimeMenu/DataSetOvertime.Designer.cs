@@ -286,6 +286,8 @@ namespace OT_Management.OvertimeMenu {
             
             private global::System.Data.DataColumn columnbadge;
             
+            private global::System.Data.DataColumn columnCode;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public DataOvertimeDataTable() {
                 this.TableName = "DataOvertime";
@@ -401,6 +403,13 @@ namespace OT_Management.OvertimeMenu {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CodeColumn {
+                get {
+                    return this.columnCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +438,7 @@ namespace OT_Management.OvertimeMenu {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public DataOvertimeRow AddDataOvertimeRow(string name, string departmentName, System.DateTime date, string start, string finish, string sumTime, string submitter, string approvalName1, string approvalName2, string approvalName3, string remark, string badge) {
+            public DataOvertimeRow AddDataOvertimeRow(string name, string departmentName, System.DateTime date, string start, string finish, string sumTime, string submitter, string approvalName1, string approvalName2, string approvalName3, string remark, string badge, string Code) {
                 DataOvertimeRow rowDataOvertimeRow = ((DataOvertimeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         name,
@@ -443,7 +452,8 @@ namespace OT_Management.OvertimeMenu {
                         approvalName2,
                         approvalName3,
                         remark,
-                        badge};
+                        badge,
+                        Code};
                 rowDataOvertimeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataOvertimeRow);
                 return rowDataOvertimeRow;
@@ -475,6 +485,7 @@ namespace OT_Management.OvertimeMenu {
                 this.columnapprovalName3 = base.Columns["approvalName3"];
                 this.columnremark = base.Columns["remark"];
                 this.columnbadge = base.Columns["badge"];
+                this.columnCode = base.Columns["Code"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -503,6 +514,8 @@ namespace OT_Management.OvertimeMenu {
                 base.Columns.Add(this.columnremark);
                 this.columnbadge = new global::System.Data.DataColumn("badge", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbadge);
+                this.columnCode = new global::System.Data.DataColumn("Code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCode);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -815,6 +828,21 @@ namespace OT_Management.OvertimeMenu {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string Code {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataOvertime.CodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Code\' in table \'DataOvertime\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataOvertime.CodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsnameNull() {
                 return this.IsNull(this.tableDataOvertime.nameColumn);
             }
@@ -932,6 +960,16 @@ namespace OT_Management.OvertimeMenu {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetbadgeNull() {
                 this[this.tableDataOvertime.badgeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsCodeNull() {
+                return this.IsNull(this.tableDataOvertime.CodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetCodeNull() {
+                this[this.tableDataOvertime.CodeColumn] = global::System.Convert.DBNull;
             }
         }
         

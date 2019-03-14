@@ -63,7 +63,7 @@ namespace OT_Management
                     dataPrint[i] = PIL.data[i];
                 }
 
-                string query = "SELECT name, departmentName,DATE_FORMAT(date, '%e %M  %Y') AS date, start, finish, sumTime, submitter, approvalName1, approvalName2, approvalName3, remark, Badge FROM overtimerequest WHERE date BETWEEN '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND '" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "' AND submitter = '" + dataPrint[0] + "' AND approvalName1 = '" + dataPrint[1] + "' AND approvalName2 = '" + dataPrint[2] + "' AND approvalName3 = '" + dataPrint[3] + "'";
+                string query = "SELECT name, departmentName,DATE_FORMAT(date, '%e %M  %Y') AS date, start, finish, sumTime, submitter, approvalName1, approvalName2, approvalName3, remark, Badge, goal.Code FROM overtimerequest INNER JOIN goal ON activity = goal.goalofOT WHERE date BETWEEN '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND '" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "' AND submitter = '" + dataPrint[0] + "' AND approvalName1 = '" + dataPrint[1] + "' AND approvalName2 = '" + dataPrint[2] + "' AND approvalName3 = '" + dataPrint[3] + "'";
                 MySqlCommand cmd = new MySqlCommand(query, DB.inializing());
                 DB.OpenConnection();
 
